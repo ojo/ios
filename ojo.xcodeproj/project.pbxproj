@@ -14,6 +14,7 @@
 		6B71130D1E105AD400C3F33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B71130B1E105AD400C3F33C /* LaunchScreen.storyboard */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
+		6BF622161E105B6400A207AC /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622151E105B6400A207AC /* Stations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6B71131E1E105AD400C3F33C /* ojoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ojoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113221E105AD400C3F33C /* ojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ojoUITests.swift; sourceTree = "<group>"; };
 		6B7113241E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BF622151E105B6400A207AC /* Stations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				6B7113021E105AD400C3F33C /* AppDelegate.swift */,
 				6B7113041E105AD400C3F33C /* ViewController.swift */,
+				6BF622151E105B6400A207AC /* Stations.swift */,
 				6B7113061E105AD400C3F33C /* Main.storyboard */,
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
 				6B71130B1E105AD400C3F33C /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				6B7113051E105AD400C3F33C /* ViewController.swift in Sources */,
 				6B7113031E105AD400C3F33C /* AppDelegate.swift in Sources */,
+				6BF622161E105B6400A207AC /* Stations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
