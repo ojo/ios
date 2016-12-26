@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6B7113031E105AD400C3F33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113021E105AD400C3F33C /* AppDelegate.swift */; };
-		6B7113051E105AD400C3F33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113041E105AD400C3F33C /* ViewController.swift */; };
 		6B7113081E105AD400C3F33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113061E105AD400C3F33C /* Main.storyboard */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
 		6B71130D1E105AD400C3F33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B71130B1E105AD400C3F33C /* LaunchScreen.storyboard */; };
@@ -18,6 +17,10 @@
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221B1E11B1A900A207AC /* StationManager.swift */; };
+		704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */; };
+		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
+		70D9CE1B1E11D011002D41B8 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */; };
+		70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 /* Begin PBXFileReference section */
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113021E105AD400C3F33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6B7113041E105AD400C3F33C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B7113071E105AD400C3F33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B7113091E105AD400C3F33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B71130C1E105AD400C3F33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221B1E11B1A900A207AC /* StationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationManager.swift; sourceTree = "<group>"; };
+		704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
+		70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlaybackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +112,11 @@
 		6B7113011E105AD400C3F33C /* ojo */ = {
 			isa = PBXGroup;
 			children = (
+				704C94A31E11AC6F00A7D2BF /* Frameworks */,
 				6B7113021E105AD400C3F33C /* AppDelegate.swift */,
-				6B7113041E105AD400C3F33C /* ViewController.swift */,
+				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */,
+				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
 				6BF622171E1195FF00A207AC /* NewsItems.swift */,
 				6BF622151E105B6400A207AC /* Stations.swift */,
 				6B7113061E105AD400C3F33C /* Main.storyboard */,
@@ -137,6 +147,14 @@
 			path = ojoUITests;
 			sourceTree = "<group>";
 		};
+		704C94A31E11AC6F00A7D2BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +165,7 @@
 				6B7112FB1E105AD400C3F33C /* Sources */,
 				6B7112FC1E105AD400C3F33C /* Frameworks */,
 				6B7112FD1E105AD400C3F33C /* Resources */,
+				70D9CE161E11B23D002D41B8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -205,7 +224,7 @@
 				TargetAttributes = {
 					6B7112FE1E105AD400C3F33C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 976H852GCK;
+						DevelopmentTeam = FPJM4NGXTD;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -274,17 +293,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70D9CE161E11B23D002D41B8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/LNPopupController.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B7112FB1E105AD400C3F33C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7113051E105AD400C3F33C /* ViewController.swift in Sources */,
+				70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */,
 				6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */,
 				6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */,
 				6B7113031E105AD400C3F33C /* AppDelegate.swift in Sources */,
 				6BF622161E105B6400A207AC /* Stations.swift in Sources */,
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
+				70D9CE1B1E11D011002D41B8 /* MusicPlayerViewController.swift in Sources */,
+				6B7113031E105AD400C3F33C /* AppDelegate.swift in Sources */,
+				6BF622161E105B6400A207AC /* Stations.swift in Sources */,
+				704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +474,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 976H852GCK;
+				DEVELOPMENT_TEAM = FPJM4NGXTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ojo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = btc.ora2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,8 +492,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 976H852GCK;
+				DEVELOPMENT_TEAM = FPJM4NGXTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ojo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = btc.ora2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
