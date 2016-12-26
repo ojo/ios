@@ -10,8 +10,16 @@ import Foundation
 import UIKit
 import LNPopupController;
 
+let stationManager = StationManager()
+let playbackManager = PlaybackManager(stationManager: stationManager)
+
 class OJORootNavigationController : UINavigationController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.green
+        let vc = MusicPlayerViewController(playbackManager: playbackManager)
+        self.presentPopupBar(withContentViewController: vc, animated: true, completion: nil)
     }
 }
