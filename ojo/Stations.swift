@@ -33,8 +33,8 @@ let Stations: [Station] = [
 ]
 
 struct Station {
-    var title: String
+    var title: String // the name the user sees
     var url: NSURL
-    var tag: String
+    var tag: String // a key used to identify the station when making station-specfic API calls
     var image: UIImage
 }
