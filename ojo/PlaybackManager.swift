@@ -9,8 +9,7 @@
 import AVFoundation
 import Foundation
 
-// TODO(btc): need lock?
-
+// NB(btc): not thread-safe.
 class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KVO on player
     lazy var player = AVPlayer()
     var stationManager: StationManager
@@ -28,7 +27,7 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                                                object: nil)
         player.addObserver(self,
                            forKeyPath: "status",
-                           options: NSKeyValueObservingOptions(rawValue: 0),
+                           options: .new,
                            context: nil)
     }
     
@@ -40,9 +39,18 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
         player.pause()
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "status" {
-            // TODO(btc): handle player status change
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        
+        switch object {
+        case let p as AVPlayer:
+            if p == player && keyPath == "status" {
+                // TODO(btc): handle player status change
+            }
+        default:
+            break
         }
     }
     
@@ -59,6 +67,8 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
         }
     }
 }
+
+// FIXME(btc): put enum and delegate in separate files?
 
 enum PlaybackState {
     case Started
