@@ -29,12 +29,9 @@ class MusicPlayerViewController : UIViewController {
 
     let musicPlayBackButton = MusicPlaybackButton()
     
-    // this is a convenient way to create this view controller without a imageURL
-    var currentStation: Station?
-    
-    // this is a convenient way to create this view controller without a imageURL
-    init(initialStation: Station) {
-        self.currentStation = initialStation
+    var playBackManager: PlaybackManager?
+    init(playBackManager: PlaybackManager) {
+        self.playBackManager = playBackManager
         super.init(nibName: nil, bundle: nil)
     }
     
