@@ -12,7 +12,15 @@ import UIKit
 class NewsCollectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(radioButtonPressed))
+        
+        // TODO(btc): extract custom button
+        let radio = UIImage(named: "radio")!
+        let button: UIButton = UIButton(type: .custom)
+        button.bounds = CGRect(x: 0, y: 0, width: radio.size.width, height: radio.size.height)
+        button.setImage(radio, for: .normal)
+        button.addTarget(self, action: #selector(radioButtonPressed), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
+        
         self.view.backgroundColor = UIColor.gray
     }
     
