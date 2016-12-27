@@ -14,7 +14,10 @@ class RootNavigationController : UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        
+        navigationBar.clipsToBounds = true // removes the bottom border
+        navigationBar.isTranslucent = false
     }
         
     override func viewDidAppear(_ animated: Bool) {
