@@ -8,17 +8,48 @@
 
 import Foundation
 import UIKit
+import HidingNavigationBar
 
 class RadioStationCollectionViewController : UICollectionViewController {
     let reuseIdentifier = "radioCell"
+    var hidingNavBarManager: HidingNavigationBarManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         collectionView?.register(RadioStationCollectionViewCell.self,
                                  forCellWithReuseIdentifier: reuseIdentifier)
+        
+        if let scrollView = self.collectionView {
+            hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: scrollView)
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hidingNavBarManager?.viewWillAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        hidingNavBarManager?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hidingNavBarManager?.viewWillDisappear(animated)
+    }
+    
+    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
+        
+        return true
     }
 }
+
+
+
 
 // MARK: - UICollectionViewDataSource
 extension RadioStationCollectionViewController {

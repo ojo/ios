@@ -25,6 +25,7 @@
 		70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */; };
 		70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB171E11F98D00B03D12 /* Utils.swift */; };
 		70F3DB1A1E11FFAE00B03D12 /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */; };
+		70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewCell.swift; sourceTree = "<group>"; };
 		70F3DB171E11F98D00B03D12 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
+		70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HidingNavigationBar.framework; path = Carthage/Build/iOS/HidingNavigationBar.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
+				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +157,7 @@
 		704C94A31E11AC6F00A7D2BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
 			);
 			name = Frameworks;
@@ -343,6 +347,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/LNPopupController.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/HidingNavigationBar.framework",
 			);
 			outputPaths = (
 			);

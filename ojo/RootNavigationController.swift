@@ -1,5 +1,5 @@
 //
-//  OJORootNavigationController.swift
+//  RootNavigationController.swift
 //  ojo
 //
 //  Created by Boris Suvorov on 12/26/16.
@@ -13,7 +13,7 @@ import LNPopupController;
 let stationManager = StationManager()
 let playbackManager = PlaybackManager(stationManager: stationManager)
 
-class OJORootNavigationController : UINavigationController {
+class RootNavigationController : UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
