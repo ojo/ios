@@ -14,14 +14,24 @@ class StationsViewController : UICollectionViewController {
     let reuseIdentifier = "radioCell"
     var hidingNavBarManager: HidingNavigationBarManager?
     
+    init(boundsWidth: CGFloat) {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: boundsWidth, height: 130)
+        super.init(collectionViewLayout: flowLayout)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         collectionView?.register(RadioStationCollectionViewCell.self,
                                  forCellWithReuseIdentifier: reuseIdentifier)
         
-        if let scrollView = self.collectionView {
-            hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: scrollView)
+        if let v = self.collectionView {
+            hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: v)
         }
     }
 

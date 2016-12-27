@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let newsViewController = NewsFeedViewController()
-        let navigationController = RootNavigationController(rootViewController: newsViewController)
+        let vc = StationsViewController(boundsWidth: UIScreen.main.bounds.width)
+        let navigationController = RootNavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

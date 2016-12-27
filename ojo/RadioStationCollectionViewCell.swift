@@ -35,7 +35,7 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        // brian - layout views here
+        // TODO(btc): layout views
         thumbnail.frame = CGRect(x: 10, y: 10, width: 80, height: 80)
         textLabel.frame = CGRect(x: 100, y: 20, width: 120, height: 40)
     }

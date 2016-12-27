@@ -25,11 +25,7 @@ class NewsFeedViewController: UIViewController {
     }
     
     @objc private func radioButtonPressed() {
-        let flowLayout = UICollectionViewFlowLayout()
-        let width = self.view.bounds.width
-        flowLayout.itemSize = CGSize(width: width, height: 130)
-        
-        let vc = StationsViewController(collectionViewLayout: flowLayout)
+        let vc = StationsViewController(boundsWidth: self.view.bounds.width)
         self.navigationController?.pushViewController(vc, animated: true)
     }
    
