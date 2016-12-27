@@ -45,6 +45,8 @@ class MusicPlayerViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.white
+        
         self.view.addSubview(albumArt)
         self.view.addSubview(artistName)
         self.view.addSubview(songName)
