@@ -11,7 +11,9 @@ import UIKit
 import HidingNavigationBar
 
 class StationsViewController : UICollectionViewController {
-    let reuseIdentifier = "radioCell"
+    
+    let REUSE_IDENTIFIER = "RadioStationCollectionViewCell"
+    
     var hidingNavBarManager: HidingNavigationBarManager?
     
     init(boundsWidth: CGFloat) {
@@ -26,11 +28,14 @@ class StationsViewController : UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView?.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
-        collectionView?.register(RadioStationCollectionViewCell.self,
-                                 forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView?.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         
-        if let v = self.collectionView {
+        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel(text: "Streams")
+
+        collectionView?.register(RadioStationCollectionViewCell.self,
+                                 forCellWithReuseIdentifier: REUSE_IDENTIFIER)
+        
+        if let v = collectionView {
             hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: v)
         }
     }
@@ -74,7 +79,7 @@ extension StationsViewController {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
         if let radioCell = cell as? RadioStationCollectionViewCell {
             radioCell.station = Stations[indexPath.row]
             return radioCell

@@ -10,6 +10,7 @@
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
+		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221B1E11B1A900A207AC /* StationManager.swift */; };
@@ -55,6 +56,7 @@
 		6B71131E1E105AD400C3F33C /* ojoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ojoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113221E105AD400C3F33C /* ojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ojoUITests.swift; sourceTree = "<group>"; };
 		6B7113241E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221B1E11B1A900A207AC /* StationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationManager.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		70F3DB111E11F3B500B03D12 /* Component Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */,
 				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
 				70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */,
 			);
@@ -365,6 +368,7 @@
 				70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */,
 				6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */,
 				6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */,
+				6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */,
 				707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */,
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
 				70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */,
