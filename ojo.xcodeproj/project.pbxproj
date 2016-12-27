@@ -116,21 +116,14 @@
 		6B7113011E105AD400C3F33C /* ojo */ = {
 			isa = PBXGroup;
 			children = (
+				70F3DB161E11F8AE00B03D12 /* Managers and services */,
+				70F3DB151E11F89900B03D12 /* Models */,
 				704C94A31E11AC6F00A7D2BF /* Frameworks */,
-				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
-				70F3DB111E11F3B500B03D12 /* Cells */,
-				70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */,
-				70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */,
-				70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */,
-				6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */,
-				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
-				6BF622171E1195FF00A207AC /* NewsItems.swift */,
+				70F3DB141E11F87500B03D12 /* View Controllers */,
+				70F3DB111E11F3B500B03D12 /* Component Views */,
 				707374C31E11DA950013EDDF /* AppDelegate.swift */,
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
 				6B71130E1E105AD400C3F33C /* Info.plist */,
-				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
-				707374C51E11DB6E0013EDDF /* Stations.swift */,
-				6BF6221B1E11B1A900A207AC /* StationManager.swift */,
 			);
 			path = ojo;
 			sourceTree = "<group>";
@@ -161,12 +154,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		70F3DB111E11F3B500B03D12 /* Cells */ = {
+		70F3DB111E11F3B500B03D12 /* Component Views */ = {
 			isa = PBXGroup;
 			children = (
+				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
 				70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */,
 			);
-			name = Cells;
+			name = "Component Views";
+			sourceTree = "<group>";
+		};
+		70F3DB141E11F87500B03D12 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */,
+				70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */,
+				70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */,
+				6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		70F3DB151E11F89900B03D12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6BF622171E1195FF00A207AC /* NewsItems.swift */,
+				707374C51E11DB6E0013EDDF /* Stations.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		70F3DB161E11F8AE00B03D12 /* Managers and services */ = {
+			isa = PBXGroup;
+			children = (
+				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
+				6BF6221B1E11B1A900A207AC /* StationManager.swift */,
+			);
+			name = "Managers and services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
