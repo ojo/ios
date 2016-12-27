@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import HidingNavigationBar
 
-class RadioStationCollectionViewController : UICollectionViewController {
+class StationsViewController : UICollectionViewController {
     let reuseIdentifier = "radioCell"
     var hidingNavBarManager: HidingNavigationBarManager?
     
@@ -52,7 +52,7 @@ class RadioStationCollectionViewController : UICollectionViewController {
 
 
 // MARK: - UICollectionViewDataSource
-extension RadioStationCollectionViewController {
+extension StationsViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MusicPlayerViewController : UIViewController, PlaybackManagerDelegate {
+class NowPlayingViewController : UIViewController, PlaybackManagerDelegate {
     var albumArt: UIImageView = {
         var result = UIImageView(image: UIImage(named: "album_art_placeholder"))
         result.backgroundColor = UIColor.red

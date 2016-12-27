@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NewsCollectionsViewController: UIViewController {
+class NewsFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +29,7 @@ class NewsCollectionsViewController: UIViewController {
         let width = self.view.bounds.width
         flowLayout.itemSize = CGSize(width: width, height: 130)
         
-        let vc = RadioStationCollectionViewController(collectionViewLayout: flowLayout)
+        let vc = StationsViewController(collectionViewLayout: flowLayout)
         self.navigationController?.pushViewController(vc, animated: true)
     }
    
