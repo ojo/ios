@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B7113081E105AD400C3F33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113061E105AD400C3F33C /* Main.storyboard */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
-		6B71130D1E105AD400C3F33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B71130B1E105AD400C3F33C /* LaunchScreen.storyboard */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
@@ -21,6 +19,8 @@
 		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
 		70D9CE1B1E11D011002D41B8 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */; };
 		70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */; };
+		70F3DAEA1E11E72A00B03D12 /* RadioStationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */; };
+		70F3DB0F1E11E90A00B03D12 /* NewsCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,7 @@
 
 /* Begin PBXFileReference section */
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B7113071E105AD400C3F33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B7113091E105AD400C3F33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6B71130C1E105AD400C3F33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B71130E1E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B7113131E105AD400C3F33C /* ojoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ojoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113171E105AD400C3F33C /* ojoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ojoTests.swift; sourceTree = "<group>"; };
@@ -61,6 +59,8 @@
 		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
 		70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlaybackButton.swift; sourceTree = "<group>"; };
+		70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewController.swift; sourceTree = "<group>"; };
+		70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +114,13 @@
 			children = (
 				704C94A31E11AC6F00A7D2BF /* Frameworks */,
 				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */,
+				70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */,
 				70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */,
 				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
 				6BF622171E1195FF00A207AC /* NewsItems.swift */,
 				707374C31E11DA950013EDDF /* AppDelegate.swift */,
-				6B7113061E105AD400C3F33C /* Main.storyboard */,
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
-				6B71130B1E105AD400C3F33C /* LaunchScreen.storyboard */,
 				6B71130E1E105AD400C3F33C /* Info.plist */,
 				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
 				707374C51E11DB6E0013EDDF /* Stations.swift */,
@@ -271,9 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B71130D1E105AD400C3F33C /* LaunchScreen.storyboard in Resources */,
 				6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */,
-				6B7113081E105AD400C3F33C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +320,9 @@
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
 				70D9CE1B1E11D011002D41B8 /* MusicPlayerViewController.swift in Sources */,
 				707374C61E11DB6E0013EDDF /* Stations.swift in Sources */,
+				70F3DAEA1E11E72A00B03D12 /* RadioStationCollectionViewController.swift in Sources */,
 				704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */,
+				70F3DB0F1E11E90A00B03D12 /* NewsCollectionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,25 +356,6 @@
 			targetProxy = 6B71131F1E105AD400C3F33C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6B7113061E105AD400C3F33C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6B7113071E105AD400C3F33C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6B71130B1E105AD400C3F33C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6B71130C1E105AD400C3F33C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6B7113251E105AD400C3F33C /* Debug */ = {

@@ -17,8 +17,10 @@ class OJORootNavigationController : UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.green
+    }
+        
+    override func viewDidAppear(_ animated: Bool) {
         let vc = MusicPlayerViewController(playbackManager: playbackManager)
         self.presentPopupBar(withContentViewController: vc, animated: true, completion: nil)
     }
