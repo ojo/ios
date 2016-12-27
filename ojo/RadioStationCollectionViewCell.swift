@@ -22,6 +22,9 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
     
     var textLabel: UILabel = {
         let result = UILabel()
+        result.text = DEFAULT_PLACEHOLDER_TEXT
+        result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 18)
+        result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // 595959 TODO extract when you recognize name
         return result
     }()
     
