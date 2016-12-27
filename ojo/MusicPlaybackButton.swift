@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 class MusicPlaybackButton : UIView {
-    static public let playImage = UIImage(named: "play")
-    static public let pauseImage = UIImage(named: "pause")
+    static public let playImage: UIImage = UIImage(named: "play")!
+    static public let pauseImage: UIImage = UIImage(named: "pause")!
 }
