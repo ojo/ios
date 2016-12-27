@@ -25,7 +25,8 @@ class NewsCollectionsViewController: UIViewController {
     }
     
     @objc private func radioButtonPressed() {
-        let vc = RadioStationCollectionViewController()
+        let flowLayout = UICollectionViewFlowLayout()
+        let vc = RadioStationCollectionViewController(collectionViewLayout: flowLayout)
         self.navigationController?.pushViewController(vc, animated: true)
     }
    

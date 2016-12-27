@@ -22,6 +22,7 @@
 		70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */; };
 		70F3DAEA1E11E72A00B03D12 /* RadioStationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */; };
 		70F3DB0F1E11E90A00B03D12 /* NewsCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */; };
+		70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlaybackButton.swift; sourceTree = "<group>"; };
 		70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewController.swift; sourceTree = "<group>"; };
 		70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionsViewController.swift; sourceTree = "<group>"; };
+		70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				704C94A31E11AC6F00A7D2BF /* Frameworks */,
 				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				70F3DB111E11F3B500B03D12 /* Cells */,
 				70F3DB0E1E11E90A00B03D12 /* NewsCollectionsViewController.swift */,
 				70F3DAE91E11E72A00B03D12 /* RadioStationCollectionViewController.swift */,
 				70D9CE1A1E11D011002D41B8 /* MusicPlayerViewController.swift */,
@@ -156,6 +159,14 @@
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70F3DB111E11F3B500B03D12 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 				6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */,
 				70D9CE1B1E11D011002D41B8 /* MusicPlayerViewController.swift in Sources */,
 				707374C61E11DB6E0013EDDF /* Stations.swift in Sources */,
+				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
 				70F3DAEA1E11E72A00B03D12 /* RadioStationCollectionViewController.swift in Sources */,
 				704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */,
 				70F3DB0F1E11E90A00B03D12 /* NewsCollectionsViewController.swift in Sources */,
