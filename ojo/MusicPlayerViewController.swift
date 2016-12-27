@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MusicPlayerViewController : UIViewController {
+class MusicPlayerViewController : UIViewController, PlaybackManagerDelegate {
     var albumArt: UIImageView = {
         var result = UIImageView(image: UIImage(named: "album_art_placeholder"))
         result.backgroundColor = UIColor.red
@@ -36,6 +36,7 @@ class MusicPlayerViewController : UIViewController {
     init(playbackManager: PlaybackManager) {
         self.playbackManager = playbackManager
         super.init(nibName: nil, bundle: nil)
+        playbackManager.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,10 +53,9 @@ class MusicPlayerViewController : UIViewController {
         self.view.addSubview(songName)
         self.view.addSubview(musicPlayBackButton)
         
-        let play = UIBarButtonItem(image: MusicPlaybackButton.playImage, landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
+        let play = UIBarButtonItem(image: MusicPlaybackButton.playImage, landscapeImagePhone: nil, style: .plain, target: self, action: #selector(playButtonPressed))
         self.popupItem.rightBarButtonItems = [play]
     }
-    
     
     override func viewDidLayoutSubviews() {
         let width = self.view.bounds.width
@@ -70,5 +70,21 @@ class MusicPlayerViewController : UIViewController {
 
         let artistNameY = Int(songName.frame.maxY) + spacing
         artistName.frame = CGRect(x: paddingX, y: artistNameY, width: widthHeight, height: spacing)
+    }
+    
+    func playbackDidChangeState(_ s: PlaybackState) {
+        NSLog("got playback state update")
+        switch s {
+        case .Buffering: break
+            // TODO(btc): display buffering button
+        case .Started: break
+            // TODO(btc): display stop/pause button
+        case .Stopped: break
+            // TODO(btc): display play button
+        }
+    }
+    
+    func playButtonPressed(_ e: UIEvent) {
+        playbackManager?.play()
     }
 }
