@@ -175,12 +175,12 @@
 		70F3DB141E11F87500B03D12 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */,
 				70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */,
 				70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */,
-				70F3DAE91E11E72A00B03D12 /* StationsViewController.swift */,
 				70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */,
-				6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */,
+				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				70F3DAE91E11E72A00B03D12 /* StationsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
