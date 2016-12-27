@@ -17,7 +17,7 @@ class OJORootNavigationController : UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
+        self.view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
     }
         
     override func viewDidAppear(_ animated: Bool) {

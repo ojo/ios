@@ -21,11 +21,14 @@ class NewsCollectionsViewController: UIViewController {
         button.addTarget(self, action: #selector(radioButtonPressed), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
         
-        self.view.backgroundColor = UIColor.gray
+        self.view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
     }
     
     @objc private func radioButtonPressed() {
         let flowLayout = UICollectionViewFlowLayout()
+        let width = self.view.bounds.width
+        flowLayout.itemSize = CGSize(width: width, height: 130)
+        
         let vc = RadioStationCollectionViewController(collectionViewLayout: flowLayout)
         self.navigationController?.pushViewController(vc, animated: true)
     }

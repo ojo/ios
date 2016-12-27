@@ -29,14 +29,15 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         self.contentView.addSubview(thumbnail)
         self.contentView.addSubview(textLabel)
     }
     
     override func layoutSubviews() {
         // brian - layout views here
-        thumbnail.frame = CGRect(x: 10, y: 10, width: 30, height: 30)
-        textLabel.frame = CGRect(x: 50, y: 20, width: 20, height: 10)
+        thumbnail.frame = CGRect(x: 10, y: 10, width: 80, height: 80)
+        textLabel.frame = CGRect(x: 100, y: 20, width: 120, height: 40)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -14,7 +14,7 @@ class RadioStationCollectionViewController : UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
+        self.collectionView?.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         collectionView?.register(RadioStationCollectionViewCell.self,
                                  forCellWithReuseIdentifier: reuseIdentifier)
     }
