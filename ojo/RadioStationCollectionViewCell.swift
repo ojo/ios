@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class RadioStationCollectionViewCell : UICollectionViewCell {
+        
+    static func cellHeight(givenFrameWidth frameWidth: CGFloat) -> CGFloat {
+        return frameWidth / 2 - 2 * DEFAULT_MARGIN_PX
+    }
+
     var thumbnail: UIImageView = {
         let result = UIImageView()
         result.layer.cornerRadius = 6
@@ -44,8 +49,24 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
     
     override func layoutSubviews() {
         // TODO(btc): layout views
-        thumbnail.frame = CGRect(x: 10, y: 10, width: 80, height: 80)
-        textLabel.frame = CGRect(x: 100, y: 20, width: 120, height: 40)
+        // TODO(btc): station name goes in horizontal center 
+        
+        let imageWidthHeight = RadioStationCollectionViewCell.cellHeight(givenFrameWidth: frame.width)
+        thumbnail.frame = CGRect(x: DEFAULT_MARGIN_PX,
+                                 y: DEFAULT_MARGIN_PX,
+                                 width: imageWidthHeight,
+                                 height: imageWidthHeight)
+        
+        textLabel.sizeToFit()
+        let textHeight = textLabel.frame.height
+        print(textHeight)
+        
+        let textX = self.frame.width / 2
+        let textY = self.frame.height / 2
+        textLabel.frame = CGRect(x: textX,
+                                 y: textY,
+                                 width: 120,
+                                 height: textHeight)
     }
     
     required init?(coder aDecoder: NSCoder) {

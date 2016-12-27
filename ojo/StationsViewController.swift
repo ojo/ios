@@ -18,7 +18,8 @@ class StationsViewController : UICollectionViewController {
     
     init(boundsWidth: CGFloat) {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: boundsWidth, height: 130)
+        let h = RadioStationCollectionViewCell.cellHeight(givenFrameWidth: boundsWidth)
+        flowLayout.itemSize = CGSize(width: boundsWidth, height: h)
         super.init(collectionViewLayout: flowLayout)
     }
     
@@ -62,8 +63,6 @@ class StationsViewController : UICollectionViewController {
         return true
     }
 }
-
-
 
 
 // MARK: - UICollectionViewDataSource
