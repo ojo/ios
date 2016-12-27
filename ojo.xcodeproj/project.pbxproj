@@ -272,7 +272,7 @@
 				TargetAttributes = {
 					6B7112FE1E105AD400C3F33C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FPJM4NGXTD;
+						DevelopmentTeam = 976H852GCK;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -506,7 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FPJM4NGXTD;
+				DEVELOPMENT_TEAM = 976H852GCK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -524,7 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FPJM4NGXTD;
+				DEVELOPMENT_TEAM = 976H852GCK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
