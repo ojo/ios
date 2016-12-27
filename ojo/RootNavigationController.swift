@@ -18,7 +18,7 @@ class RootNavigationController : UINavigationController {
     }
         
     override func viewDidAppear(_ animated: Bool) {
-        let vc = NowPlayingViewController(playbackManager: playbackManager)
+        let vc = NowPlayingViewController(playbackManager: PLAYBACK_MANAGER)
         self.presentPopupBar(withContentViewController: vc, animated: true, completion: nil)
     }
 }
