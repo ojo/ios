@@ -49,6 +49,9 @@ class MusicPlayerViewController : UIViewController {
         self.view.addSubview(artistName)
         self.view.addSubview(songName)
         self.view.addSubview(musicPlayBackButton)
+        
+        let play = UIBarButtonItem(image: MusicPlaybackButton.playImage, landscapeImagePhone: nil, style: .plain, target: nil, action: nil)
+        self.popupItem.rightBarButtonItems = [play]
     }
     
     
@@ -56,7 +59,7 @@ class MusicPlayerViewController : UIViewController {
         let width = self.view.bounds.width
         let paddingX: Int = 6
         let albumArtPaddingY: Int = 66
-        let widthHeight = Int(width) - paddingX
+        let widthHeight = Int(width) - 2 * paddingX
         albumArt.frame = CGRect(x: paddingX, y: albumArtPaddingY, width: widthHeight, height: widthHeight)
         
         let spacing: Int = 26
