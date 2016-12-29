@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E351E14D40200F937BA /* Stations3ViewController.swift */; };
 		6B173E381E14D42F00F937BA /* StationsVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E371E14D42F00F937BA /* StationsVCFactory.swift */; };
+		6B28B4DC1E158DC90098E1D8 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28B4DB1E158DC90098E1D8 /* ReactiveCocoa.framework */; };
+		6B28B4DF1E158E970098E1D8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28B4DE1E158E970098E1D8 /* ReactiveSwift.framework */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
 		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
+		6BA6B34C1E159A220033130E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA6B34B1E159A220033130E /* Result.framework */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221B1E11B1A900A207AC /* StationManager.swift */; };
@@ -51,6 +54,8 @@
 /* Begin PBXFileReference section */
 		6B173E351E14D40200F937BA /* Stations3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations3ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		6B173E371E14D42F00F937BA /* StationsVCFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsVCFactory.swift; sourceTree = "<group>"; };
+		6B28B4DB1E158DC90098E1D8 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
+		6B28B4DE1E158E970098E1D8 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = SOURCE_ROOT; };
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113091E105AD400C3F33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B71130E1E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		6B7113221E105AD400C3F33C /* ojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ojoUITests.swift; sourceTree = "<group>"; };
 		6B7113241E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
+		6BA6B34B1E159A220033130E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221B1E11B1A900A207AC /* StationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationManager.swift; sourceTree = "<group>"; };
@@ -85,7 +91,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
+				6B28B4DC1E158DC90098E1D8 /* ReactiveCocoa.framework in Frameworks */,
+				6BA6B34C1E159A220033130E /* Result.framework in Frameworks */,
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
+				6B28B4DF1E158E970098E1D8 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,8 +172,11 @@
 		704C94A31E11AC6F00A7D2BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6BA6B34B1E159A220033130E /* Result.framework */,
+				6B28B4DE1E158E970098E1D8 /* ReactiveSwift.framework */,
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
+				6B28B4DB1E158DC90098E1D8 /* ReactiveCocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,6 +369,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/LNPopupController.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HidingNavigationBar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			outputPaths = (
 			);
