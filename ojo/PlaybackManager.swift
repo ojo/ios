@@ -12,7 +12,7 @@ import Foundation
 // NB(btc): not thread-safe.
 class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KVO on player
   
-    lazy var player = AVPlayer(url: URL.init(string: "http://fms.ttrn.org:1936/live/961wefm.sdp/playlist.m3u8")!)
+    lazy var player = AVPlayer()
   
     var stationManager: StationManager
   
@@ -33,8 +33,9 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                            context: nil)
     }
     
-    public func setPlayable(_ p: Playable) {
-        
+    public func setURL(_ url: URL) {
+        let nextItem = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: nextItem)
     }
     
     public func play() {
@@ -83,8 +84,4 @@ enum PlaybackState {
 
 protocol PlaybackManagerDelegate {
     func playbackDidChangeState(_ s: PlaybackState)
-}
-
-protocol Playable {
-    func playURL() -> NSURL
 }

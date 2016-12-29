@@ -14,31 +14,27 @@ import UIKit
 let STATIONS: [Station] = [
     Station(
         title: "STAR",
-        url: NSURL(string: "http://fms.ttrn.org:1936/live/star947.sdp/playlist.m3u8")!,
+        url: URL(string: "http://fms.ttrn.org:1936/live/star947.sdp/playlist.m3u8")!,
         tag: "947fm",
         image: UIImage(named: "947fm")!
         ),
     Station(
         title: "WEFM",
-        url: NSURL(string: "http://fms.ttrn.org:1936/live/961wefm.sdp/playlist.m3u8")!,
+        url: URL(string: "http://fms.ttrn.org:1936/live/961wefm.sdp/playlist.m3u8")!,
         tag: "961fm",
         image: UIImage(named: "961fm")!
     ),
     Station(
         title: "Music for Life",
-        url: NSURL(string: "http://fms.ttrn.org:1936/live/1077fm.sdp/playlist.m3u8")!,
+        url: URL(string: "http://fms.ttrn.org:1936/live/1077fm.sdp/playlist.m3u8")!,
         tag: "1077fm",
         image: UIImage(named: "1077fm")!
     ),
 ]
 
-struct Station: Playable {
+struct Station {
     let title: String // the name the user sees
-    let url: NSURL
+    let url: URL
     let tag: String // a key used to identify the station when making station-specfic API calls
     let image: UIImage
-    
-    func playURL() -> NSURL {
-        return url
-    }
 }

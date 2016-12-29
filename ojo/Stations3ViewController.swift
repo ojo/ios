@@ -32,7 +32,7 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     }
     
     func stationSelected(_ s: Station) {
-        PLAYBACK_MANAGER.setPlayable(s)
+        PLAYBACK_MANAGER.setURL(s.url)
         PLAYBACK_MANAGER.play()
     }
     
