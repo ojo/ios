@@ -22,7 +22,7 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
         result.clipsToBounds = true
         result.layer.borderColor = UIColor(red:0.59, green:0.59, blue:0.59, alpha:1.0).cgColor
         result.layer.borderWidth = 1
-        result.contentMode = .center
+        result.contentMode = .scaleAspectFit
         return result
     }()
     
