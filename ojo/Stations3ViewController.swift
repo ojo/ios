@@ -19,8 +19,8 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         return 40
     }()
     
-    var stations: [Station]?
-    var views: [UIView]?
+    var stations: [Station] = [Station]()
+    var views: [UIView] = [UIView]()
     
     init(stations: [Station], bounds: CGRect) {
         self.stations = stations
@@ -41,7 +41,7 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel(text: "Streams")
         
         var vs: [UIView] = [UIView]()
-        for s in stations! {
+        for s in stations {
             let v = StationView(frame: view.frame)
             v.station = s
             v.delegate = self
@@ -55,9 +55,9 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     
     override func viewDidLayoutSubviews() {
         let f = view.frame
-        let h = (f.height - MINIPLAYER_HEIGHT - DEFAULT_MARGIN_PX) / 3
+        let h = (f.height - MINIPLAYER_HEIGHT - DEFAULT_MARGIN_PX) / CGFloat(views.count)
         
-        for (i, v) in views!.enumerated() {
+        for (i, v) in views.enumerated() {
             v.frame = CGRect(x: 0,
                              y: CGFloat(i * Int(h)), // cast to Int to make sure i == 0 is handled correctly
                              width: f.width,
