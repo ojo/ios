@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = StationsViewController(boundsWidth: UIScreen.main.bounds.width)
+        let vc = getStationsViewController(stations: STATIONS, bounds: UIScreen.main.bounds)
         let navigationController = RootNavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

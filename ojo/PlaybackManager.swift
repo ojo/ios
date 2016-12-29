@@ -33,6 +33,10 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                            context: nil)
     }
     
+    public func setPlayable(_ p: Playable) {
+        
+    }
+    
     public func play() {
         player.play()
     }
@@ -55,7 +59,7 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
         }
     }
     
-    func handleInterruption(n: NSNotification) {
+    @objc private func handleInterruption(n: NSNotification) {
         if n.name == .AVAudioSessionInterruption {
             switch n.userInfo![AVAudioSessionInterruptionTypeKey]! {
             case AVAudioSessionInterruptionType.began:
@@ -79,4 +83,8 @@ enum PlaybackState {
 
 protocol PlaybackManagerDelegate {
     func playbackDidChangeState(_ s: PlaybackState)
+}
+
+protocol Playable {
+    func playURL() -> NSURL
 }

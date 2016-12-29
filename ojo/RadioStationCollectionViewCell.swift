@@ -11,8 +11,9 @@ import UIKit
 
 class RadioStationCollectionViewCell : UICollectionViewCell {
         
-    static func cellHeight(givenFrameWidth frameWidth: CGFloat) -> CGFloat {
-        return frameWidth / 2 - 2 * DEFAULT_MARGIN_PX
+    // FIXME(btc): rename parameter. is it the frame or bounds?
+    class func cellHeight(givenBounds bounds: CGRect) -> CGFloat {
+        return bounds.width / 2 - 2 * DEFAULT_MARGIN_PX
     }
 
     var thumbnail: UIImageView = {
@@ -51,7 +52,7 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
         // TODO(btc): layout views
         // TODO(btc): station name goes in horizontal center 
         
-        let imageWidthHeight = RadioStationCollectionViewCell.cellHeight(givenFrameWidth: frame.width)
+        let imageWidthHeight = RadioStationCollectionViewCell.cellHeight(givenBounds: frame)
         thumbnail.frame = CGRect(x: DEFAULT_MARGIN_PX,
                                  y: DEFAULT_MARGIN_PX,
                                  width: imageWidthHeight,
@@ -59,7 +60,6 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
         
         textLabel.sizeToFit()
         let textHeight = textLabel.frame.height
-        print(textHeight)
         
         let textX = self.frame.width / 2
         let textY = self.frame.height / 2

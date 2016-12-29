@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E351E14D40200F937BA /* Stations3ViewController.swift */; };
+		6B173E381E14D42F00F937BA /* StationsVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E371E14D42F00F937BA /* StationsVCFactory.swift */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
@@ -21,7 +23,7 @@
 		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
 		70D9CE1B1E11D011002D41B8 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */; };
 		70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */; };
-		70F3DAEA1E11E72A00B03D12 /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* StationsViewController.swift */; };
+		70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */; };
 		70F3DB0F1E11E90A00B03D12 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */; };
 		70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */; };
 		70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB171E11F98D00B03D12 /* Utils.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B173E351E14D40200F937BA /* Stations3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations3ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		6B173E371E14D42F00F937BA /* StationsVCFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsVCFactory.swift; sourceTree = "<group>"; };
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113091E105AD400C3F33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B71130E1E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,7 +71,7 @@
 		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
 		70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlaybackButton.swift; sourceTree = "<group>"; };
-		70F3DAE91E11E72A00B03D12 /* StationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
+		70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsNViewController.swift; sourceTree = "<group>"; };
 		70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewCell.swift; sourceTree = "<group>"; };
 		70F3DB171E11F98D00B03D12 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -183,7 +187,9 @@
 				70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */,
 				70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */,
 				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
-				70F3DAE91E11E72A00B03D12 /* StationsViewController.swift */,
+				70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */,
+				6B173E351E14D40200F937BA /* Stations3ViewController.swift */,
+				6B173E371E14D42F00F937BA /* StationsVCFactory.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -371,13 +377,15 @@
 				6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */,
 				707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */,
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
+				6B173E381E14D42F00F937BA /* StationsVCFactory.swift in Sources */,
 				70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */,
 				70F3DB1A1E11FFAE00B03D12 /* NewsItemViewController.swift in Sources */,
 				6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */,
 				70D9CE1B1E11D011002D41B8 /* NowPlayingViewController.swift in Sources */,
+				6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */,
 				707374C61E11DB6E0013EDDF /* Stations.swift in Sources */,
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
-				70F3DAEA1E11E72A00B03D12 /* StationsViewController.swift in Sources */,
+				70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */,
 				704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */,
 				70F3DB0F1E11E90A00B03D12 /* NewsFeedViewController.swift in Sources */,
 			);
@@ -516,7 +524,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ojo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = btc.ora2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -534,7 +542,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ojo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = btc.ora2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

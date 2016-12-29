@@ -11,5 +11,5 @@ import Foundation
 class StationManager {
     // TODO(btc): setStation, next, prev, currentStation
     
-    private var stations: [Station] = Stations
+    private var stations: [Station] = STATIONS
 }

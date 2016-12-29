@@ -11,7 +11,7 @@ import UIKit
 
 // TODO(btc): Add named image assets
 
-let Stations: [Station] = [
+let STATIONS: [Station] = [
     Station(
         title: "STAR",
         url: NSURL(string: "http://fms.ttrn.org:1936/live/star947.sdp/playlist.m3u8")!,
@@ -32,9 +32,13 @@ let Stations: [Station] = [
     ),
 ]
 
-struct Station {
+struct Station: Playable {
     let title: String // the name the user sees
     let url: NSURL
     let tag: String // a key used to identify the station when making station-specfic API calls
     let image: UIImage
+    
+    func playURL() -> NSURL {
+        return url
+    }
 }

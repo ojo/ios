@@ -16,11 +16,16 @@ class StationsViewController : UICollectionViewController {
     
     var hidingNavBarManager: HidingNavigationBarManager?
     
-    init(boundsWidth: CGFloat) {
+    var stations: [Station]!
+    
+    init(withStations stations: [Station], rect: CGRect) {
+        self.stations = stations
+        
         let flowLayout = UICollectionViewFlowLayout()
-        let h = RadioStationCollectionViewCell.cellHeight(givenFrameWidth: boundsWidth)
-        flowLayout.itemSize = CGSize(width: boundsWidth, height: h)
+        flowLayout.itemSize = CGSize(width: rect.width,
+                                     height: RadioStationCollectionViewCell.cellHeight(givenBounds: rect))
         super.init(collectionViewLayout: flowLayout)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,14 +78,16 @@ extension StationsViewController {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return Stations.count
+        return stations.count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
+        
+        // FIXME(btc): Is it a bug to hardcode the Type here when the cell's class could
         if let radioCell = cell as? RadioStationCollectionViewCell {
-            radioCell.station = Stations[indexPath.row]
+            radioCell.station = stations[indexPath.row]
             return radioCell
         }
 

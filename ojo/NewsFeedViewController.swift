@@ -25,7 +25,7 @@ class NewsFeedViewController: UIViewController {
     }
     
     @objc private func radioButtonPressed() {
-        let vc = StationsViewController(boundsWidth: self.view.bounds.width)
+        let vc = StationsViewController(withStations: STATIONS, rect: view.bounds) // FIXME(btc): view.frame?
         self.navigationController?.pushViewController(vc, animated: true)
     }
    
