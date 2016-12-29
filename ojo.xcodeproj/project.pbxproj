@@ -16,6 +16,7 @@
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
 		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
 		6BA6B34C1E159A220033130E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA6B34B1E159A220033130E /* Result.framework */; };
+		6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221B1E11B1A900A207AC /* StationManager.swift */; };
@@ -67,6 +68,7 @@
 		6B7113241E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
 		6BA6B34B1E159A220033130E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
+		6BA6B34E1E15CC960033130E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221B1E11B1A900A207AC /* StationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationManager.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				70F3DB111E11F3B500B03D12 /* Component Views */,
 				707374C31E11DA950013EDDF /* AppDelegate.swift */,
 				70F3DB171E11F98D00B03D12 /* Utils.swift */,
+				6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */,
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
 				6B71130E1E105AD400C3F33C /* Info.plist */,
 			);
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */,
+				6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +440,17 @@
 			targetProxy = 6B71131F1E105AD400C3F33C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BA6B34E1E15CC960033130E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6B7113251E105AD400C3F33C /* Debug */ = {
