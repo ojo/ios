@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class NowPlayingViewController : UIViewController, PlaybackManagerDelegate {
+class NowPlayingViewController : UIViewController, PlaybackDelegate {
+    
     var albumArt: UIImageView = {
         var result = OJORoundedImageView()
         return result

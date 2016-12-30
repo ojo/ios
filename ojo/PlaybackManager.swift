@@ -110,6 +110,6 @@ enum PlaybackState {
     case buffering
 }
 
-protocol PlaybackManagerDelegate {
+protocol PlaybackDelegate {
     func playbackDidChangeState(_ s: PlaybackState)
 }
