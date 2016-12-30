@@ -16,7 +16,7 @@ class RootNavigationController : UINavigationController {
         super.viewDidLoad()
         view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         
-        navigationBar.clipsToBounds = true // removes the bottom border
+        navigationBar.clipsToBounds = true // removes the bottom border of nav bar
         navigationBar.isTranslucent = false
     }
         
