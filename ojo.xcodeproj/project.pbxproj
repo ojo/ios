@@ -18,6 +18,7 @@
 		6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3591E16227E0033130E /* Miniplayer.swift */; };
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
 		6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35D1E17174D0033130E /* UIColor+hex.swift */; };
+		6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D01E171E5E002CA55E /* Alamofire.framework */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */; };
@@ -70,6 +71,7 @@
 		6BA6B3591E16227E0033130E /* Miniplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miniplayer.swift; sourceTree = "<group>"; };
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		6BA6B35D1E17174D0033130E /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		6BCD64D01E171E5E002CA55E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverEventsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
+				6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */,
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +245,7 @@
 		704C94A31E11AC6F00A7D2BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6BCD64D01E171E5E002CA55E /* Alamofire.framework */,
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
 			);
@@ -394,6 +398,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/LNPopupController.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HidingNavigationBar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
