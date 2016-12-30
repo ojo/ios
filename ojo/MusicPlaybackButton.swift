@@ -9,7 +9,20 @@
 import Foundation
 import UIKit
 
-class MusicPlaybackButton : UIView {
+class MusicPlaybackButton : UIButton {
     static public let playImage: UIImage = UIImage(named: "play")!
     static public let pauseImage: UIImage = UIImage(named: "pause")!
+    static public let bufferingImage: UIImage = UIImage(named: "radio")!
+    
+    func buffering() {
+        setImage(MusicPlaybackButton.bufferingImage, for: .normal)
+    }
+    
+    func playing() {
+        setImage(MusicPlaybackButton.pauseImage, for: .normal)
+    }
+    
+    func stopped() {
+        setImage(MusicPlaybackButton.playImage, for: .normal)
+    }
 }
