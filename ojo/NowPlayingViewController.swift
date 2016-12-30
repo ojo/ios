@@ -11,21 +11,20 @@ import UIKit
 
 class NowPlayingViewController : UIViewController, PlaybackManagerDelegate {
     var albumArt: UIImageView = {
-        var result = UIImageView(image: UIImage(named: "album_art_placeholder"))
-        result.backgroundColor = UIColor.red
+        var result = OJORoundedImageView()
         return result
     }()
 
     var artistName: UILabel = {
         var result = UILabel()
-        result.text = "placeholder artist name"
+        result.text = DEFAULT_PLACEHOLDER_TEXT
         result.textAlignment = NSTextAlignment.center
         return result
     }()
     
     var songName: UILabel = {
         var result = UILabel()
-        result.text = "placeholder song name"
+        result.text = DEFAULT_PLACEHOLDER_TEXT
         result.textAlignment = NSTextAlignment.center
         return result
     }()
@@ -62,14 +61,23 @@ class NowPlayingViewController : UIViewController, PlaybackManagerDelegate {
         let paddingX: Int = 6
         let albumArtPaddingY: Int = 66
         let widthHeight = Int(width) - 2 * paddingX
-        albumArt.frame = CGRect(x: paddingX, y: albumArtPaddingY, width: widthHeight, height: widthHeight)
+        albumArt.frame = CGRect(x: paddingX,
+                                y: albumArtPaddingY,
+                                width: widthHeight,
+                                height: widthHeight)
         
         let spacing: Int = 26
         let songNameY = Int(albumArt.frame.maxY) + spacing
-        songName.frame = CGRect(x: paddingX, y: songNameY, width: widthHeight, height: spacing)
+        songName.frame = CGRect(x: paddingX,
+                                y: songNameY,
+                                width: widthHeight,
+                                height: spacing)
 
         let artistNameY = Int(songName.frame.maxY) + spacing
-        artistName.frame = CGRect(x: paddingX, y: artistNameY, width: widthHeight, height: spacing)
+        artistName.frame = CGRect(x: paddingX,
+                                  y: artistNameY,
+                                  width: widthHeight,
+                                  height: spacing)
     }
     
     func playbackDidChangeState(_ s: PlaybackState) {

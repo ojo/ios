@@ -77,11 +77,7 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         }
         
         var image: UIImageView = {
-            let result = UIImageView()
-            result.layer.cornerRadius = 6
-            result.clipsToBounds = true
-            result.layer.borderColor = UIColor(red:0.59, green:0.59, blue:0.59, alpha:1.0).cgColor
-            result.layer.borderWidth = 1
+            let result = OJORoundedImageView()
             result.contentMode = .scaleAspectFit
             return result
         }()
