@@ -36,7 +36,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     init(playbackManager: PlaybackManager) {
         self.playbackManager = playbackManager
         super.init(nibName: nil, bundle: nil)
-        playbackManager.delegate = self
+        playbackManager.addDelegate(self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,8 +51,6 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         view.addSubview(albumArt)
         view.addSubview(artistName)
         view.addSubview(songName)
-        view.addSubview(playbackToggle)
-        
         
         let play = UIBarButtonItem(image: MusicPlaybackButton.playImage, landscapeImagePhone: nil, style: .plain, target: self, action: #selector(playButtonPressed))
         self.popupItem.rightBarButtonItems = [play]
@@ -84,12 +82,9 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
     func playbackDidChangeState(_ s: PlaybackState) {
         switch s {
-        case .buffering:
-            playbackToggle.buffering()
-        case .started:
-            playbackToggle.playing()
-        case .stopped:
-            playbackToggle.stopped()
+        case .buffering: break
+        case .started: break
+        case .stopped: break
         }
     }
     
