@@ -84,9 +84,9 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
 // FIXME(btc): put enum and delegate in separate files?
 
 enum PlaybackState {
-    case Started
-    case Stopped
-    case Buffering
+    case started
+    case stopped
+    case buffering
 }
 
 protocol PlaybackManagerDelegate {

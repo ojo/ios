@@ -81,14 +81,13 @@ class NowPlayingViewController : UIViewController, PlaybackManagerDelegate {
     }
     
     func playbackDidChangeState(_ s: PlaybackState) {
-        NSLog("got playback state update")
         switch s {
-        case .Buffering: break
-            // TODO(btc): display buffering button
-        case .Started: break
-            // TODO(btc): display stop/pause button
-        case .Stopped: break
-            // TODO(btc): display play button
+        case .buffering:
+            playbackToggle.buffering()
+        case .started:
+            playbackToggle.playing()
+        case .stopped:
+            playbackToggle.stopped()
         }
     }
     
