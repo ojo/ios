@@ -13,14 +13,10 @@ import Foundation
 class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KVO on player
   
     lazy var player = AVPlayer()
-  
-    var stationManager: StationManager
-  
+    
     var delegate: PlaybackManagerDelegate?
     
-    init(stationManager: StationManager) {
-        self.stationManager = stationManager
-
+    override init() {
         super.init()
         
         NotificationCenter.default.addObserver(self,

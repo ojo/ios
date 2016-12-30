@@ -8,7 +8,7 @@
 
 import UIKit
 
-let PLAYBACK_MANAGER = PlaybackManager(stationManager: StationManager())
+let PLAYBACK_MANAGER = PlaybackManager()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
