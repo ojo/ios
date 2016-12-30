@@ -19,6 +19,8 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
     override init() {
         super.init()
         
+        prepareAudioPlaybackForBackgrounding()
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.handleInterruption),
                                                name: .AVAudioSessionInterruption,
@@ -66,6 +68,15 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
             default:
                 break
             }
+        }
+    }
+    
+    private func prepareAudioPlaybackForBackgrounding() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
 }
