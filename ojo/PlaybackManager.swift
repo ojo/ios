@@ -14,7 +14,8 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
   
     lazy var player = AVPlayer()
     
-    var delegate: PlaybackManagerDelegate?
+    lazy var delegates = [PlaybackDelegate]()
+    
     var station: Station? = nil {
         didSet {
             guard let station = station else { return }
@@ -56,7 +57,11 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                            options: .new,
                            context: nil)
     }
-
+    
+    public func addDelegate(_ d: PlaybackDelegate) {
+        delegates.append(d)
+    }
+    
     public func play() {
         player.play()
     }
