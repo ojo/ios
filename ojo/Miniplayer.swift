@@ -28,9 +28,12 @@ class Miniplayer: PlaybackDelegate {
         case .stopped: break
         }
     }
+    
+    func incomingNowPlayingInfo(_ info: NowPlayingInfo) {
+        // TODO(btc): Impl
+    }
 
     func showMiniplayer() {
-
         let vc = NowPlayingViewController(playbackManager: playbackManager)
         root?.presentPopupBar(withContentViewController: vc,
                               animated: true,

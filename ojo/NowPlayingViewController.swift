@@ -88,6 +88,10 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         }
     }
     
+    func incomingNowPlayingInfo(_ info: NowPlayingInfo) {
+        // TODO
+    }
+    
     func playButtonPressed(_ e: UIEvent) {
         playbackManager?.play()
     }

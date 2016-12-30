@@ -11,34 +11,47 @@ import Foundation
 
 // NB(btc): not thread-safe.
 class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KVO on player
+    
+    private let PLAYER_ITEM_KEYPATHS = [
+        "playbackBufferEmpty",
+        "playbackLikelyToKeepUp",
+        "playbackBufferFull",
+        ]
   
-    lazy var player = AVPlayer()
+    let player = AVPlayer()
     
     lazy var delegates = [PlaybackDelegate]()
     
+    var infoService: NowPlayingInfoService = NowPlayingInfoService()
+    
     var station: Station? = nil {
-        didSet {
-            guard let station = station else { return }
-            
-            let keyPathsToObserve = [
-                "playbackBufferEmpty",
-                "playbackLikelyToKeepUp",
-                "playbackBufferFull",
-                ]
-            
-            keyPathsToObserve.forEach({
+        
+        willSet(newStation) {
+            PLAYER_ITEM_KEYPATHS.forEach({
                 player.currentItem?.removeObserver(self, forKeyPath: $0)
             })
+            if let station = station {
+                infoService.unsubscribe(forStation: station)
+            }
+        }
+        
+        didSet {
+            print("didSet?")
+            guard let station = station else { return }
+            print("didSet!")
             
             let nextItem = AVPlayerItem(url: station.url)
             
-            keyPathsToObserve.forEach({
+            PLAYER_ITEM_KEYPATHS.forEach({
                 nextItem.addObserver(self,
                                      forKeyPath: $0,
                                      options: .new,
                                      context: nil)
             })
-            
+            infoService.request(forStation: station,
+                               callback: incomingNowPlayingInfo)
+            infoService.subscribe(forStation: station,
+                                 callback: incomingNowPlayingInfo)
             player.replaceCurrentItem(with: nextItem)
         }
     }
@@ -84,6 +97,16 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
         }
     }
     
+    private func incomingNowPlayingInfo(info: NowPlayingInfo) {
+        // only proceed if there is a current station
+        guard let station = station else { return }
+        // ignore stale data
+        guard info.stationTag == station.tag else { return }
+        for d in delegates {
+            d.incomingNowPlayingInfo(info)
+        }
+    }
+    
     @objc private func handleInterruption(n: NSNotification) {
         if n.name == .AVAudioSessionInterruption {
             switch n.userInfo![AVAudioSessionInterruptionTypeKey]! {
@@ -117,4 +140,5 @@ enum PlaybackState {
 
 protocol PlaybackDelegate {
     func playbackDidChangeState(_ s: PlaybackState)
+    func incomingNowPlayingInfo(_ info: NowPlayingInfo)
 }
