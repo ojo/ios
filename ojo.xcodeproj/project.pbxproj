@@ -21,7 +21,6 @@
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
-		6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221B1E11B1A900A207AC /* StationManager.swift */; };
 		6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */; };
 		704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */; };
 		707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707374C31E11DA950013EDDF /* AppDelegate.swift */; };
@@ -75,7 +74,6 @@
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
-		6BF6221B1E11B1A900A207AC /* StationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationManager.swift; sourceTree = "<group>"; };
 		6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverEventsViewController.swift; sourceTree = "<group>"; };
 		704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		707374C31E11DA950013EDDF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
-				6BF6221B1E11B1A900A207AC /* StationManager.swift */,
 			);
 			name = Streaming;
 			sourceTree = "<group>";
@@ -422,7 +419,6 @@
 			files = (
 				70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */,
 				6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */,
-				6BF6221C1E11B1A900A207AC /* StationManager.swift in Sources */,
 				6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */,
 				707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */,
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
