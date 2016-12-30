@@ -12,6 +12,10 @@ import LNPopupController;
 
 class RootNavigationController : UINavigationController {
     
+    // results in a circular reference, but I think it's okay since this class
+    // and the Miniplayer are always active/in scope.
+    var miniplayer: Miniplayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
@@ -21,7 +25,6 @@ class RootNavigationController : UINavigationController {
     }
         
     override func viewDidAppear(_ animated: Bool) {
-        let vc = NowPlayingViewController(playbackManager: PLAYBACK_MANAGER)
-        self.presentPopupBar(withContentViewController: vc, animated: true, completion: nil)
+        miniplayer = Miniplayer(self, playbackManager: PLAYBACK_MANAGER)
     }
 }
