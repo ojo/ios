@@ -46,12 +46,13 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
         
-        self.view.addSubview(albumArt)
-        self.view.addSubview(artistName)
-        self.view.addSubview(songName)
-        self.view.addSubview(musicPlayBackButton)
+        view.addSubview(albumArt)
+        view.addSubview(artistName)
+        view.addSubview(songName)
+        view.addSubview(playbackToggle)
+        
         
         let play = UIBarButtonItem(image: MusicPlaybackButton.playImage, landscapeImagePhone: nil, style: .plain, target: self, action: #selector(playButtonPressed))
         self.popupItem.rightBarButtonItems = [play]
