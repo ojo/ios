@@ -217,7 +217,6 @@
 				6BA6B3591E16227E0033130E /* Miniplayer.swift */,
 				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
 				70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */,
-				6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */,
 			);
 			name = "Miniplayer and Now Playing";
 			sourceTree = "<group>";
@@ -243,6 +242,7 @@
 		6BA6B3581E15E6D70033130E /* Streaming */ = {
 			isa = PBXGroup;
 			children = (
+				6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */,
 				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
 			);
 			name = Streaming;
