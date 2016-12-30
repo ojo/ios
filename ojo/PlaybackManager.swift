@@ -15,6 +15,32 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
     lazy var player = AVPlayer()
     
     var delegate: PlaybackManagerDelegate?
+    var station: Station? = nil {
+        didSet {
+            guard let station = station else { return }
+            
+            let keyPathsToObserve = [
+                "playbackBufferEmpty",
+                "playbackLikelyToKeepUp",
+                "playbackBufferFull",
+                ]
+            
+            keyPathsToObserve.forEach({
+                player.currentItem?.removeObserver(self, forKeyPath: $0)
+            })
+            
+            let nextItem = AVPlayerItem(url: station.url)
+            
+            keyPathsToObserve.forEach({
+                nextItem.addObserver(self,
+                                     forKeyPath: $0,
+                                     options: .new,
+                                     context: nil)
+            })
+            
+            player.replaceCurrentItem(with: nextItem)
+        }
+    }
     
     override init() {
         super.init()
@@ -30,12 +56,7 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                            options: .new,
                            context: nil)
     }
-    
-    public func setURL(_ url: URL) {
-        let nextItem = AVPlayerItem(url: url)
-        player.replaceCurrentItem(with: nextItem)
-    }
-    
+
     public func play() {
         player.play()
     }
