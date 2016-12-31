@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E351E14D40200F937BA /* Stations3ViewController.swift */; };
-		6B173E381E14D42F00F937BA /* StationsVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E371E14D42F00F937BA /* StationsVCFactory.swift */; };
+		6B173E381E14D42F00F937BA /* StationsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */; };
 		6B494EBF1E175E6700A7E7F3 /* RemoteControlResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */; };
 		6B494EC11E1765F300A7E7F3 /* RemoteControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EC01E1765F300A7E7F3 /* RemoteControlDelegate.swift */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
@@ -62,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		6B173E351E14D40200F937BA /* Stations3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations3ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		6B173E371E14D42F00F937BA /* StationsVCFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsVCFactory.swift; sourceTree = "<group>"; };
+		6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewControllerFactory.swift; sourceTree = "<group>"; };
 		6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlResponder.swift; sourceTree = "<group>"; };
 		6B494EC01E1765F300A7E7F3 /* RemoteControlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlDelegate.swift; sourceTree = "<group>"; };
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +207,7 @@
 				707374C51E11DB6E0013EDDF /* Stations.swift */,
 				70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */,
 				6B173E351E14D40200F937BA /* Stations3ViewController.swift */,
-				6B173E371E14D42F00F937BA /* StationsVCFactory.swift */,
+				6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */,
 			);
 			name = Stations;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 				707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */,
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
 				6BCD64D31E1720A5002CA55E /* NowPlayingInfoService.swift in Sources */,
-				6B173E381E14D42F00F937BA /* StationsVCFactory.swift in Sources */,
+				6B173E381E14D42F00F937BA /* StationsViewControllerFactory.swift in Sources */,
 				70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */,
 				6B494EBF1E175E6700A7E7F3 /* RemoteControlResponder.swift in Sources */,
 				70F3DB1A1E11FFAE00B03D12 /* NewsItemViewController.swift in Sources */,

@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = getStationsViewController(stations: STATIONS, bounds: UIScreen.main.bounds)
+        let vc = StationsViewControllerFactory.make(withStations: STATIONS,
+                                                     bounds: UIScreen.main.bounds)
         let navigationController = RootNavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
