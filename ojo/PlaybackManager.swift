@@ -109,13 +109,17 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     }
     
     private func incomingNowPlayingInfo(info: NowPlayingInfo) {
+        
         // only proceed if there is a current station
         guard let station = station else { return }
         // ignore stale data
         guard info.stationTag == station.tag else { return }
+        
         for d in delegates {
-            d.incomingNowPlayingInfo(info)
+            d.incoming(info: info)
         }
+        
+        // TODO update MPNowPlaying...
     }
     
     @objc private func handleInterruption(n: NSNotification) {
