@@ -72,10 +72,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         
         prepareAudioPlaybackForBackgrounding()
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.handleInterruption),
-                                               name: .AVAudioSessionInterruption,
-                                               object: nil)
+        NotificationCenter.default
+            .addObserver(self,
+                         selector: #selector(self.handleInterruption),
+                         name: .AVAudioSessionInterruption,
+                         object: nil)
         player.addObserver(self,
                            forKeyPath: "status",
                            options: .new,
@@ -102,6 +103,19 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         case let p as AVPlayer:
             if p == player && keyPath == "status" {
                 // TODO(btc): handle player status change
+            }
+        case let item as AVPlayerItem:
+            guard let keyPath = keyPath else { return }
+            switch keyPath {
+            case "playbackBufferEmpty":
+                delegates.forEach() { $0.didChange(state: .buffering) }
+            case "playbackLikelyToKeepUp":
+                delegates.forEach() { $0.didChange(state: .started) }
+            default:
+                // TODO(btc): remove these debug prints
+                print("unhandled observation: \(keyPath)")
+                print(keyPath)
+                print(item.status.rawValue)
             }
         default:
             break

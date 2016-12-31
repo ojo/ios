@@ -23,8 +23,10 @@ class Miniplayer: PlaybackDelegate {
     
     func didChange(state: PlaybackState) {
         switch state {
-        case .buffering: break
-        case .started: break
+        case .buffering:
+            showMiniplayer()
+        case .started:
+            showMiniplayer()
         case .stopped: break
         }
     }

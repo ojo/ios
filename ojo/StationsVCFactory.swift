@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// returns a VC implementation depending on the number of stations
 func getStationsViewController(stations: [Station], bounds: CGRect) -> UIViewController {
     // we special-case 3 stations because we expect to have three stations for a long time.
     // If it is any other number, we simply fall back to default collection behavior.
