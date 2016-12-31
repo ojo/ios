@@ -18,7 +18,7 @@ class NowPlayingInfoService {
     init() {
     }
 
-    func request(forStation station: Station,
+    func request(station: Station,
                  callback: @escaping (NowPlayingInfo) -> Void) {
         print("request!")
         let p = ["tag": station.tag]
@@ -31,12 +31,12 @@ class NowPlayingInfoService {
         }
     }
 
-    func subscribe(forStation station: Station,
+    func subscribe(station: Station,
                    callback: (NowPlayingInfo) -> Void) {
         // TODO
     }
 
-    func unsubscribe(forStation station: Station) {
+    func unsubscribe(station: Station) {
         // TODO
     }
 

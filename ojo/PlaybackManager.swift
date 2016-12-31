@@ -31,7 +31,7 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                 player.currentItem?.removeObserver(self, forKeyPath: $0)
             })
             if let station = station {
-                infoService.unsubscribe(forStation: station)
+                infoService.unsubscribe(station: station)
             }
         }
         
@@ -48,9 +48,9 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
                                      options: .new,
                                      context: nil)
             })
-            infoService.request(forStation: station,
+            infoService.request(station: station,
                                callback: incomingNowPlayingInfo)
-            infoService.subscribe(forStation: station,
+            infoService.subscribe(station: station,
                                  callback: incomingNowPlayingInfo)
             player.replaceCurrentItem(with: nextItem)
         }

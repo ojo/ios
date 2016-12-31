@@ -16,6 +16,8 @@ struct NowPlayingInfo {
     let stationTag: String
     let artwork: Artwork
 
+    // decomposed into another struct because of a limitation in the curry lib
+    // see: https://github.com/thoughtbot/Argo/blob/master/Documentation/Curry-Limitations.md
     struct Artwork {
         let artworkDominantColor: String?
         let artworkUrl500: String?
