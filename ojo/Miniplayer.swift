@@ -12,6 +12,11 @@ class Miniplayer: PlaybackDelegate {
     
     private var playbackManager: PlaybackManager
     
+    // one alternative to holding a reference to this controller is to use the 
+    // delegate pattern to tell the delegate when to display the miniplayer.
+    // that seems less preferable because of the interobject communication.
+    // however, holding the property like this is undesirable because of the
+    // circular reference between root <-> miniplayer
     private var root: UINavigationController?
     
     private var nowPlaying: NowPlayingViewController
@@ -48,19 +53,22 @@ class Miniplayer: PlaybackDelegate {
         }
         
         // replace station image with info.artwork.image when it loads async'ly
+        
         // change the contentMode of the imageView so that the station image
         // isn't distorted
+        
         nowPlaying.popupItem.image = playbackManager.station?.image
+        
         // TODO(btc): nowPlaying?.popupItem.image = future.result
     }
 
-    func showMiniplayer() {
+    private func showMiniplayer() {
         root?.presentPopupBar(withContentViewController: nowPlaying,
                               animated: true,
                               completion: nil)
     }
     
-    func hideMiniplayer() {
+    private func hideMiniplayer() {
         root?.dismissPopupBar(animated: true, completion: nil)
     }
 }
