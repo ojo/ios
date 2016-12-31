@@ -70,8 +70,6 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         
         remoteControlResponder.add(delegate: self)
         
-        prepareAudioPlaybackForBackgrounding()
-        
         NotificationCenter.default
             .addObserver(self,
                          selector: #selector(self.handleInterruption),
@@ -88,6 +86,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     }
     
     func play() {
+        prepareAudioPlaybackForBackgrounding()
         player.play()
     }
     
