@@ -20,6 +20,9 @@
 		6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35D1E17174D0033130E /* UIColor+hex.swift */; };
 		6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D01E171E5E002CA55E /* Alamofire.framework */; };
 		6BCD64D31E1720A5002CA55E /* NowPlayingInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */; };
+		6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D41E172D57002CA55E /* Argo.framework */; };
+		6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D61E172F65002CA55E /* Runes.framework */; };
+		6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D81E172F86002CA55E /* Curry.framework */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */; };
@@ -74,6 +77,9 @@
 		6BA6B35D1E17174D0033130E /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		6BCD64D01E171E5E002CA55E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfoService.swift; sourceTree = "<group>"; };
+		6BCD64D41E172D57002CA55E /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = SOURCE_ROOT; };
+		6BCD64D61E172F65002CA55E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = SOURCE_ROOT; };
+		6BCD64D81E172F86002CA55E /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = SOURCE_ROOT; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverEventsViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +104,10 @@
 			files = (
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
 				6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */,
+				6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */,
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
+				6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */,
+				6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +258,11 @@
 			isa = PBXGroup;
 			children = (
 				6BCD64D01E171E5E002CA55E /* Alamofire.framework */,
+				6BCD64D41E172D57002CA55E /* Argo.framework */,
+				6BCD64D81E172F86002CA55E /* Curry.framework */,
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
+				6BCD64D61E172F65002CA55E /* Runes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -402,6 +414,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/LNPopupController.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/HidingNavigationBar.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
 			);
 			outputPaths = (
 			);
