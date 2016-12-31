@@ -47,7 +47,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        view.backgroundColor = UIColor.ojo_defaultVCBackground
         
         view.addSubview(albumArt)
         view.addSubview(artistName)

@@ -91,7 +91,7 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         
         override init(frame: CGRect) {
             super.init(frame: frame)
-            backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+            backgroundColor = UIColor.ojo_defaultVCBackground
             
             let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
             addGestureRecognizer(gr)

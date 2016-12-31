@@ -9,11 +9,28 @@
 import Foundation
 import UIKit
 
-// you can use http://uicolor.xyz/#/hex-to-ui to convert hex to UIColor!
-
-let DEFAULT_VC_BACKGROUND_COLOR = UIColor.white
-let DEFAULT_RED_COLOR = UIColor(red:0.85, green:0.00, blue:0.00, alpha:1.0)
 let DEFAULT_MARGIN_PX = CGFloat(6)
 let DEFAULT_PLACEHOLDER_TEXT = "REPLACE ME"
 let DEFAULT_FONT = "HelveticaNeue"
 let DEFAULT_FONT_BOLD = "HelveticaNeue-Bold"
+
+extension UIColor {
+    
+    // you can use http://uicolor.xyz/#/hex-to-ui to convert hex to UIColor!
+    
+    static var ojo_defaultVCBackground: UIColor {
+        get {
+            return UIColor.white
+        }
+    }
+    static var ojo_grey: UIColor {
+        get {
+            return UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959
+        }
+    }
+    static var ojo_red: UIColor {
+        get {
+            return UIColor(red:0.85, green:0.00, blue:0.00, alpha:1.0)
+        }
+    }
+}

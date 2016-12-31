@@ -19,6 +19,6 @@ class DefaultTopItemLabel: UILabel {
     
     func setup() {
         font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
-        textColor = DEFAULT_RED_COLOR
+        textColor = UIColor.ojo_red
     }
 }
