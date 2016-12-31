@@ -19,7 +19,7 @@ struct NowPlayingInfo {
     // decomposed into another struct because of a limitation in the curry lib
     // see: https://github.com/thoughtbot/Argo/blob/master/Documentation/Curry-Limitations.md
     struct Artwork {
-        let artworkDominantColor: String?
-        let artworkUrl500: String?
+        let dominantColor: String?
+        let url500: String?
     }
 }
