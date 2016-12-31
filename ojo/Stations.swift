@@ -37,4 +37,8 @@ struct Station {
     let url: URL
     let tag: String // a key used to identify the station when making station-specfic API calls
     let image: UIImage
+    
+    func isEqual(to station: Station) -> Bool {
+        return tag == station.tag
+    }
 }
