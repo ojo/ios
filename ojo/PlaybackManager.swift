@@ -161,6 +161,6 @@ enum PlaybackState {
 }
 
 protocol PlaybackDelegate {
-    func playbackDidChangeState(_ s: PlaybackState)
-    func incomingNowPlayingInfo(_ info: NowPlayingInfo)
+    func didChangeState(_ state: PlaybackState)
+    func incoming(info: NowPlayingInfo)
 }
