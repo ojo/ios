@@ -8,6 +8,7 @@
 
 import AVFoundation
 import Foundation
+import UIKit
 
 // NB(btc): not thread-safe.
 class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KVO on player
@@ -57,6 +58,10 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
     override init() {
         super.init()
         
+        // beginReceivingRemote... is required in order to resume playback after
+        // intermittent interruption. for some reason, handling interruptions
+        // doesn't work otherwise.
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         prepareAudioPlaybackForBackgrounding()
         
         NotificationCenter.default.addObserver(self,
