@@ -22,14 +22,14 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         "playbackBufferFull",
         ]
   
-    let player = AVPlayer()
+    private let player = AVPlayer()
     
-    var delegates = [PlaybackDelegate]()
+    private var delegates = [PlaybackDelegate]()
     
-    let infoService = NowPlayingInfoService()
+    private let infoService = NowPlayingInfoService()
 
 
-    let remoteControlResponder = RemoteControlResponder()
+    private let remoteControlResponder = RemoteControlResponder()
     
     var station: Station? = nil {
         
@@ -82,15 +82,15 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                            context: nil)
     }
     
-    public func addDelegate(_ d: PlaybackDelegate) {
+    func addDelegate(_ d: PlaybackDelegate) {
         delegates.append(d)
     }
     
-    public func play() {
+    func play() {
         player.play()
     }
     
-    public func stop() {
+    func stop() {
         player.pause()
     }
     
