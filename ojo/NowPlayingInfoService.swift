@@ -20,7 +20,6 @@ class NowPlayingInfoService {
 
     func request(station: Station,
                  callback: @escaping (NowPlayingInfo) -> Void) {
-        print("request!")
         let p = ["tag": station.tag]
         Alamofire.request(API_URL, parameters: p).responseJSON { response in
             if let json: Any = response.result.value {

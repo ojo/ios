@@ -36,9 +36,7 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
         }
         
         didSet {
-            print("didSet?")
             guard let station = station else { return }
-            print("didSet!")
             
             let nextItem = AVPlayerItem(url: station.url)
             
