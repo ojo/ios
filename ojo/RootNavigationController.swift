@@ -18,7 +18,7 @@ class RootNavigationController : UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        view.backgroundColor = UIColor.ojo_defaultVCBackground
         
         navigationBar.clipsToBounds = true // removes the bottom border of nav bar
         navigationBar.isTranslucent = false

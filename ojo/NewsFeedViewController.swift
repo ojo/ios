@@ -21,7 +21,7 @@ class NewsFeedViewController: UIViewController {
         button.addTarget(self, action: #selector(radioButtonPressed), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
         
-        self.view.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        self.view.backgroundColor = UIColor.ojo_defaultVCBackground
     }
     
     @objc private func radioButtonPressed() {

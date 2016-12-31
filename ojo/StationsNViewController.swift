@@ -34,7 +34,7 @@ class StationsViewController : UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        collectionView?.backgroundColor = UIColor.ojo_defaultVCBackground
         navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel(text: "Streams")
 
         collectionView?.register(RadioStationCollectionViewCell.self,

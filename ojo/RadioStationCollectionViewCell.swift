@@ -43,7 +43,7 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = DEFAULT_VC_BACKGROUND_COLOR
+        self.backgroundColor = UIColor.ojo_defaultVCBackground
         self.contentView.addSubview(thumbnail)
         self.contentView.addSubview(textLabel)
     }
