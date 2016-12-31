@@ -90,7 +90,21 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }
     
     func incoming(info: NowPlayingInfo) {
-        // TODO
+        
+        // BUG: If user taps station and immediately taps the Miniplayer to open
+        // this screen, the screen appears without any content. What in the world
+        // is happening?
+
+        if info.title == "" {
+            // then the server hasn't been fixed yet.
+            songName.text = info.artist
+            artistName.text = info.album
+        } else {
+            songName.text = info.title
+            artistName.text = info.artist
+        }
+        albumArt.image = playbackManager?.station?.image
+        // TODO replace image with async'ly fetched art
     }
     
     func playButtonPressed(_ e: UIEvent) {
