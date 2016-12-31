@@ -7,32 +7,65 @@
 //
 
 import Alamofire
-import Foundation
+import Argo
+import Curry
+import Runes
 
 class NowPlayingInfoService {
-    
+
     let API_URL = "https://api.ojo.world/api/v0/stations/now-playing"
-    
+
     init() {
     }
-    
+
     func request(forStation station: Station,
-                 callback: (NowPlayingInfo) -> Void) {
+                 callback: @escaping (NowPlayingInfo) -> Void) {
         print("request!")
         let p = ["tag": station.tag]
         Alamofire.request(API_URL, parameters: p).responseJSON { response in
-            if let json = response.result.value {
-                // convert to NPI and call the callback
+            if let json: Any = response.result.value {
+                if let info = NowPlayingInfoService.AnyToInfo(json) {
+                    callback(info)
+                }
             }
         }
     }
-    
+
     func subscribe(forStation station: Station,
                    callback: (NowPlayingInfo) -> Void) {
         // TODO
     }
-    
+
     func unsubscribe(forStation station: Station) {
         // TODO
+    }
+
+    private static func AnyToInfo(_ data: Any) -> NowPlayingInfo? {
+        let decoded: Decoded<NowPlayingInfo> = JSON(data) <| ["data", "attributes"]
+        if let info = decoded.value {
+            return info
+        }
+        // TODO(btc): debug print only
+        print(decoded.error.debugDescription)
+        return nil
+    }
+}
+
+extension NowPlayingInfo: Decodable {
+    static func decode(_ j: JSON) -> Decoded<NowPlayingInfo> {
+        return curry(self.init)
+            <^> j <| "title"
+            <*> j <| "artist"
+            <*> j <| "album"
+            <*> j <| "station-tag"
+            <*> NowPlayingInfo.Artwork.decode(j)
+    }
+}
+
+extension NowPlayingInfo.Artwork: Decodable {
+    static func decode(_ j: JSON) -> Decoded<NowPlayingInfo.Artwork> {
+        return curry(self.init)
+            <^> j <|? "artwork-dominant-color"
+            <*> j <|? "artwork-url-500"
     }
 }
