@@ -80,8 +80,8 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
                                   height: spacing)
     }
     
-    func didChangeState(_ s: PlaybackState) {
-        switch s {
+    func didChange(state: PlaybackState) {
+        switch state {
         case .buffering: break
         case .started: break
         case .stopped: break
