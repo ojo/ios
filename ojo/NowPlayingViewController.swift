@@ -53,8 +53,6 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         view.addSubview(artistName)
         view.addSubview(songName)
         
-        let play = UIBarButtonItem(image: MusicPlaybackButton.playImage, landscapeImagePhone: nil, style: .plain, target: self, action: #selector(playButtonPressed))
-        self.popupItem.rightBarButtonItems = [play]
     }
     
     override func viewDidLayoutSubviews() {
