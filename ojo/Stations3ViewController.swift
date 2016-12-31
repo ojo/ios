@@ -78,7 +78,6 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         
         var image: UIImageView = {
             let result = OJORoundedImageView()
-            result.contentMode = .scaleAspectFit
             return result
         }()
         

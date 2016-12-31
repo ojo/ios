@@ -20,5 +20,6 @@ class OJORoundedImageView: UIImageView {
         clipsToBounds = true
         layer.borderColor = UIColor(red:0.59, green:0.59, blue:0.59, alpha:1.0).cgColor
         layer.borderWidth = 1
+        contentMode = .scaleAspectFit
     }
 }

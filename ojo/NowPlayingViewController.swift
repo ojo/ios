@@ -33,6 +33,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     let musicPlayBackButton = MusicPlaybackButton()
     
     var playbackManager: PlaybackManager?
+    
     init(playbackManager: PlaybackManager) {
         self.playbackManager = playbackManager
         super.init(nibName: nil, bundle: nil)
@@ -93,6 +94,6 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }
     
     func playButtonPressed(_ e: UIEvent) {
-        playbackManager?.play()
+        // TODO toggle
     }
 }
