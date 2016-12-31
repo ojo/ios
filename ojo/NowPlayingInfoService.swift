@@ -18,7 +18,7 @@ class NowPlayingInfoService {
     init() {
     }
 
-    func request(station: Station,
+    func request(infoFor station: Station,
                  callback: @escaping (NowPlayingInfo) -> Void) {
         let p = ["tag": station.tag]
         Alamofire.request(API_URL, parameters: p).responseJSON { response in
@@ -30,12 +30,12 @@ class NowPlayingInfoService {
         }
     }
 
-    func subscribe(station: Station,
+    func subscribe(to station: Station,
                    callback: (NowPlayingInfo) -> Void) {
         // TODO
     }
 
-    func unsubscribe(station: Station) {
+    func unsubscribe(from station: Station) {
         // TODO
     }
 

@@ -32,30 +32,29 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     
     var station: Station? = nil {
         
-        willSet(newStation) {
-            PLAYER_ITEM_KEYPATHS.forEach({
+        willSet {
+            PLAYER_ITEM_KEYPATHS.forEach() {
                 player.currentItem?.removeObserver(self, forKeyPath: $0)
-            })
+            }
             if let station = station {
-                infoService.unsubscribe(station: station)
+                infoService.unsubscribe(from: station)
             }
         }
-        
         didSet {
             guard let station = station else { return }
             
             let nextItem = AVPlayerItem(url: station.url)
             
-            PLAYER_ITEM_KEYPATHS.forEach({
+            PLAYER_ITEM_KEYPATHS.forEach() {
                 nextItem.addObserver(self,
                                      forKeyPath: $0,
                                      options: .new,
                                      context: nil)
-            })
-            infoService.request(station: station,
-                               callback: incomingNowPlayingInfo)
-            infoService.subscribe(station: station,
-                                 callback: incomingNowPlayingInfo)
+            }
+            infoService.request(infoFor: station,
+                                callback: incomingNowPlayingInfo)
+            infoService.subscribe(to: station,
+                                  callback: incomingNowPlayingInfo)
             player.replaceCurrentItem(with: nextItem)
         }
     }
