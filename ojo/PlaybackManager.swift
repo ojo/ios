@@ -119,15 +119,16 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     }
     
     @objc private func handleInterruption(n: NSNotification) {
-        if n.name == .AVAudioSessionInterruption {
-            switch n.userInfo![AVAudioSessionInterruptionTypeKey]! {
-            case AVAudioSessionInterruptionType.began:
-                stop()
-            case AVAudioSessionInterruptionType.ended:
-                play()
-            default:
-                break
-            }
+        guard n.name == .AVAudioSessionInterruption else { return }
+        guard let y = n.userInfo?[AVAudioSessionInterruptionTypeKey]
+            as? NSNumber else { return }
+
+        let began = NSNumber(value: AVAudioSessionInterruptionType.began.rawValue)
+        let ended = NSNumber(value: AVAudioSessionInterruptionType.ended.rawValue)
+        if y.isEqual(to: began) {
+            stop()
+        } else if y.isEqual(to: ended) {
+            play()
         }
     }
     
