@@ -60,26 +60,27 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
     override func viewDidLayoutSubviews() {
         let width = self.view.bounds.width
-        let paddingX: Int = 6
-        let albumArtPaddingY: Int = 66
-        let widthHeight = Int(width) - 2 * paddingX
+        let paddingX: CGFloat = 6
+        let albumArtPaddingY: CGFloat = 66
+        let widthHeight = width - 2 * paddingX
         imageView.frame = CGRect(x: paddingX,
                                 y: albumArtPaddingY,
                                 width: widthHeight,
                                 height: widthHeight)
         
-        let spacing: Int = 25
-        let songNameY = Int(imageView.frame.maxY) + spacing
+        let spacingBetweenImageAndTitle: CGFloat = 25
+        let songNameY = imageView.frame.maxY + spacingBetweenImageAndTitle
+        let lineHeight: CGFloat = 25
         titleView.frame = CGRect(x: paddingX,
                                 y: songNameY,
                                 width: widthHeight,
-                                height: spacing)
+                                height: lineHeight)
 
-        let artistNameY = Int(titleView.frame.maxY)
+        let artistNameY = titleView.frame.maxY + DEFAULT_MARGIN_PX
         artistView.frame = CGRect(x: paddingX,
                                   y: artistNameY,
                                   width: widthHeight,
-                                  height: spacing)
+                                  height: lineHeight)
     }
     
     func didChange(state: PlaybackState) {
