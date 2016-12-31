@@ -9,6 +9,7 @@
 import AVFoundation
 import Foundation
 import UIKit
+import MediaPlayer
 
 // NB(btc): not thread-safe.
 class PlaybackManager : NSObject, RemoteControlDelegate {
@@ -118,7 +119,13 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             d.incoming(info: info)
         }
         
-        // TODO update MPNowPlaying...
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [
+            MPMediaItemPropertyTitle: info.title,
+            MPMediaItemPropertyArtist: info.artist,
+            MPMediaItemPropertyAlbumTitle: info.album,
+            MPMediaItemPropertyArtwork: MPMediaItemArtwork(image: station.image),
+        ]
+        // TODO asynchronously fetch artwork
     }
     
     @objc private func handleInterruption(n: NSNotification) {
