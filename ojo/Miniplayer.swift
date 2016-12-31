@@ -41,7 +41,7 @@ class Miniplayer: PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo) {
+    func incoming(info: NowPlayingInfo, future: Future<UIImage>) {
         
         if info.title == "" {
             // then the server hasn't been fixed yet.
@@ -59,7 +59,7 @@ class Miniplayer: PlaybackDelegate {
         
         nowPlaying.popupItem.image = playbackManager.station?.image
         
-        // TODO(btc): nowPlaying?.popupItem.image = future.result
+        future.onSuccess() { nowPlaying.popupItem.image = $0 }        
     }
 
     private func showMiniplayer() {

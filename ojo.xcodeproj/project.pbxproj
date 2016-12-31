@@ -20,6 +20,7 @@
 		6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3591E16227E0033130E /* Miniplayer.swift */; };
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
 		6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35D1E17174D0033130E /* UIColor+hex.swift */; };
+		6BB8C2451E18620300F4AEE2 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8C2441E18620300F4AEE2 /* Future.swift */; };
 		6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D01E171E5E002CA55E /* Alamofire.framework */; };
 		6BCD64D31E1720A5002CA55E /* NowPlayingInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */; };
 		6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D41E172D57002CA55E /* Argo.framework */; };
@@ -79,6 +80,7 @@
 		6BA6B3591E16227E0033130E /* Miniplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miniplayer.swift; sourceTree = "<group>"; };
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		6BA6B35D1E17174D0033130E /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		6BB8C2441E18620300F4AEE2 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		6BCD64D01E171E5E002CA55E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfoService.swift; sourceTree = "<group>"; };
 		6BCD64D41E172D57002CA55E /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = SOURCE_ROOT; };
@@ -213,8 +215,9 @@
 		6BA6B3521E15E2070033130E /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				6BA6B35D1E17174D0033130E /* UIColor+hex.swift */,
 				6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */,
+				6BB8C2441E18620300F4AEE2 /* Future.swift */,
+				6BA6B35D1E17174D0033130E /* UIColor+hex.swift */,
 				6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */,
 			);
 			name = Library;
@@ -455,6 +458,7 @@
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
 				70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */,
 				6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */,
+				6BB8C2451E18620300F4AEE2 /* Future.swift in Sources */,
 				6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */,
 				6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */,
 				6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */,

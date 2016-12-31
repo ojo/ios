@@ -122,7 +122,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         }
     }
     
-    private func incomingNowPlayingInfo(info: NowPlayingInfo) {
+    private func incomingNowPlayingInfo(info: NowPlayingInfo, future: Future<UIImage>) {
         
         // only proceed if there is a current station
         guard let station = station else { return }
@@ -130,7 +130,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         guard info.stationTag == station.tag else { return }
         
         for d in delegates {
-            d.incoming(info: info)
+            d.incoming(info: info, future: future)
         }
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
@@ -187,5 +187,5 @@ enum PlaybackState {
 
 protocol PlaybackDelegate {
     func didChange(state: PlaybackState)
-    func incoming(info: NowPlayingInfo)
+    func incoming(info: NowPlayingInfo, future: Future<UIImage>)
 }

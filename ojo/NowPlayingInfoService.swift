@@ -10,8 +10,11 @@ import Alamofire
 import Argo
 import Curry
 import Runes
+import UIKit
 
 class NowPlayingInfoService {
+
+    typealias Callback = (NowPlayingInfo, Future<UIImage>) -> Void
 
     let API_URL = "https://api.ojo.world/api/v0/stations/now-playing"
 
@@ -19,19 +22,20 @@ class NowPlayingInfoService {
     }
 
     func request(infoFor station: Station,
-                 callback: @escaping (NowPlayingInfo) -> Void) {
+                 callback: @escaping Callback) {
         let p = ["tag": station.tag]
         Alamofire.request(API_URL, parameters: p).responseJSON { response in
             if let json: Any = response.result.value {
                 if let info = NowPlayingInfoService.AnyToInfo(json) {
-                    callback(info)
+                    let f = Future<UIImage>()
+                    callback(info, f)
                 }
             }
         }
     }
 
     func subscribe(to station: Station,
-                   callback: (NowPlayingInfo) -> Void) {
+                   callback: Callback) {
         // TODO
     }
 

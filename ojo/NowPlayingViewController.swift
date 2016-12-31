@@ -89,7 +89,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo) {
+    func incoming(info: NowPlayingInfo, future: Future<UIImage>) {
         
         // BUG: If user taps station and immediately taps the Miniplayer to open
         // this screen, the screen appears without any content. What in the world
@@ -104,7 +104,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
             artistName.text = info.artist
         }
         albumArt.image = playbackManager?.station?.image
-        // TODO replace image with async'ly fetched art
+        future.onSuccess() { albumArt.image = $0 }
     }
     
     func playButtonPressed(_ e: UIEvent) {
