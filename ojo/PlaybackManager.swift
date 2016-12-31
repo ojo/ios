@@ -21,7 +21,7 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
   
     let player = AVPlayer()
     
-    lazy var delegates = [PlaybackDelegate]()
+    var delegates = [PlaybackDelegate]()
     
     let infoService = NowPlayingInfoService()
     
