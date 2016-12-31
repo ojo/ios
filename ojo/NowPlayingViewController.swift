@@ -11,21 +11,25 @@ import UIKit
 
 class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
-    var albumArt: UIImageView = {
+    var imageView: UIImageView = {
         var result = OJORoundedImageView()
         return result
     }()
-
-    var artistName: UILabel = {
+    
+    var titleView: UILabel = {
         var result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
+        result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
+        result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959 TODO extract when you use it enough throughout the app to share it and give it a name
         result.textAlignment = NSTextAlignment.center
         return result
     }()
-    
-    var songName: UILabel = {
+
+    var artistView: UILabel = {
         var result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
+        result.font = UIFont(name: DEFAULT_FONT, size: 22)
+        result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959 TODO extract when you use it enough throughout the app to share it and give it a name
         result.textAlignment = NSTextAlignment.center
         return result
     }()
@@ -49,10 +53,9 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         
         view.backgroundColor = UIColor.ojo_defaultVCBackground
         
-        view.addSubview(albumArt)
-        view.addSubview(artistName)
-        view.addSubview(songName)
-        
+        view.addSubview(imageView)
+        view.addSubview(artistView)
+        view.addSubview(titleView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,20 +63,20 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         let paddingX: Int = 6
         let albumArtPaddingY: Int = 66
         let widthHeight = Int(width) - 2 * paddingX
-        albumArt.frame = CGRect(x: paddingX,
+        imageView.frame = CGRect(x: paddingX,
                                 y: albumArtPaddingY,
                                 width: widthHeight,
                                 height: widthHeight)
         
-        let spacing: Int = 26
-        let songNameY = Int(albumArt.frame.maxY) + spacing
-        songName.frame = CGRect(x: paddingX,
+        let spacing: Int = 25
+        let songNameY = Int(imageView.frame.maxY) + spacing
+        titleView.frame = CGRect(x: paddingX,
                                 y: songNameY,
                                 width: widthHeight,
                                 height: spacing)
 
-        let artistNameY = Int(songName.frame.maxY) + spacing
-        artistName.frame = CGRect(x: paddingX,
+        let artistNameY = Int(titleView.frame.maxY)
+        artistView.frame = CGRect(x: paddingX,
                                   y: artistNameY,
                                   width: widthHeight,
                                   height: spacing)
@@ -95,14 +98,14 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
 
         if info.title == "" {
             // then the server hasn't been fixed yet.
-            songName.text = info.artist
-            artistName.text = info.album
+            titleView.text = info.artist
+            artistView.text = info.album
         } else {
-            songName.text = info.title
-            artistName.text = info.artist
+            titleView.text = info.title
+            artistView.text = info.artist
         }
-        albumArt.image = playbackManager?.station?.image
-        future.onSuccess() { albumArt.image = $0 }
+        imageView.image = playbackManager?.station?.image
+        future.onSuccess() { imageView.image = $0 }
     }
     
     func playButtonPressed(_ e: UIEvent) {
