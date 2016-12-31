@@ -11,7 +11,9 @@ import Foundation
 import UIKit
 
 // NB(btc): not thread-safe.
-class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KVO on player
+class PlaybackManager : NSObject, RemoteControlDelegate {
+    
+    // NB(btc): subclasses NSObject in order to perform KVO on player
     
     private let PLAYER_ITEM_KEYPATHS = [
         "playbackBufferEmpty",
@@ -24,6 +26,9 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
     var delegates = [PlaybackDelegate]()
     
     let infoService = NowPlayingInfoService()
+
+
+    let remoteControlResponder = RemoteControlResponder()
     
     var station: Station? = nil {
         
@@ -62,6 +67,9 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
         // intermittent interruption. for some reason, handling interruptions
         // doesn't work otherwise.
         UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        remoteControlResponder.add(delegate: self)
+        
         prepareAudioPlaybackForBackgrounding()
         
         NotificationCenter.default.addObserver(self,
@@ -129,6 +137,17 @@ class PlaybackManager : NSObject { // NB(btc): subclassed in order to perform KV
             try AVAudioSession.sharedInstance().setActive(true)
         } catch let error as NSError {
             print(error.localizedDescription)
+        }
+    }
+    
+    func received(eventType: UIEventSubtype) {
+        switch eventType {
+        case .remoteControlPlay:
+            play()
+        case .remoteControlPause:
+            stop()
+        default: break
+            // TODO(btc): handle next, prev
         }
     }
 }
