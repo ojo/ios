@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5E1A575DE452CC78E11857 /* Pods_ojoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56186538FD968F2A0DE3E6FA /* Pods_ojoTests.framework */; };
+		39F753BA02A636A93164FDF8 /* Pods_ojoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F9A55B378770304602E069 /* Pods_ojoUITests.framework */; };
 		6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E351E14D40200F937BA /* Stations3ViewController.swift */; };
 		6B173E381E14D42F00F937BA /* StationsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */; };
 		6B494EBF1E175E6700A7E7F3 /* RemoteControlResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */; };
@@ -41,6 +43,7 @@
 		70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB171E11F98D00B03D12 /* Utils.swift */; };
 		70F3DB1A1E11FFAE00B03D12 /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */; };
 		70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */; };
+		FA689DD244AAE9F5421F1A74 /* Pods_ojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF89B71D91A139294E69809C /* Pods_ojo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11AC7DD7EE3884742AD24562 /* Pods-ojo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ojo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ojo/Pods-ojo.debug.xcconfig"; sourceTree = "<group>"; };
+		56186538FD968F2A0DE3E6FA /* Pods_ojoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ojoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6259BA627F71B1FCD5CC2C3C /* Pods-ojoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ojoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ojoTests/Pods-ojoTests.release.xcconfig"; sourceTree = "<group>"; };
+		67DBF4F1610D087365F1F5A1 /* Pods-ojoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ojoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ojoTests/Pods-ojoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B173E351E14D40200F937BA /* Stations3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations3ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewControllerFactory.swift; sourceTree = "<group>"; };
 		6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlResponder.swift; sourceTree = "<group>"; };
@@ -101,6 +108,11 @@
 		70F3DB171E11F98D00B03D12 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
 		70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HidingNavigationBar.framework; path = Carthage/Build/iOS/HidingNavigationBar.framework; sourceTree = SOURCE_ROOT; };
+		85E0C54ED5B75A5862CEC7D9 /* Pods-ojoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ojoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ojoUITests/Pods-ojoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEAC17425A99129A742ABF53 /* Pods-ojoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ojoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ojoUITests/Pods-ojoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E105031A56240E75157B18BA /* Pods-ojo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ojo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ojo/Pods-ojo.release.xcconfig"; sourceTree = "<group>"; };
+		F3F9A55B378770304602E069 /* Pods_ojoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ojoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF89B71D91A139294E69809C /* Pods_ojo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ojo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,7 @@
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
 				6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */,
 				6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */,
+				FA689DD244AAE9F5421F1A74 /* Pods_ojo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5E1A575DE452CC78E11857 /* Pods_ojoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F753BA02A636A93164FDF8 /* Pods_ojoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +156,8 @@
 				6B7113161E105AD400C3F33C /* ojoTests */,
 				6B7113211E105AD400C3F33C /* ojoUITests */,
 				6B7113001E105AD400C3F33C /* Products */,
+				B8A759F1D72DDCE2BC21E301 /* Pods */,
+				86F0ED5AD4769854AFEC49D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,6 +293,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		86F0ED5AD4769854AFEC49D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF89B71D91A139294E69809C /* Pods_ojo.framework */,
+				56186538FD968F2A0DE3E6FA /* Pods_ojoTests.framework */,
+				F3F9A55B378770304602E069 /* Pods_ojoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B8A759F1D72DDCE2BC21E301 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11AC7DD7EE3884742AD24562 /* Pods-ojo.debug.xcconfig */,
+				E105031A56240E75157B18BA /* Pods-ojo.release.xcconfig */,
+				67DBF4F1610D087365F1F5A1 /* Pods-ojoTests.debug.xcconfig */,
+				6259BA627F71B1FCD5CC2C3C /* Pods-ojoTests.release.xcconfig */,
+				85E0C54ED5B75A5862CEC7D9 /* Pods-ojoUITests.debug.xcconfig */,
+				DEAC17425A99129A742ABF53 /* Pods-ojoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,10 +323,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B7113271E105AD400C3F33C /* Build configuration list for PBXNativeTarget "ojo" */;
 			buildPhases = (
+				4A8ABEA08CE8E46A76099C9C /* [CP] Check Pods Manifest.lock */,
 				6B7112FB1E105AD400C3F33C /* Sources */,
 				6B7112FC1E105AD400C3F33C /* Frameworks */,
 				6B7112FD1E105AD400C3F33C /* Resources */,
 				70D9CE161E11B23D002D41B8 /* ShellScript */,
+				DC4EEE69DF4A7CFD8F6037E3 /* [CP] Embed Pods Frameworks */,
+				FFF421AE44FFBA94A93A5D2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,9 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B71132A1E105AD400C3F33C /* Build configuration list for PBXNativeTarget "ojoTests" */;
 			buildPhases = (
+				C4E2540E9A97EB93837BD673 /* [CP] Check Pods Manifest.lock */,
 				6B71130F1E105AD400C3F33C /* Sources */,
 				6B7113101E105AD400C3F33C /* Frameworks */,
 				6B7113111E105AD400C3F33C /* Resources */,
+				CF378C78B2640E28D27E3B23 /* [CP] Embed Pods Frameworks */,
+				F993B3A03207759CB4F80E4D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,9 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B71132D1E105AD400C3F33C /* Build configuration list for PBXNativeTarget "ojoUITests" */;
 			buildPhases = (
+				B0D2E45810D9125841316417 /* [CP] Check Pods Manifest.lock */,
 				6B71131A1E105AD400C3F33C /* Sources */,
 				6B71131B1E105AD400C3F33C /* Frameworks */,
 				6B71131C1E105AD400C3F33C /* Resources */,
+				44357744239BE48C8D212CF6 /* [CP] Embed Pods Frameworks */,
+				657B82D02C593E129C042D3F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -414,6 +463,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		44357744239BE48C8D212CF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ojoUITests/Pods-ojoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A8ABEA08CE8E46A76099C9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		657B82D02C593E129C042D3F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ojoUITests/Pods-ojoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		70D9CE161E11B23D002D41B8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,6 +526,96 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		B0D2E45810D9125841316417 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4E2540E9A97EB93837BD673 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF378C78B2640E28D27E3B23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ojoTests/Pods-ojoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4EEE69DF4A7CFD8F6037E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ojo/Pods-ojo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F993B3A03207759CB4F80E4D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ojoTests/Pods-ojoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFF421AE44FFBA94A93A5D2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ojo/Pods-ojo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -603,6 +787,7 @@
 		};
 		6B7113281E105AD400C3F33C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11AC7DD7EE3884742AD24562 /* Pods-ojo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 976H852GCK;
@@ -621,6 +806,7 @@
 		};
 		6B7113291E105AD400C3F33C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E105031A56240E75157B18BA /* Pods-ojo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 976H852GCK;
@@ -639,6 +825,7 @@
 		};
 		6B71132B1E105AD400C3F33C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67DBF4F1610D087365F1F5A1 /* Pods-ojoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -654,6 +841,7 @@
 		};
 		6B71132C1E105AD400C3F33C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6259BA627F71B1FCD5CC2C3C /* Pods-ojoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -669,6 +857,7 @@
 		};
 		6B71132E1E105AD400C3F33C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85E0C54ED5B75A5862CEC7D9 /* Pods-ojoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 976H852GCK;
@@ -683,6 +872,7 @@
 		};
 		6B71132F1E105AD400C3F33C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEAC17425A99129A742ABF53 /* Pods-ojoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 976H852GCK;
