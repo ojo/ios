@@ -7,10 +7,8 @@
 //
 
 import Alamofire
-import Argo
-import Curry
-import Runes
 import UIKit
+import Argo
 
 class NowPlayingInfoService {
 
@@ -51,24 +49,5 @@ class NowPlayingInfoService {
         // TODO(btc): debug print only
         print(decoded.error.debugDescription)
         return nil
-    }
-}
-
-extension NowPlayingInfo: Decodable {
-    static func decode(_ j: JSON) -> Decoded<NowPlayingInfo> {
-        return curry(self.init)
-            <^> j <| "title"
-            <*> j <| "artist"
-            <*> j <| "album"
-            <*> j <| "station-tag"
-            <*> NowPlayingInfo.Artwork.decode(j)
-    }
-}
-
-extension NowPlayingInfo.Artwork: Decodable {
-    static func decode(_ j: JSON) -> Decoded<NowPlayingInfo.Artwork> {
-        return curry(self.init)
-            <^> j <|? "artwork-dominant-color"
-            <*> j <|? "artwork-url-500"
     }
 }
