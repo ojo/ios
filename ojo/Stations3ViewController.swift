@@ -38,7 +38,7 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel(text: "Streams")
+        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel(text: "OJO Streams")
         
         var vs: [UIView] = [UIView]()
         for s in stations {
