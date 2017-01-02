@@ -21,4 +21,11 @@ extension UIColor {
         let blue    = CGFloat( hex6 & 0x0000FF       ) / divisor
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
+    
+    public static func from(hexString: String) -> UIColor? {
+        if let hexInt = UInt32(hexString, radix: 16) {
+            return UIColor(hex6: hexInt)
+        }
+        return nil
+    }
 }
