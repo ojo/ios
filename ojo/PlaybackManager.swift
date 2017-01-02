@@ -34,6 +34,13 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     var station: Station? = nil {
         
         willSet {
+            if let currentStation = station, let nextStation = newValue,
+                currentStation.isEqual(to: nextStation) {
+                // if current and next both exist and they are the same, don't
+                // run these operations
+                return
+            }
+
             PLAYER_ITEM_KEYPATHS.forEach() {
                 player.currentItem?.removeObserver(self, forKeyPath: $0)
             }
@@ -44,10 +51,13 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         didSet {
             guard let station = station else { return }
             
-            // this is to avoid switching stations if it's already set to the
-            // right one
-            guard let oldValue = oldValue, !station.isEqual(to: oldValue) else { return }
+            // because of the above guard, we know that station is now present.
+            // if the old value of the optional was also a station, and they 
+            // were the same, then don't execute these operations
             
+            if let oldValue = oldValue, station.isEqual(to: oldValue) {
+                return
+            }
             
             let nextItem = AVPlayerItem(url: station.url)
             
@@ -91,6 +101,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     }
     
     func play() {
+        print(player.status)
         prepareAudioPlaybackForBackgrounding()
         player.play()
     }
