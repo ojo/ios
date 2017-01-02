@@ -45,6 +45,7 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     }
     
     override func viewDidLayoutSubviews() {
+        let STATUS_H = UIApplication.shared.statusBarFrame.height
         let MINIPLAYER_H: CGFloat = {
             // this is a hack. TODO(btc): replace with a dynamic lookup of the miniplayer's height
             if #available(iOS 10.0, *) {
@@ -55,11 +56,11 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         let TAB_BAR_H: CGFloat = UITabBarController().tabBar.frame.height
         
         let f = view.frame
-        let viewH = (f.height - MINIPLAYER_H - DEFAULT_MARGIN_PX - TAB_BAR_H) / CGFloat(views.count)
+        let viewH = (f.height - MINIPLAYER_H - DEFAULT_MARGIN_PX - TAB_BAR_H - STATUS_H) / CGFloat(views.count)
         
         for (i, v) in views.enumerated() {
             v.frame = CGRect(x: 0,
-                             y: CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
+                             y: STATUS_H + CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
                              width: f.width,
                              height: viewH)
         }
