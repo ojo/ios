@@ -101,7 +101,6 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     }
     
     func play() {
-        print(player.status)
         prepareAudioPlaybackForBackgrounding()
         player.play()
     }
@@ -126,11 +125,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                 delegates.forEach() { $0.didChange(state: .buffering) }
             case "playbackLikelyToKeepUp":
                 delegates.forEach() { $0.didChange(state: .started) }
-            default:
-                // TODO(btc): remove these debug prints
-                print("unhandled observation: \(keyPath)")
-                print(keyPath)
-                print(item.status.rawValue)
+            default: break
             }
         default:
             break
