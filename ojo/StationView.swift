@@ -46,6 +46,7 @@ class StationView: UIView {
         backgroundColor = UIColor.ojo_defaultVCBackground
         
         let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        gr.cancelsTouchesInView = false // allows us to tint the views in response to touch
         addGestureRecognizer(gr)
         isUserInteractionEnabled = true
         
@@ -76,5 +77,19 @@ class StationView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) is not supported")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        // FIXME: We actually want to tint the whole image. Not just the bg.
+        // This is because some station image view may not have a visible background.
+        // That would occur when the station image is completely opaque.
+        image.backgroundColor = UIColor.ojo_tint_for_selected_view
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        image.backgroundColor = UIColor.ojo_defaultVCBackground
     }
 }

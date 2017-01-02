@@ -33,4 +33,9 @@ extension UIColor {
             return UIColor(red:0.85, green:0.00, blue:0.00, alpha:1.0)
         }
     }
+    static var ojo_tint_for_selected_view: UIColor {
+        get {
+            return UIColor(red:0.9, green:0.9, blue:0.9, alpha:1.0)
+        }
+    }
 }
