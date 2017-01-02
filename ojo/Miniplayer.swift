@@ -62,12 +62,10 @@ class Miniplayer: PlaybackDelegate {
     }
 
     private func showMiniplayer() {
-        barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
-                              animated: true,
-                              completion: nil)
-    }
-    
-    private func hideMiniplayer() {
-        barPresenter?.dismissPopupBar(animated: true, completion: nil)
+        if let state = barPresenter?.popupPresentationState, state == .hidden {
+            barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
+                                          animated: true,
+                                          completion: nil)
+        }
     }
 }
