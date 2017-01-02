@@ -118,7 +118,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             if p == player && keyPath == "status" {
                 // TODO(btc): handle player status change
             }
-        case let item as AVPlayerItem:
+        case is AVPlayerItem:
             guard let keyPath = keyPath else { return }
             switch keyPath {
             case "playbackBufferEmpty":
