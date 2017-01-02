@@ -19,6 +19,7 @@
 		6B801E2F1E1A2A49002C96F7 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E2E1E1A2A49002C96F7 /* StationView.swift */; };
 		6B801E311E1AE470002C96F7 /* PlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E301E1AE470002C96F7 /* PlaybackDelegate.swift */; };
 		6B801E331E1AE47B002C96F7 /* PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E321E1AE47B002C96F7 /* PlaybackState.swift */; };
+		6B801E371E1B1457002C96F7 /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B801E361E1B1457002C96F7 /* SwiftHEXColors.framework */; };
 		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
 		6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */; };
 		6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */; };
@@ -87,6 +88,7 @@
 		6B801E2E1E1A2A49002C96F7 /* StationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		6B801E301E1AE470002C96F7 /* PlaybackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackDelegate.swift; sourceTree = "<group>"; };
 		6B801E321E1AE47B002C96F7 /* PlaybackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackState.swift; sourceTree = "<group>"; };
+		6B801E361E1B1457002C96F7 /* SwiftHEXColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHEXColors.framework; path = Carthage/Build/iOS/SwiftHEXColors.framework; sourceTree = SOURCE_ROOT; };
 		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
 		6BA6B34E1E15CC960033130E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OJORoundedImageView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B801E371E1B1457002C96F7 /* SwiftHEXColors.framework in Frameworks */,
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
 				6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */,
 				6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */,
@@ -298,6 +301,7 @@
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
 				6BCD64D61E172F65002CA55E /* Runes.framework */,
+				6B801E361E1B1457002C96F7 /* SwiftHEXColors.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -529,6 +533,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftHEXColors.framework",
 			);
 			outputPaths = (
 			);

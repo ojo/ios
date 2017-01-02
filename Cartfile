@@ -3,3 +3,4 @@ github "LeoNatan/LNPopupController" "5a6bd3038af53989f468609ce3670d10647e9cea"
 github "thoughtbot/Argo"
 github "thoughtbot/Curry"
 github "tristanhimmelman/HidingNavigationBar" ~> 1.0
+github "thii/SwiftHEXColors"
