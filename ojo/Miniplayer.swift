@@ -50,12 +50,6 @@ class Miniplayer: PlaybackDelegate {
             nowPlaying.popupItem.title = info.title
             nowPlaying.popupItem.subtitle = info.artist
         }
-        
-        // replace station image with info.artwork.image when it loads async'ly
-        
-        // change the contentMode of the imageView so that the station image
-        // isn't distorted
-        
         if info.artwork.isPresent(), let color = info.artwork.dominantUIColor() {
             let size = CGSize(width: 100, height: 100) // an educated guess.
             let colorImage = UIImage.from(color: color, withSize: size)
