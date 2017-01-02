@@ -9,6 +9,8 @@
 import Argo
 import Curry
 import Runes
+import UIKit
+import SwiftHEXColors
 
 struct NowPlayingInfo {
     let title: String
@@ -22,6 +24,10 @@ struct NowPlayingInfo {
     struct Artwork {
         let dominantColor: String?
         let url500: String?
+        
+        func isPresent() -> Bool {
+            return dominantColor != nil && url500 != nil
+        }
     }
 }
 
@@ -41,5 +47,13 @@ extension NowPlayingInfo.Artwork: Decodable {
         return curry(self.init)
             <^> j <|? "artwork-dominant-color"
             <*> j <|? "artwork-url-500"
+    }
+}
+
+// FIXME: Consider placing this extension elsewhere
+extension NowPlayingInfo.Artwork {
+    func dominantUIColor() -> UIColor? {
+        guard let colorStr = dominantColor else { return nil }
+        return UIColor(hexString: colorStr)
     }
 }
