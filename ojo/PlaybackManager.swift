@@ -28,8 +28,9 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     
     private let infoService = NowPlayingInfoService()
 
-
     private let remoteControlResponder = RemoteControlResponder()
+    
+    private(set) var nowPlayingInfo: NowPlayingInfo?
     
     var station: Station? = nil {
         
@@ -139,8 +140,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         // ignore stale data
         guard info.stationTag == station.tag else { return }
         
+        // set the value BEFORE notifying delegates
+        nowPlayingInfo = info
+        
         for d in delegates {
-            d.incoming(info: info, future: future)
+            d.incoming(info: info)
         }
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [

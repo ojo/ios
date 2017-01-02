@@ -12,6 +12,7 @@ import Argo
 
 class NowPlayingInfoService {
 
+    // TODO: remove future from callback
     typealias Callback = (NowPlayingInfo, Future<UIImage>) -> Void
 
     let API_URL = "https://api.ojo.world/api/v0/stations/now-playing"

@@ -10,5 +10,5 @@ import UIKit
 
 protocol PlaybackDelegate {
     func didChange(state: PlaybackState)
-    func incoming(info: NowPlayingInfo, future: Future<UIImage>)
+    func incoming(info: NowPlayingInfo)
 }

@@ -58,6 +58,13 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         view.addSubview(titleView)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let info = playbackManager?.nowPlayingInfo {
+            incoming(info: info)
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         let width = self.view.bounds.width
         let paddingX: CGFloat = 6
@@ -91,7 +98,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo, future: Future<UIImage>) {
+    func incoming(info: NowPlayingInfo) {
         
         // BUG: If user taps station and immediately taps the Miniplayer to open
         // this screen, the screen appears without any content. What in the world
@@ -105,8 +112,12 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
             titleView.text = info.title
             artistView.text = info.artist
         }
-        imageView.image = playbackManager?.station?.image
-        future.onSuccess() { imageView.image = $0 }
+        if info.artwork.isPresent(), let c = info.artwork.dominantUIColor() {
+            let s = imageView.frame.size
+            imageView.image = UIImage.from(color: c, withSize: s)
+        } else {
+            imageView.image = playbackManager?.station?.image
+        }
     }
     
     func playButtonPressed(_ e: UIEvent) {

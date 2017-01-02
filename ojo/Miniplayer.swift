@@ -41,7 +41,7 @@ class Miniplayer: PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo, future: Future<UIImage>) {
+    func incoming(info: NowPlayingInfo) {
         if info.title == "" {
             // then the server hasn't been fixed yet.
             nowPlaying.popupItem.title = info.artist
@@ -54,7 +54,6 @@ class Miniplayer: PlaybackDelegate {
             let size = CGSize(width: 100, height: 100) // an educated guess.
             let colorImage = UIImage.from(color: color, withSize: size)
             nowPlaying.popupItem.image = colorImage
-            future.onSuccess() { nowPlaying.popupItem.image = $0 }
         } else {
             nowPlaying.popupItem.image = playbackManager.station?.image
         }
@@ -65,6 +64,7 @@ class Miniplayer: PlaybackDelegate {
             barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
                                           animated: true,
                                           completion: nil)
+            // TODO: fetch nowPlayingInfo
         }
     }
 }
