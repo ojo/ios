@@ -16,6 +16,7 @@
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
+		6B801E2F1E1A2A49002C96F7 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E2E1E1A2A49002C96F7 /* StationView.swift */; };
 		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
 		6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */; };
 		6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */; };
@@ -28,10 +29,10 @@
 		6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D41E172D57002CA55E /* Argo.framework */; };
 		6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D61E172F65002CA55E /* Runes.framework */; };
 		6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D81E172F86002CA55E /* Curry.framework */; };
+		6BE8907C1E1A14A6000BB347 /* UITabBarRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */; };
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */; };
-		704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */; };
 		707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707374C31E11DA950013EDDF /* AppDelegate.swift */; };
 		707374C61E11DB6E0013EDDF /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707374C51E11DB6E0013EDDF /* Stations.swift */; };
 		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
@@ -81,6 +82,7 @@
 		6B71131E1E105AD400C3F33C /* ojoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ojoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113221E105AD400C3F33C /* ojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ojoUITests.swift; sourceTree = "<group>"; };
 		6B7113241E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B801E2E1E1A2A49002C96F7 /* StationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
 		6BA6B34E1E15CC960033130E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OJORoundedImageView.swift; sourceTree = "<group>"; };
@@ -93,10 +95,10 @@
 		6BCD64D41E172D57002CA55E /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D61E172F65002CA55E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D81E172F86002CA55E /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = SOURCE_ROOT; };
+		6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarRootViewController.swift; sourceTree = "<group>"; };
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverEventsViewController.swift; sourceTree = "<group>"; };
-		704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		707374C31E11DA950013EDDF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		707374C51E11DB6E0013EDDF /* Stations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
@@ -178,7 +180,7 @@
 				6BA6B3521E15E2070033130E /* Library */,
 				6BA6B3501E15E1D80033130E /* Features */,
 				707374C31E11DA950013EDDF /* AppDelegate.swift */,
-				704C94A11E11ABC300A7D2BF /* RootNavigationController.swift */,
+				6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */,
 				70F3DB171E11F98D00B03D12 /* Utils.swift */,
 				6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */,
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
@@ -222,6 +224,7 @@
 			children = (
 				70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */,
 				707374C51E11DB6E0013EDDF /* Stations.swift */,
+				6B801E2E1E1A2A49002C96F7 /* StationView.swift */,
 				70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */,
 				6B173E351E14D40200F937BA /* Stations3ViewController.swift */,
 				6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */,
@@ -642,11 +645,12 @@
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
 				70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */,
 				6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */,
+				6BE8907C1E1A14A6000BB347 /* UITabBarRootViewController.swift in Sources */,
+				6B801E2F1E1A2A49002C96F7 /* StationView.swift in Sources */,
 				6BB8C2451E18620300F4AEE2 /* Future.swift in Sources */,
 				6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */,
 				6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */,
 				6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */,
-				704C94A21E11ABC300A7D2BF /* RootNavigationController.swift in Sources */,
 				70F3DB0F1E11E90A00B03D12 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

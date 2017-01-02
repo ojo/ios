@@ -15,7 +15,7 @@ class StationsViewControllerFactory {
         // we special-case 3 stations because we expect to have three stations for a long time.
         // If it is any other number, we simply fall back to default collection behavior.
         if stations.count == 3 {
-            return Stations3ViewController(stations: stations, bounds: bounds)
+            return Stations3ViewController(stations: stations)
         }
         return StationsViewController(withStations: stations, rect: bounds)
     }

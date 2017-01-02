@@ -10,7 +10,7 @@ import UIKit
 
 class DefaultTopItemLabel: UILabel {
     
-    convenience init(text: String) {
+    convenience init(_ text: String) {
         self.init()
         self.setup()
         self.text = text

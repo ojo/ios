@@ -17,13 +17,13 @@ class Miniplayer: PlaybackDelegate {
     // that seems less preferable because of the interobject communication.
     // however, holding the property like this is undesirable because of the
     // circular reference between root <-> miniplayer
-    private var root: UINavigationController?
+    private var barPresenter: UIViewController?
     
     private var nowPlaying: NowPlayingViewController
 
-    init(_ navigationController: UINavigationController,
+    init(_ barPresenter: UIViewController,
          playbackManager: PlaybackManager) {
-        self.root = navigationController
+        self.barPresenter = barPresenter
         self.playbackManager = playbackManager
         self.nowPlaying = NowPlayingViewController(playbackManager: playbackManager)
         self.playbackManager.addDelegate(self)
@@ -42,7 +42,6 @@ class Miniplayer: PlaybackDelegate {
     }
     
     func incoming(info: NowPlayingInfo, future: Future<UIImage>) {
-        
         if info.title == "" {
             // then the server hasn't been fixed yet.
             nowPlaying.popupItem.title = info.artist
@@ -63,12 +62,12 @@ class Miniplayer: PlaybackDelegate {
     }
 
     private func showMiniplayer() {
-        root?.presentPopupBar(withContentViewController: nowPlaying,
+        barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
                               animated: true,
                               completion: nil)
     }
     
     private func hideMiniplayer() {
-        root?.dismissPopupBar(animated: true, completion: nil)
+        barPresenter?.dismissPopupBar(animated: true, completion: nil)
     }
 }

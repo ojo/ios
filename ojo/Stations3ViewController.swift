@@ -11,24 +11,19 @@ import LNPopupController
 
 class Stations3ViewController: UIViewController, StationViewDelegate {
     
-    private let MINIPLAYER_HEIGHT: CGFloat = {
-        // this is a hack. TODO(btc): replace with a dynamic lookup of the miniplayer's height
-        if #available(iOS 10.0, *) {
-            return 64
-        }
-        return 40
-    }()
+    private let label: UIView = DefaultTopItemLabel("OJO Streams")
     
-    var stations: [Station] = [Station]()
-    var views: [UIView] = [UIView]()
+    private let stations: [Station]
     
-    init(stations: [Station], bounds: CGRect) {
+    private var views: [StationView] = [StationView]()
+    
+    init(stations: [Station]) {
         self.stations = stations
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) is not supported")
     }
     
     func stationSelected(_ s: Station) {
@@ -38,96 +33,35 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel(text: "OJO Streams")
+        view.backgroundColor = UIColor.ojo_defaultVCBackground
         
-        var vs: [UIView] = [UIView]()
-        for s in stations {
-            let v = StationView(frame: view.frame)
-            v.station = s
-            v.delegate = self
-            vs.append(v)
+        views = stations.map() { s in
+            let v = StationView(frame: view.frame, station: s, delegate: self)
+            return v
         }
-        for v in vs {
+        for v in views {
             view.addSubview(v)
         }
-        views = vs
     }
     
     override func viewDidLayoutSubviews() {
+        let MINIPLAYER_H: CGFloat = {
+            // this is a hack. TODO(btc): replace with a dynamic lookup of the miniplayer's height
+            if #available(iOS 10.0, *) {
+                return 64
+            }
+            return 40
+        }()
+        let TAB_BAR_H: CGFloat = UITabBarController().tabBar.frame.height
+        
         let f = view.frame
-        let h = (f.height - MINIPLAYER_HEIGHT - DEFAULT_MARGIN_PX) / CGFloat(views.count)
+        let viewH = (f.height - MINIPLAYER_H - DEFAULT_MARGIN_PX - TAB_BAR_H) / CGFloat(views.count)
         
         for (i, v) in views.enumerated() {
             v.frame = CGRect(x: 0,
-                             y: CGFloat(i * Int(h)), // cast to Int to make sure i == 0 is handled correctly
+                             y: CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
                              width: f.width,
-                             height: h)
+                             height: viewH)
         }
-    }
-    
-    private class StationView: UIView {
-        
-        var delegate: StationViewDelegate?
-        
-        var station: Station? = nil {
-            didSet {
-                image.image = station?.image
-                text.text = station?.title
-            }
-        }
-        
-        var image: UIImageView = {
-            let result = OJORoundedImageView()
-            return result
-        }()
-        
-        var text: UILabel = {
-            let result = UILabel()
-            result.text = DEFAULT_PLACEHOLDER_TEXT
-            result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 18)
-            result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959 TODO extract when you use it enough throughout the app to share it and give it a name
-            return result
-        }()
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            backgroundColor = UIColor.ojo_defaultVCBackground
-            
-            let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-            addGestureRecognizer(gr)
-            isUserInteractionEnabled = true
-            
-            addSubview(image)
-            addSubview(text)
-        }
-        
-        func handleTap() {
-            delegate?.stationSelected(station!)
-        }
-        
-        override func layoutSubviews() {
-            
-            let imageWH = frame.height - 2 * DEFAULT_MARGIN_PX
-            image.frame = CGRect(x: DEFAULT_MARGIN_PX,
-                                 y: DEFAULT_MARGIN_PX,
-                                 width: imageWH,
-                                 height: imageWH)
-            
-            text.sizeToFit()
-            let textHeight = text.frame.height
-
-            text.frame = CGRect(x: frame.width / 2,
-                                y: frame.height / 2 - text.frame.height / 2,
-                                width: frame.width / 2,
-                                height: textHeight)
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-}
-
-protocol StationViewDelegate {
-    func stationSelected(_ s: Station)
+    }    
 }
