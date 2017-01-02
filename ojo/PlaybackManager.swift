@@ -191,16 +191,3 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         }
     }
 }
-
-// FIXME(btc): put enum and delegate in separate files?
-
-enum PlaybackState {
-    case started
-    case stopped
-    case buffering
-}
-
-protocol PlaybackDelegate {
-    func didChange(state: PlaybackState)
-    func incoming(info: NowPlayingInfo, future: Future<UIImage>)
-}

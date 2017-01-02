@@ -17,6 +17,8 @@
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
 		6B801E2F1E1A2A49002C96F7 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E2E1E1A2A49002C96F7 /* StationView.swift */; };
+		6B801E311E1AE470002C96F7 /* PlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E301E1AE470002C96F7 /* PlaybackDelegate.swift */; };
+		6B801E331E1AE47B002C96F7 /* PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E321E1AE47B002C96F7 /* PlaybackState.swift */; };
 		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
 		6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */; };
 		6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */; };
@@ -83,6 +85,8 @@
 		6B7113221E105AD400C3F33C /* ojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ojoUITests.swift; sourceTree = "<group>"; };
 		6B7113241E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B801E2E1E1A2A49002C96F7 /* StationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
+		6B801E301E1AE470002C96F7 /* PlaybackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackDelegate.swift; sourceTree = "<group>"; };
+		6B801E321E1AE47B002C96F7 /* PlaybackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackState.swift; sourceTree = "<group>"; };
 		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
 		6BA6B34E1E15CC960033130E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OJORoundedImageView.swift; sourceTree = "<group>"; };
@@ -276,7 +280,9 @@
 			children = (
 				6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */,
 				6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */,
+				6B801E301E1AE470002C96F7 /* PlaybackDelegate.swift */,
 				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
+				6B801E321E1AE47B002C96F7 /* PlaybackState.swift */,
 				6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */,
 				6B494EC01E1765F300A7E7F3 /* RemoteControlDelegate.swift */,
 			);
@@ -645,9 +651,11 @@
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
 				70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */,
 				6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */,
+				6B801E331E1AE47B002C96F7 /* PlaybackState.swift in Sources */,
 				6BE8907C1E1A14A6000BB347 /* UITabBarRootViewController.swift in Sources */,
 				6B801E2F1E1A2A49002C96F7 /* StationView.swift in Sources */,
 				6BB8C2451E18620300F4AEE2 /* Future.swift in Sources */,
+				6B801E311E1AE470002C96F7 /* PlaybackDelegate.swift in Sources */,
 				6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */,
 				6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */,
 				6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */,
