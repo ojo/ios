@@ -58,7 +58,7 @@ class Miniplayer: PlaybackDelegate {
         
         if info.artwork.isPresent(), let color = info.artwork.dominantUIColor() {
             let size = CGSize(width: 100, height: 100) // an educated guess.
-            let colorImage = getImageWithColor(color: color, size: size)
+            let colorImage = UIImage.from(color: color, withSize: size)
             nowPlaying.popupItem.image = colorImage
             future.onSuccess() { nowPlaying.popupItem.image = $0 }
         } else {
