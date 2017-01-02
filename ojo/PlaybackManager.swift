@@ -44,6 +44,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         didSet {
             guard let station = station else { return }
             
+            // this is to avoid switching stations if it's already set to the
+            // right one
+            guard let oldValue = oldValue, !station.isEqual(to: oldValue) else { return }
+            
+            
             let nextItem = AVPlayerItem(url: station.url)
             
             PLAYER_ITEM_KEYPATHS.forEach() {
