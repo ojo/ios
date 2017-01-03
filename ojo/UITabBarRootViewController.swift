@@ -23,6 +23,7 @@ class UITabBarRootViewController: UITabBarController {
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
                                           image: radioImage,
                                           selectedImage: radioImage)
+        tabBar.tintColor = UIColor.ojo_red
         viewControllers = [radioVC]
     }
 }
