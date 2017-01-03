@@ -863,7 +863,7 @@
 			baseConfigurationReference = 11AC7DD7EE3884742AD24562 /* Pods-ojo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 976H852GCK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -884,7 +884,7 @@
 			baseConfigurationReference = E105031A56240E75157B18BA /* Pods-ojo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 976H852GCK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
