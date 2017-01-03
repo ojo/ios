@@ -18,12 +18,19 @@ class StationView: UIView {
     
     private var station: Station?
 
-    private var image: UIImageView = {
+    private let image: UIImageView = {
         let result = OJORoundedImageView()
         return result
     }()
     
-    private var text: UILabel = {
+    private let imageMask: UIView = {
+        let v = OJORoundedImageView()
+        v.alpha = 0.5
+        v.backgroundColor = UIColor.ojo_grey
+        return v
+    }()
+    
+    private let text: UILabel = {
         let result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 18)
@@ -66,6 +73,8 @@ class StationView: UIView {
                              width: imageWH,
                              height: imageWH)
         
+        imageMask.frame = image.frame
+        
         text.sizeToFit()
         let textHeight = text.frame.height
         
@@ -81,15 +90,11 @@ class StationView: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
-        // FIXME: We actually want to tint the whole image. Not just the bg.
-        // This is because some station image view may not have a visible background.
-        // That would occur when the station image is completely opaque.
-        image.backgroundColor = UIColor.ojo_tint_for_selected_view
+        addSubview(imageMask)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        image.backgroundColor = UIColor.ojo_defaultVCBackground
+        imageMask.removeFromSuperview()
     }
 }
