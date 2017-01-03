@@ -34,7 +34,11 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         return result
     }()
 
-    let musicPlayBackButton = MusicPlaybackButton()
+    let playbackToggle: MusicPlaybackButton = {
+        let result = MusicPlaybackButton()
+        result.stopped()
+        return result
+    }()
     
     var playbackManager: PlaybackManager?
     
@@ -42,6 +46,10 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         self.playbackManager = playbackManager
         super.init(nibName: nil, bundle: nil)
         playbackManager.addDelegate(self)
+        
+        playbackToggle.addTarget(self,
+                                 action: #selector(playButtonPressed),
+                                 for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,6 +64,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         view.addSubview(imageView)
         view.addSubview(artistView)
         view.addSubview(titleView)
+        view.addSubview(playbackToggle)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,13 +97,21 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
                                   y: artistNameY,
                                   width: widthHeight,
                                   height: lineHeight)
+        let toggleWH: CGFloat = 100
+        playbackToggle.frame = CGRect(x: width/2 - toggleWH/2,
+                                      y: artistView.frame.maxY + DEFAULT_MARGIN_PX,
+                                      width: toggleWH,
+                                      height: toggleWH)
     }
     
     func didChange(state: PlaybackState) {
         switch state {
-        case .buffering: break
-        case .started: break
-        case .stopped: break
+        case .buffering:
+            playbackToggle.buffering()
+        case .started:
+            playbackToggle.playing()
+        case .stopped:
+            playbackToggle.stopped()
         }
     }
     
@@ -121,6 +138,13 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }
     
     func playButtonPressed(_ e: UIEvent) {
-        // TODO toggle
+        switch playbackToggle.playbackState {
+        case .buffering:
+            break
+        case .started:
+            playbackManager?.stop()
+        case .stopped:
+            playbackManager?.play()
+        }
     }
 }

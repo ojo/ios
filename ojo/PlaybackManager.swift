@@ -95,6 +95,10 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                            forKeyPath: "status",
                            options: .new,
                            context: nil)
+        player.addObserver(self,
+                           forKeyPath: "rate",
+                           options: .new,
+                           context: nil)
     }
     
     func addDelegate(_ d: PlaybackDelegate) {
@@ -115,9 +119,14 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                                change: [NSKeyValueChangeKey : Any]?,
                                context: UnsafeMutableRawPointer?) {
         switch object {
-        case let p as AVPlayer:
-            if p == player && keyPath == "status" {
-                // TODO(btc): handle player status change
+        case let p as AVPlayer where p == player:
+            guard let keyPath = keyPath else { return }
+            switch keyPath {
+            case "status": break
+            case "rate":
+                let newState: PlaybackState = player.rate == 0 ? .stopped : .started
+                delegates.forEach { $0.didChange(state: newState) }
+            default: break
             }
         case is AVPlayerItem:
             guard let keyPath = keyPath else { return }
@@ -128,8 +137,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                 delegates.forEach() { $0.didChange(state: .started) }
             default: break
             }
-        default:
-            break
+        default: break
         }
     }
     
