@@ -14,6 +14,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
     var imageView: UIImageView = {
         var result = OJORoundedImageView()
+        result.contentMode = .scaleAspectFill
         return result
     }()
     
