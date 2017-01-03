@@ -10,7 +10,15 @@ import UIKit
 
 class Stations3ViewController: UIViewController, StationViewDelegate {
 
-    private let label: UIView = DefaultTopItemLabel("OJO Streams")
+    private var bar: UINavigationBar = {
+        let v = UINavigationBar()
+        v.items = [ UINavigationItem()]
+        v.topItem?.titleView = DefaultTopItemLabel("OJO Streams")
+        v.backgroundColor = UIColor.ojo_defaultVCBackground
+        v.clipsToBounds = true // removes bottom border
+        v.isTranslucent = false
+        return v
+    }()
 
     private let stations: [Station]
 
@@ -33,6 +41,8 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ojo_defaultVCBackground
+        
+        view.addSubview(bar)
 
         views = stations.map() { s in
             let v = StationView(frame: view.frame, station: s, delegate: self)
@@ -48,11 +58,17 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         let offsetFromTop = topLayoutGuide.length
         let offsetFromBottom = bottomLayoutGuide.length
         let parent = view.bounds
-        let viewH = (parent.height - DEFAULT_MARGIN_PX - offsetFromBottom - offsetFromTop) / CGFloat(views.count)
+        
+        bar.frame = CGRect(x: 0,
+                           y: offsetFromTop,
+                           width: parent.width,
+                           height: 44)
+        
+        let viewH = (parent.height - offsetFromBottom - bar.frame.maxY) / CGFloat(views.count)
 
         for (i, v) in views.enumerated() {
             v.frame = CGRect(x: 0,
-                             y: offsetFromTop + CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
+                             y: offsetFromTop + bar.frame.height + CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
                              width: parent.width,
                              height: viewH)
         }
