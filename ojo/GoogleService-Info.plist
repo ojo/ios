@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
+	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
+	<true/>
 	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
 	<string>ca-app-pub-3940256099942544/2934735716</string>
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
@@ -23,7 +27,7 @@
 	<key>STORAGE_BUCKET</key>
 	<string>ttrn-ojo.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
@@ -31,7 +35,7 @@
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<false/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:4597641832:ios:cf0131e1eaf13b40</string>
 	<key>DATABASE_URL</key>
