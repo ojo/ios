@@ -837,6 +837,7 @@
 			baseConfigurationReference = 11AC7DD7EE3884742AD24562 /* Pods-ojo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 976H852GCK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -848,6 +849,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = btc.ora2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -856,6 +858,7 @@
 			baseConfigurationReference = E105031A56240E75157B18BA /* Pods-ojo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 976H852GCK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -867,6 +870,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = btc.ora2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
