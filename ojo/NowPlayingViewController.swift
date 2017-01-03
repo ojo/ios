@@ -9,6 +9,7 @@
 import AlamofireImage
 import Foundation
 import UIKit
+import MarqueeLabel
 
 class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
@@ -19,8 +20,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }()
     
     var titleView: UILabel = {
-        // TODO var result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
-        var result = UILabel()
+        let result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
         result.textColor = UIColor.ojo_grey
@@ -29,8 +29,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }()
 
     var artistView: UILabel = {
-        // TODO var result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
-        var result = UILabel()
+        let result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT, size: 22)
         result.textColor = UIColor.ojo_grey

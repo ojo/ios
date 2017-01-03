@@ -1,6 +1,7 @@
 github "Alamofire/Alamofire" ~> 4.0
 github "Alamofire/AlamofireImage" ~> 3.2
 github "LeoNatan/LNPopupController" "dede96cd0475a5681953cac369ed56d6c836529a"
+github "cbpowell/MarqueeLabel" ~> 3.0
 github "mxcl/PromiseKit"
 github "thii/SwiftHEXColors"
 github "thoughtbot/Argo"

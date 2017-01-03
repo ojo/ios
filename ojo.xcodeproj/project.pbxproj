@@ -35,6 +35,7 @@
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
 		6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35D1E17174D0033130E /* UIColor+hex.swift */; };
 		6BB8C2451E18620300F4AEE2 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8C2441E18620300F4AEE2 /* Future.swift */; };
+		6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */; };
 		6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D01E171E5E002CA55E /* Alamofire.framework */; };
 		6BCD64D31E1720A5002CA55E /* NowPlayingInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */; };
 		6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D41E172D57002CA55E /* Argo.framework */; };
@@ -110,6 +111,7 @@
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		6BA6B35D1E17174D0033130E /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		6BB8C2441E18620300F4AEE2 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D01E171E5E002CA55E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D21E1720A5002CA55E /* NowPlayingInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfoService.swift; sourceTree = "<group>"; };
 		6BCD64D41E172D57002CA55E /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = SOURCE_ROOT; };
@@ -150,6 +152,7 @@
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
 				6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */,
 				6B801E411E1B74B0002C96F7 /* PromiseKit.framework in Frameworks */,
+				6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */,
 				6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */,
 				FA689DD244AAE9F5421F1A74 /* Pods_ojo.framework in Frameworks */,
 			);
@@ -321,6 +324,7 @@
 				6BCD64D81E172F86002CA55E /* Curry.framework */,
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
+				6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */,
 				6B801E401E1B74B0002C96F7 /* PromiseKit.framework */,
 				6BCD64D61E172F65002CA55E /* Runes.framework */,
 				6B801E361E1B1457002C96F7 /* SwiftHEXColors.framework */,
@@ -561,6 +565,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftHEXColors.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
 			);
 			outputPaths = (
 			);
