@@ -19,10 +19,10 @@ class UITabBarRootViewController: UITabBarController {
         
         let radioVC = StationsViewControllerFactory.make(withStations: STATIONS,
                                                          bounds: view.frame)
+        let radioImage = UIImage(named: "radio")
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
-                                          image: UIImage(named: "radio"),
-                                          selectedImage: UIImage(named: "radio"))
-        
+                                          image: radioImage,
+                                          selectedImage: radioImage)
         viewControllers = [radioVC]
     }
 }
