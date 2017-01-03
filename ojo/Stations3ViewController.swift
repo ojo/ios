@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LNPopupController
 
 class Stations3ViewController: UIViewController, StationViewDelegate {
 
