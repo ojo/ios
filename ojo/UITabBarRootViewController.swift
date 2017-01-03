@@ -14,16 +14,36 @@ class UITabBarRootViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // configure the appearance of this container
+        
         view.backgroundColor = UIColor.ojo_defaultVCBackground
+        tabBar.tintColor = UIColor.ojo_red
+
+        // add the miniplayer
         miniplayer = Miniplayer(self, playbackManager: PLAYBACK_MANAGER)
         
+        hookUpTheDifferentSectionsOfTheApp()
+    }
+    
+    func hookUpTheDifferentSectionsOfTheApp() {
         let radioVC = StationsViewControllerFactory.make(withStations: STATIONS,
                                                          bounds: view.frame)
         let radioImage = UIImage(named: "radio")
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
                                           image: radioImage,
                                           selectedImage: radioImage)
-        tabBar.tintColor = UIColor.ojo_red
-        viewControllers = [radioVC]
+        let newsVC = NewsFeedViewController()
+        let newsImage = UIImage(named: "news")
+        newsVC.tabBarItem = UITabBarItem(title: "News",
+                                          image: newsImage,
+                                          selectedImage: newsImage)
+        let eventsVC = DiscoverEventsViewController()
+        let eventsImage = UIImage(named: "events")
+        eventsVC.tabBarItem = UITabBarItem(title: "Discover Events",
+                                         image: eventsImage,
+                                         selectedImage: eventsImage)
+        viewControllers = [newsVC, radioVC, eventsVC]
+        selectedViewController = radioVC
     }
 }
