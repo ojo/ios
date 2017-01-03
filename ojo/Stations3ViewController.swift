@@ -45,16 +45,16 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let offsetFromTop = topLayoutGuide.length
         let offsetFromBottom = bottomLayoutGuide.length
-
-        let f = view.frame
-        let viewH = (f.height - DEFAULT_MARGIN_PX - offsetFromBottom - offsetFromTop) / CGFloat(views.count)
+        let parent = view.bounds
+        let viewH = (parent.height - DEFAULT_MARGIN_PX - offsetFromBottom - offsetFromTop) / CGFloat(views.count)
 
         for (i, v) in views.enumerated() {
             v.frame = CGRect(x: 0,
                              y: offsetFromTop + CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
-                             width: f.width,
+                             width: parent.width,
                              height: viewH)
         }
     }
