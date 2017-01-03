@@ -21,6 +21,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
     var titleView: UILabel = {
         let result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
+        result.trailingBuffer = 50
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
         result.textColor = UIColor.ojo_grey
@@ -30,6 +31,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
 
     var artistView: UILabel = {
         let result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
+        result.trailingBuffer = 50
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT, size: 22)
         result.textColor = UIColor.ojo_grey
