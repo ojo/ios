@@ -36,7 +36,6 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
 
     let playbackToggle: MusicPlaybackButton = {
         let result = MusicPlaybackButton()
-        result.stopped()
         return result
     }()
     
@@ -105,14 +104,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }
     
     func didChange(state: PlaybackState) {
-        switch state {
-        case .buffering:
-            playbackToggle.buffering()
-        case .started:
-            playbackToggle.playing()
-        case .stopped:
-            playbackToggle.stopped()
-        }
+        playbackToggle.playbackState = state
     }
     
     func incoming(info: NowPlayingInfo) {

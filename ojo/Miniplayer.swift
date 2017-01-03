@@ -20,6 +20,11 @@ class Miniplayer: PlaybackDelegate {
     private var barPresenter: UIViewController?
     
     private var nowPlaying: NowPlayingViewController
+    
+    private var playbackToggle: MusicPlaybackButton = {
+        let result = MusicPlaybackButton()
+        return result
+    }()
 
     init(_ barPresenter: UIViewController,
          playbackManager: PlaybackManager) {
@@ -27,15 +32,22 @@ class Miniplayer: PlaybackDelegate {
         self.playbackManager = playbackManager
         self.nowPlaying = NowPlayingViewController(playbackManager: playbackManager)
         self.playbackManager.addDelegate(self)
+        
+        self.barPresenter?.popupBar.marqueeScrollEnabled = true
+        
+        playbackToggle.addTarget(self,
+                                 action: #selector(toggled),
+                                 for: .touchUpInside)
+        let buttonItem = UIBarButtonItem(customView: playbackToggle)
+        self.nowPlaying.popupItem.rightBarButtonItems = [buttonItem]
     }
     
     func didChange(state: PlaybackState) {
+        playbackToggle.playbackState = state
         switch state {
         case .buffering:
-            // TODO(btc): update playback toggle to reflect buffering state
             showMiniplayer()
         case .started:
-            // TODO(btc): update playback toggle to pause/stop button
             showMiniplayer()
         case .stopped: break
         }
@@ -65,6 +77,16 @@ class Miniplayer: PlaybackDelegate {
                                           animated: true,
                                           completion: nil)
             // TODO: fetch nowPlayingInfo
+        }
+    }
+    
+    @objc func toggled() {
+        switch playbackToggle.playbackState {
+        case .stopped:
+            playbackManager.play()
+        case .started:
+            playbackManager.stop()
+        case .buffering: break
         }
     }
 }
