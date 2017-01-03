@@ -38,6 +38,7 @@ class UITabBarRootViewController: UITabBarController {
         newsVC.tabBarItem = UITabBarItem(title: "News",
                                           image: newsImage,
                                           selectedImage: newsImage)
+        newsVC.tabBarItem.badgeValue = "4"
         let eventsVC = DiscoverEventsViewController()
         let eventsImage = UIImage(named: "events")
         eventsVC.tabBarItem = UITabBarItem(title: "Discover Events",
