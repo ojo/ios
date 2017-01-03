@@ -14,7 +14,7 @@ extension UIImage {
         defer { UIGraphicsEndImageContext() }
         guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        ctx.setFillColor(UIColor.green.cgColor)
+        ctx.setFillColor(color.cgColor)
         ctx.fill(rect)
         if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
             return image
