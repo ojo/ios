@@ -12,9 +12,10 @@ extension UIImage {
     static func from(color: UIColor, withSize size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)
         defer { UIGraphicsEndImageContext() }
+        guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        color.setFill()
-        UIRectFill(rect)
+        ctx.setFillColor(UIColor.green.cgColor)
+        ctx.fill(rect)
         if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
             return image
         }
