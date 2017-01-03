@@ -147,7 +147,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                     return
                 }
                 delegates.forEach() { $0.incoming(info: nowPlayingInfo, forStation: s) }
-            case "playbackLikelyToKeepUp": break
+            case "playbackLikelyToKeepUp":
+                delegates.forEach() { $0.didChange(state: .started) }
             default: break
             }
         default: break

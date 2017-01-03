@@ -13,6 +13,8 @@ final class PlaybackTracker: PlaybackDelegate {
     private let analytics: Analytics
     private let playbackManager: PlaybackManager
     
+    private var lastPlaybackState: PlaybackState?
+    
     private init(analytics: Analytics, playbackManager: PlaybackManager) {
         self.analytics = analytics
         self.playbackManager = playbackManager
@@ -32,12 +34,14 @@ final class PlaybackTracker: PlaybackDelegate {
         // TODO decide what to do about this event. We only care about buffering
         // if previous state was .started
         case .started:
-            if let station = playbackManager.station {
+            if let station = playbackManager.station,
+                lastPlaybackState != .started {
                 analytics.trackListeningSessionBegin(station: station)
             }
         case .stopped:
             analytics.trackListeningSessionEnd()
             // we need to be sure we actually catch the end session notification
         }
+        lastPlaybackState = state
     }
 }
