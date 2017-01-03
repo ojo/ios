@@ -120,7 +120,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
             artistView.text = info.album
         } else {
             titleView.text = info.title
-            artistView.text = info.artist
+            artistView.text = "\(info.artist) - \(info.album)"
         }
         if info.artwork.isPresent(), let c = info.artwork.dominantUIColor() {
             let s = imageView.frame.size

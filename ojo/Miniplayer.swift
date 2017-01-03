@@ -60,7 +60,7 @@ class Miniplayer: PlaybackDelegate {
             nowPlaying.popupItem.subtitle = info.album
         } else {
             nowPlaying.popupItem.title = info.title
-            nowPlaying.popupItem.subtitle = info.artist
+            nowPlaying.popupItem.subtitle = "\(info.artist) - \(info.album)"
         }
         if info.artwork.isPresent(), let color = info.artwork.dominantUIColor() {
             let size = CGSize(width: 100, height: 100) // an educated guess.
