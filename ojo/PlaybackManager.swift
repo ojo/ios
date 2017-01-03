@@ -63,6 +63,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                 return
             }
             
+            delegates.forEach() { $0.didChange(state: .stopped) }
+            
             // station changed (old value might have been nil)
             
             let nextItem = AVPlayerItem(url: station.url)
@@ -145,8 +147,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                     return
                 }
                 delegates.forEach() { $0.incoming(info: nowPlayingInfo, forStation: s) }
-            case "playbackLikelyToKeepUp":
-                delegates.forEach() { $0.didChange(state: .started) }
+            case "playbackLikelyToKeepUp": break
             default: break
             }
         default: break

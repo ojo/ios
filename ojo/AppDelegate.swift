@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Mixpanel
 
 let PLAYBACK_MANAGER = PlaybackManager()
 
@@ -23,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         FIRApp.configure() // for real-time NowPlayingInfo updates
+        
+        let mp = Mixpanel.initialize(token: "94b5a087efd368348e9765150a465858")
+        let analytics = Analytics(client: mp)
+        PlaybackTracker.bind(analytics: analytics,
+                             playbackManager: PLAYBACK_MANAGER)
+        
 
         return true
     }
