@@ -6,6 +6,7 @@
 //  Copyright © 2016 TTRN. All rights reserved.
 //
 
+import AlamofireImage
 import Foundation
 import UIKit
 
@@ -124,7 +125,12 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         }
         if info.artwork.isPresent(), let c = info.artwork.dominantUIColor() {
             let s = imageView.frame.size
-            imageView.image = UIImage.from(color: c, withSize: s)
+            let placeholder = UIImage.from(color: c, withSize: s)
+            guard let str = info.artwork.url500, let url = URL(string: str) else {
+                imageView.image = playbackManager?.station?.image
+                return
+            }
+            imageView.af_setImage(withURL: url, placeholderImage: placeholder)
         } else {
             imageView.image = playbackManager?.station?.image
         }

@@ -62,10 +62,19 @@ class Miniplayer: PlaybackDelegate {
             nowPlaying.popupItem.title = info.title
             nowPlaying.popupItem.subtitle = "\(info.artist) - \(info.album)"
         }
-        if info.artwork.isPresent(), let color = info.artwork.dominantUIColor() {
+        if info.artwork.isPresent(),
+            let color = info.artwork.dominantUIColor(),
+            let url = info.artwork.url100 {
+            
             let size = CGSize(width: 100, height: 100) // an educated guess.
             let colorImage = UIImage.from(color: color, withSize: size)
             nowPlaying.popupItem.image = colorImage
+            
+            fetchImage(url).then { image in
+                self.nowPlaying.popupItem.image = image
+            }.catch { _ in
+                self.nowPlaying.popupItem.image = station.image
+            }
         } else {
             nowPlaying.popupItem.image = playbackManager.station?.image
         }
@@ -76,7 +85,7 @@ class Miniplayer: PlaybackDelegate {
             barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
                                           animated: true,
                                           completion: nil)
-            // TODO: fetch nowPlayingInfo
+            // TODO: fetch nowPlayingInfo?
         }
     }
     

@@ -23,6 +23,7 @@ struct NowPlayingInfo {
     // see: https://github.com/thoughtbot/Argo/blob/master/Documentation/Curry-Limitations.md
     struct Artwork {
         let dominantColor: String?
+        let url100: String?
         let url500: String?
         
         func isPresent() -> Bool {
@@ -46,6 +47,7 @@ extension NowPlayingInfo.Artwork: Decodable {
     static func decode(_ j: JSON) -> Decoded<NowPlayingInfo.Artwork> {
         return curry(self.init)
             <^> j <|? "artwork-dominant-color"
+            <*> j <|? "artwork-url-100"
             <*> j <|? "artwork-url-500"
     }
 }
