@@ -9,8 +9,9 @@
 import MediaPlayer
 
 class InfoCenterDelegate: PlaybackDelegate {
-    func incoming(info: NowPlayingInfo, forStation station: Station) {
-        
+    
+    func incoming(info: NowPlayingInfo?, forStation station: Station) {
+        guard let info = info else { return }
         var image: UIImage = station.image // default
         
         if info.artwork.isPresent(),
@@ -36,8 +37,9 @@ class InfoCenterDelegate: PlaybackDelegate {
     func didChange(state: PlaybackState) {
     }
     
-    private func updateInfoCenter(withInfo info: NowPlayingInfo,
+    private func updateInfoCenter(withInfo info: NowPlayingInfo?,
                                   andImage image: UIImage) {
+        guard let info = info else { return } // TODO handle empty info state
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
             MPMediaItemPropertyTitle: info.title,
             MPMediaItemPropertyArtist: info.artist,

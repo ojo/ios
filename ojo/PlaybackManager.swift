@@ -29,6 +29,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
 
     private let remoteControlResponder = RemoteControlResponder()
     
+    // |nowPlayingInfo| is nil if station is nil
     private(set) var nowPlayingInfo: NowPlayingInfo?
     
     var station: Station? = nil {
@@ -49,7 +50,10 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             }
         }
         didSet {
-            guard let station = station else { return }
+            guard let station = station else {
+                nowPlayingInfo = nil
+                return
+            }
             
             // because of the above guard, we know that station is now present.
             // if the old value of the optional was also a station, and they 
@@ -58,6 +62,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             if let oldValue = oldValue, station.isEqual(to: oldValue) {
                 return
             }
+            
+            // station changed (old value might have been nil)
             
             let nextItem = AVPlayerItem(url: station.url)
             
@@ -134,6 +140,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             switch keyPath {
             case "playbackBufferEmpty":
                 delegates.forEach() { $0.didChange(state: .buffering) }
+                guard let s = station else {
+                    print("station should not be nil in buffering state")
+                    return
+                }
+                delegates.forEach() { $0.incoming(info: nowPlayingInfo, forStation: s) }
             case "playbackLikelyToKeepUp":
                 delegates.forEach() { $0.didChange(state: .started) }
             default: break
@@ -142,7 +153,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         }
     }
     
-    private func incomingNowPlayingInfo(info: NowPlayingInfo, future: Future<UIImage>) {
+    private func incomingNowPlayingInfo(info: NowPlayingInfo) {
         
         // only proceed if there is a current station
         guard let station = station else { return }

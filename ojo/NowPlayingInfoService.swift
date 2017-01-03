@@ -12,8 +12,7 @@ import Argo
 
 class NowPlayingInfoService {
 
-    // TODO: remove future from callback
-    typealias Callback = (NowPlayingInfo, Future<UIImage>) -> Void
+    typealias Callback = (NowPlayingInfo) -> Void
 
     let API_URL = "https://api.ojo.world/api/v0/stations/now-playing"
 
@@ -26,8 +25,7 @@ class NowPlayingInfoService {
         Alamofire.request(API_URL, parameters: p).responseJSON { response in
             if let json: Any = response.result.value {
                 if let info = NowPlayingInfoService.AnyToInfo(json) {
-                    let f = Future<UIImage>()
-                    callback(info, f)
+                    callback(info)
                 }
             }
         }
@@ -43,6 +41,7 @@ class NowPlayingInfoService {
     }
 
     private static func AnyToInfo(_ data: Any) -> NowPlayingInfo? {
+        // data is JSONAPI formatted, so extract first. then, decode.
         let decoded: Decoded<NowPlayingInfo> = JSON(data) <| ["data", "attributes"]
         if let info = decoded.value {
             return info

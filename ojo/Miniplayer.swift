@@ -53,7 +53,8 @@ class Miniplayer: PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo, forStation station: Station) {
+    func incoming(info: NowPlayingInfo?, forStation station: Station) {
+        guard let info = info else { return }
         if info.title == "" {
             // then the server hasn't been fixed yet.
             nowPlaying.popupItem.title = info.artist
@@ -85,7 +86,6 @@ class Miniplayer: PlaybackDelegate {
             barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
                                           animated: true,
                                           completion: nil)
-            // TODO: fetch nowPlayingInfo?
         }
     }
     

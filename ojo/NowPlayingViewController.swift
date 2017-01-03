@@ -19,19 +19,21 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     }()
     
     var titleView: UILabel = {
+        // TODO var result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
         var result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
-        result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959 TODO extract when you use it enough throughout the app to share it and give it a name
+        result.textColor = UIColor.ojo_grey
         result.textAlignment = NSTextAlignment.center
         return result
     }()
 
     var artistView: UILabel = {
+        // TODO var result = MarqueeLabel(frame: CGRect.zero, rate: 30, andFadeLength: 100)!
         var result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT, size: 22)
-        result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959 TODO extract when you use it enough throughout the app to share it and give it a name
+        result.textColor = UIColor.ojo_grey
         result.textAlignment = NSTextAlignment.center
         return result
     }()
@@ -110,7 +112,8 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         playbackToggle.playbackState = state
     }
     
-    func incoming(info: NowPlayingInfo, forStation station: Station) {
+    func incoming(info: NowPlayingInfo?, forStation station: Station) {
+        guard let info = info else { return } // TODO handle nil case
         
         // BUG: If user taps station and immediately taps the Miniplayer to open
         // this screen, the screen appears without any content. What in the world
