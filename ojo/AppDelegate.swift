@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 let PLAYBACK_MANAGER = PlaybackManager()
 
@@ -20,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
-        
+
+        FIRApp.configure() // for real-time NowPlayingInfo updates
+
         return true
     }
 

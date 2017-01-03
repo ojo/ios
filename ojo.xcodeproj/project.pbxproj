@@ -25,6 +25,9 @@
 		6B801E3F1E1B6E7B002C96F7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B801E3E1E1B6E7B002C96F7 /* AlamofireImage.framework */; };
 		6B801E411E1B74B0002C96F7 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B801E401E1B74B0002C96F7 /* PromiseKit.framework */; };
 		6B801E451E1B7A16002C96F7 /* Promise+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B801E441E1B7A16002C96F7 /* Promise+UIImage.swift */; };
+		6B8ED9631E1B8A5500C49C45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B8ED9621E1B8A5500C49C45 /* GoogleService-Info.plist */; };
+		6B8ED9641E1B8A5500C49C45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B8ED9621E1B8A5500C49C45 /* GoogleService-Info.plist */; };
+		6B8ED9651E1B8A5500C49C45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B8ED9621E1B8A5500C49C45 /* GoogleService-Info.plist */; };
 		6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */; };
 		6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */; };
 		6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */; };
@@ -99,6 +102,7 @@
 		6B801E3E1E1B6E7B002C96F7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = SOURCE_ROOT; };
 		6B801E401E1B74B0002C96F7 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = SOURCE_ROOT; };
 		6B801E441E1B7A16002C96F7 /* Promise+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+UIImage.swift"; sourceTree = "<group>"; };
+		6B8ED9621E1B8A5500C49C45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTopItemLabel.swift; sourceTree = "<group>"; };
 		6BA6B34E1E15CC960033130E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OJORoundedImageView.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 				6BA6B34D1E15CC960033130E /* LaunchScreen.storyboard */,
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
 				6B71130E1E105AD400C3F33C /* Info.plist */,
+				6B8ED9621E1B8A5500C49C45 /* GoogleService-Info.plist */,
 			);
 			path = ojo;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			files = (
 				6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */,
 				6BA6B34F1E15CC960033130E /* LaunchScreen.storyboard in Resources */,
+				6B8ED9631E1B8A5500C49C45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8ED9641E1B8A5500C49C45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +494,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8ED9651E1B8A5500C49C45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

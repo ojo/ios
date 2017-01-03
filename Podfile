@@ -5,6 +5,8 @@ target 'ojo' do
   use_frameworks!
 
   # Pods for ojo
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
   target 'ojoTests' do
     inherit! :search_paths
