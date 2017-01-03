@@ -53,7 +53,7 @@ class Miniplayer: PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo) {
+    func incoming(info: NowPlayingInfo, forStation station: Station) {
         if info.title == "" {
             // then the server hasn't been fixed yet.
             nowPlaying.popupItem.title = info.artist

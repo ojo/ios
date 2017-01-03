@@ -68,8 +68,9 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let info = playbackManager?.nowPlayingInfo {
-            incoming(info: info)
+        if let info = playbackManager?.nowPlayingInfo,
+            let station = playbackManager?.station {
+            incoming(info: info, forStation: station)
         }
     }
     
@@ -107,7 +108,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         playbackToggle.playbackState = state
     }
     
-    func incoming(info: NowPlayingInfo) {
+    func incoming(info: NowPlayingInfo, forStation station: Station) {
         
         // BUG: If user taps station and immediately taps the Miniplayer to open
         // this screen, the screen appears without any content. What in the world

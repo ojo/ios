@@ -9,7 +9,6 @@
 import AVFoundation
 import Foundation
 import UIKit
-import MediaPlayer
 
 // NB(btc): not thread-safe.
 class PlaybackManager : NSObject, RemoteControlDelegate {
@@ -99,6 +98,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                            forKeyPath: "rate",
                            options: .new,
                            context: nil)
+        
+        delegates.append(InfoCenterDelegate())
     }
     
     func addDelegate(_ d: PlaybackDelegate) {
@@ -152,16 +153,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         nowPlayingInfo = info
         
         for d in delegates {
-            d.incoming(info: info)
+            d.incoming(info: info, forStation: station)
         }
-        
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [
-            MPMediaItemPropertyTitle: info.title,
-            MPMediaItemPropertyArtist: info.artist,
-            MPMediaItemPropertyAlbumTitle: info.album,
-            MPMediaItemPropertyArtwork: MPMediaItemArtwork(image: station.image),
-        ]
-        // TODO asynchronously fetch artwork
     }
     
     @objc private func handleInterruption(n: NSNotification) {
