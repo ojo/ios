@@ -1,8 +1,11 @@
-# OJO for iOS™
+# OJO for iOS
 
 How to build the project:
 
+1. run `bundle install`
+1. run `bundle exec pod install`
 1. run `carthage update`
-2. run `pod install`
-3. open `ojo.xcworkspace`
-4. Build!
+1. open `ojo.xcworkspace`
+1. Build!
+
+or simply run `make dependencies` and open the workspace
