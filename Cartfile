@@ -1,6 +1,6 @@
 github "Alamofire/Alamofire" ~> 4.0
 github "Alamofire/AlamofireImage" ~> 3.2
-github "LeoNatan/LNPopupController" "5a6bd3038af53989f468609ce3670d10647e9cea"
+github "LeoNatan/LNPopupController" "dede96cd0475a5681953cac369ed56d6c836529a"
 github "mxcl/PromiseKit"
 github "thii/SwiftHEXColors"
 github "thoughtbot/Argo"
