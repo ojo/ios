@@ -15,7 +15,7 @@ import SwiftyJSON
 class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
 
     typealias Callback = (NowPlayingInfo) -> Void
-    
+
     // maps from station.tag to callback function
     private var callbacks: [String:Callback] = [String:Callback]()
 
@@ -43,48 +43,48 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         FIRMessaging.messaging().unsubscribe(fromTopic: "/topics/now-playing-\(station.tag)")
         callbacks[station.tag] = nil
     }
-    
+
     func configure() {
-        
+
         // SET UP FIREBASE. IT'S A TEDIOUS PROCESS
-        
+
         // 1
         FIRApp.configure()
-        
+
         // 2. For iOS 10 data message (sent via FCM)
         FIRMessaging.messaging().remoteMessageDelegate = INFO_SERVICE
-        
+
         // Add observer for InstanceID token refresh callback.
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didRefresh),
                                                name: .firInstanceIDTokenRefresh,
                                                object: nil)
-    
+
     }
-    
+
     @objc private func didRefresh(_ notification: Notification) {
         connectToFCM()
     }
-    
+
     func applicationDidBecomeActive() {
         connectToFCM()
     }
-    
+
     func applicationWillTerminate() {
         // TODO: reconsider whether we should disconnect when we get backgrounded
         // we still want to update art as long as we're playing
         FIRMessaging.messaging().disconnect()
     }
-    
+
     private func connectToFCM() {
         // Won't connect since there is no token
         guard FIRInstanceID.instanceID().token() != nil else {
             return;
         }
-        
+
         // Disconnect previous FCM connection if it exists.
         FIRMessaging.messaging().disconnect()
-        
+
         FIRMessaging.messaging().connect { (error) in
             if error != nil {
                 print("Unable to connect with FCM. \(error)")
@@ -93,22 +93,12 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
             }
         }
     }
-    
-    
+
+
     // iOS <= 9 data messages
+    // TODO
     func didReceiveRemoteNotification(userInfo: [AnyHashable : Any]) {
-        print("didReceiveRemoteNotification")
-        print(userInfo)
-        let decoded: Decoded<NowPlayingInfo> = JSON(userInfo) <| "data"
-        guard let info = decoded.value else { return }
-        guard let cb = callbacks[info.stationTag] else { return }
-        cb(info)
-        print("calledback")
-    }
-    
-    /// The callback to handle data message received via FCM for devices running iOS 10 or above.
-    public func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
-        guard let value: Any = remoteMessage.appData["data"] else { return }
+        guard let value: Any = userInfo["data"] else { return }
         guard let str = value as? String else { return }
         guard let data = str.data(using: .utf8) else { return }
         guard let json = try? JSONSerialization.jsonObject(with: data) else { return }
@@ -116,6 +106,11 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         guard let info = decoded.value else { return }
         guard let cb = callbacks[info.stationTag] else { return }
         cb(info)
+    }
+
+    /// The callback to handle data message received via FCM for devices running iOS 10 or above.
+    public func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
+        didReceiveRemoteNotification(userInfo: remoteMessage.appData)
     }
 
     private static func AnyJsonApiToInfo(_ data: Any) -> NowPlayingInfo? {
