@@ -25,7 +25,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     
     private var delegates = [PlaybackDelegate]()
     
-    private let infoService = NowPlayingInfoService()
+    private var infoService = NowPlayingInfoService()
 
     private let remoteControlResponder = RemoteControlResponder()
     
@@ -81,6 +81,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                                   callback: incomingNowPlayingInfo)
             player.replaceCurrentItem(with: nextItem)
         }
+    }
+    
+    convenience init(infoService: NowPlayingInfoService) {
+        self.init()
+        self.infoService = infoService
     }
     
     override init() {
