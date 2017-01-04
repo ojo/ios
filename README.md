@@ -4,7 +4,7 @@ How to build the project:
 
 1. run `bundle install`
 1. run `bundle exec pod install`
-1. run `carthage update`
+1. run `carthage update --no-use-binaries`
 1. open `ojo.xcworkspace`
 1. Build!
 
