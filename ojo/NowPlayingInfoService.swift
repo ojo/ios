@@ -70,7 +70,7 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         connectToFCM()
     }
     
-    func applicationDidEnterBackground() {
+    func applicationWillTerminate() {
         // TODO: reconsider whether we should disconnect when we get backgrounded
         // we still want to update art as long as we're playing
         FIRMessaging.messaging().disconnect()
