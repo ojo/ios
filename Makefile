@@ -3,7 +3,7 @@ all:
 dependencies: carthage cocoapods
 
 carthage:
-	carthage update
+	carthage bootstrap --no-use-binaries
 
 cocoapods: bundler
 	bundle exec pod install --verbose
