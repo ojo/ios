@@ -3,7 +3,7 @@
 How to build the project:
 
 1. run `pod install`
-1. run `carthage bootstrap --no-use-binaries`. It's important to include the flag `--no-use-binaries`. Be warned. Without that flag, some libraries use binaries and the binaries will be incompatible with the code that you compile locally!
+1. run `carthage bootstrap --no-use-binaries`. It's important to include the flag `--no-use-binaries`. Be warned. Without that flag, some libraries will use/install binaries and the binaries will be incompatible with the code that you compile locally!
 1. open `ojo.xcworkspace`
 1. Build!
 
