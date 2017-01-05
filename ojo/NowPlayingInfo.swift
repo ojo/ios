@@ -93,14 +93,6 @@ extension NowPlayingInfo {
     }
 }
 
-func either<T: Decodable>(_ j: JSON, _ field: String, _ alt: String) -> Decoded<T> where T == T.DecodedType {
-    return j <| field <|> j <| alt
-}
-
-func eitherO<T: Decodable>(_ j: JSON, _ field: String, _ alt: String) -> Decoded<T?> where T == T.DecodedType {
-    return  j <|? field <|> j <|? alt
-}
-
 extension NowPlayingInfo: Decodable {
     static func decode(_ j: JSON) -> Decoded<NowPlayingInfo> {
         return curry(self.init)
