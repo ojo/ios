@@ -13,7 +13,7 @@ import UIKit
 // NB(btc): not thread-safe.
 class PlaybackManager : NSObject, RemoteControlDelegate {
     
-    // NB(btc): subclasses NSObject in order to perform KVO on player
+    // NB(btc): svarlasses NSObject in order to perform KVO on player
     
     private let PLAYER_ITEM_KEYPATHS = [
         "playbackBufferEmpty",
@@ -63,7 +63,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                 return
             }
             
-            delegates.forEach() { $0.didChange(state: .stopped) }
+            notify(.stopped)
             
             // station changed (old value might have been nil)
             
@@ -139,21 +139,16 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             case "status": break
             case "rate":
                 let newState: PlaybackState = player.rate == 0 ? .stopped : .started
-                delegates.forEach { $0.didChange(state: newState) }
+                notify(newState)
             default: break
             }
         case is AVPlayerItem:
             guard let keyPath = keyPath else { return }
             switch keyPath {
             case "playbackBufferEmpty":
-                delegates.forEach() { $0.didChange(state: .buffering) }
-                guard let s = station else {
-                    print("station should not be nil in buffering state")
-                    return
-                }
-                delegates.forEach() { $0.incoming(info: nowPlayingInfo, forStation: s) }
+                notify(.buffering)
             case "playbackLikelyToKeepUp":
-                delegates.forEach() { $0.didChange(state: .started) }
+                notify(.started)
             default: break
             }
         default: break
@@ -206,6 +201,25 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             stop()
         default: break
             // TODO(btc): handle next, prev
+        }
+    }
+    
+    private func notify(_ state: PlaybackState) {
+        switch state {
+        case .buffering:
+            delegates.forEach() { $0.didChange(state: .buffering) }
+            guard let s = station else {
+                print("station should not be nil in buffering state")
+                return
+            }
+            // TODO perhaps this needs to be moved to the clients where it'll be
+            // their responsibility to get the information they need. this feels
+            // weird to do here.
+            delegates.forEach() { $0.incoming(info: nowPlayingInfo, forStation: s) }
+        case .started:
+            delegates.forEach() { $0.didChange(state: .started) }
+        case .stopped:
+            delegates.forEach() { $0.didChange(state: .stopped) }
         }
     }
 }
