@@ -90,7 +90,10 @@ class Miniplayer: PlaybackDelegate {
         }
     }
     
-    @objc func toggled() {
+    @objc private func toggled() {
+        // It is a UX decision to always respect the appearance of the toggle 
+        // even if it goes out of sync with the internal state. This way, the user
+        // always has control of the playback 
         switch playbackToggle.playbackState {
         case .stopped:
             playbackManager.play()
