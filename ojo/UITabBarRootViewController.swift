@@ -44,7 +44,16 @@ class UITabBarRootViewController: UITabBarController {
         eventsVC.tabBarItem = UITabBarItem(title: "Discover Events",
                                          image: eventsImage,
                                          selectedImage: eventsImage)
-        viewControllers = [newsVC, radioVC, eventsVC]
-        selectedViewController = radioVC
+        switch RELEASE_PHASE {
+        case 1:
+            viewControllers = [radioVC]
+        case 2:
+            viewControllers = [newsVC, radioVC]
+        case 3:
+            viewControllers = [newsVC, radioVC, eventsVC]
+        default:
+            viewControllers = [radioVC]
+        }
+        selectedViewController = radioVC // always
     }
 }

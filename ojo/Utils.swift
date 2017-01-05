@@ -14,6 +14,8 @@ let DEFAULT_PLACEHOLDER_TEXT = "REPLACE ME"
 let DEFAULT_FONT = "HelveticaNeue"
 let DEFAULT_FONT_BOLD = "HelveticaNeue-Bold"
 
+let RELEASE_PHASE: UInt = 1
+
 extension UIColor {
     
     // you can use http://uicolor.xyz/#/hex-to-ui to convert hex to UIColor!
