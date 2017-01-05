@@ -30,7 +30,12 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     private let remoteControlResponder = RemoteControlResponder()
     
     // |nowPlayingInfo| is nil if station is nil
-    private(set) var nowPlayingInfo: NowPlayingInfo?
+    private(set) var nowPlayingInfo: NowPlayingInfo? = nil {
+        didSet {
+            guard let s = station else { return }
+            delegates.forEach { $0.incoming(info: nowPlayingInfo, forStation: s) }
+        }
+    }
     
     private(set) var state: PlaybackState = .stopped {
         didSet {
@@ -181,12 +186,25 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         guard let station = station else { return }
         // ignore stale data
         guard info.stationTag == station.tag else { return }
+        // make sure this info is current
+        guard !info.expired() else { return }
         
         // set the value BEFORE notifying delegates
         nowPlayingInfo = info
         
-        for d in delegates {
-            d.incoming(info: info, forStation: station)
+        // invalidate info if it's still around after expiry!
+        guard info.expires() else { return }
+        info.onExpiry().then { _ -> Void in
+            
+            // if there's no currentInfo, there's no point in doing anything else
+            guard let currentInfo = self.nowPlayingInfo else { return }
+            
+            if currentInfo == info {
+                // then it's time to say goodbye
+                self.nowPlayingInfo = nil
+            }
+        }.catch { _ in
+            print("tried to listen for expiry on a value that doesn't expire")
         }
     }
     

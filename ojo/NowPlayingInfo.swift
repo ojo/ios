@@ -10,7 +10,12 @@ import Argo
 import Curry
 import Runes
 import UIKit
+import PromiseKit
 import SwiftHEXColors
+
+// NB: Artwork...
+// is embedded as another struct because of a limitation in the curry lib
+// see: https://github.com/thoughtbot/Argo/blob/master/Documentation/Curry-Limitations.md
 
 struct NowPlayingInfo {
     let title: String
@@ -18,10 +23,13 @@ struct NowPlayingInfo {
     let album: String
     let stationTag: String
     let mediaType: String
+    
+    let startedAt: Int?
+    let lengthInSecs: Int?
+    
     let artwork: Artwork
 
-    // decomposed into another struct because of a limitation in the curry lib
-    // see: https://github.com/thoughtbot/Argo/blob/master/Documentation/Curry-Limitations.md
+    
     struct Artwork {
         let dominantColor: String?
         let url100: String?
@@ -29,6 +37,58 @@ struct NowPlayingInfo {
         
         func isPresent() -> Bool {
             return dominantColor != nil && url500 != nil
+        }
+    }
+}
+
+extension NowPlayingInfo {
+    static func ==(lhs: NowPlayingInfo, rhs: NowPlayingInfo) -> Bool {
+        
+        // In practice, we really don't need to check every field to know that
+        // two infos are the same. Still, it's good to be safe. Consider this
+        // safe. Even as we add new fields, it's probably not necessary to update
+        // this every time.
+        return lhs.title == rhs.title &&
+            lhs.artist == rhs.artist &&
+            lhs.album == rhs.album &&
+            lhs.stationTag == rhs.stationTag &&
+            lhs.mediaType == rhs.mediaType &&
+            lhs.startedAt == rhs.startedAt &&
+            lhs.lengthInSecs == rhs.lengthInSecs
+    }
+}
+
+extension NowPlayingInfo {
+    
+    enum Err: Error {
+        case neverExpires
+    }
+    
+    func expires() -> Bool {
+        return startedAt != nil && lengthInSecs != nil
+    }
+    
+    func expired() -> Bool {
+        guard let e = expiry() else { return false }
+        return e < Date()
+    }
+    
+    func expiry() -> Date? {
+        guard let s = startedAt, let l = lengthInSecs else { return nil }
+        let expiry: Int = s + l + ESTIMATED_STREAM_LATENCY_IN_SECS
+        let ti: TimeInterval = Double(expiry)
+        return Date(timeIntervalSince1970: ti)
+    }
+    
+    func onExpiry() -> Promise<Void> {
+        guard expires() else {
+            return Promise(error: Err.neverExpires)
+        }
+        return Promise { fulfill, reject in
+            guard let e = expiry() else { reject(Err.neverExpires); return }
+            let interval = e.timeIntervalSinceNow
+            let when = DispatchTime.now() + interval
+            DispatchQueue.main.asyncAfter(deadline: when, execute: fulfill)
         }
     }
 }
@@ -49,6 +109,8 @@ extension NowPlayingInfo: Decodable {
             <*> j <| "album"
             <*> either(j, "station-tag", "station_tag")
             <*> either(j, "media-type", "media_type")
+            <*> eitherO(j, "started-at", "started_at")
+            <*> eitherO(j, "length-in-secs", "length_in_secs")
             <*> NowPlayingInfo.Artwork.decode(j)
     }
 }

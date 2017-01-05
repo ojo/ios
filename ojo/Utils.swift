@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+let ESTIMATED_STREAM_LATENCY_IN_SECS = 23
 let DEFAULT_MARGIN_PX = CGFloat(6)
 let DEFAULT_PLACEHOLDER_TEXT = "REPLACE ME"
 let DEFAULT_FONT = "HelveticaNeue"
