@@ -117,15 +117,11 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         // BUG: If user taps station and immediately taps the Miniplayer to open
         // this screen, the screen appears without any content. What in the world
         // is happening?
-
-        if info.title == "" {
-            // then the server hasn't been fixed yet.
-            titleView.text = info.artist
-            artistView.text = info.album
-        } else {
-            titleView.text = info.title
-            artistView.text = "\(info.artist) - \(info.album)"
-        }
+        
+        let p = TwoLinePresenter(forInfo: info)
+        titleView.text = p.title
+        artistView.text = p.subtitle
+        
         if info.artwork.isPresent(), let c = info.artwork.dominantUIColor() {
             let s = imageView.frame.size
             let placeholder = UIImage.from(color: c, withSize: s)

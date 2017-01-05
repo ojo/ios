@@ -103,14 +103,9 @@ extension Miniplayer: PlaybackDelegate {
     }
     
     func incoming(info: NowPlayingInfo, forStation station: Station) {
-        if info.title == "" {
-            // then the server hasn't been fixed yet.
-            nowPlaying.popupItem.title = info.artist
-            nowPlaying.popupItem.subtitle = info.album
-        } else {
-            nowPlaying.popupItem.title = info.title
-            nowPlaying.popupItem.subtitle = "\(info.artist) - \(info.album)"
-        }
+        let p = TwoLinePresenter(forInfo: info)
+        nowPlaying.popupItem.title = p.title
+        nowPlaying.popupItem.subtitle = p.subtitle
         if info.artwork.isPresent(),
             let color = info.artwork.dominantUIColor(),
             let url = info.artwork.url100 {
