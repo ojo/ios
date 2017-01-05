@@ -32,7 +32,7 @@ platform :ios do
     commit_version_bump(xcodeproj: "ojo.xcodeproj", message: "misc: Bump Version")
     changelog = prompt(text: "Changelog: ")
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "ojo") # Build your app - more options available
+    gym(scheme: "ojo")
     pilot(changelog: changelog, distribute_external: true)
     # sh "your_script.sh"
   end
