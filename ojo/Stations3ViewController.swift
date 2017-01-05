@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Reachability
 
 class Stations3ViewController: UIViewController, StationViewDelegate {
 
+    let reachability = Reachability()!
+    
     private var bar: UINavigationBar = {
         let v = UINavigationBar()
         v.items = [ UINavigationItem()]
@@ -23,6 +26,11 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     private let stations: [Station]
 
     private var views: [StationView] = [StationView]()
+    
+    private let offlineView: UIView = {
+        let v = OfflineOverlayView()
+        return v
+    }()
 
     init(stations: [Station]) {
         self.stations = stations
@@ -40,8 +48,14 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        try? reachability.startNotifier()
+        reachability.whenReachable = { _ in self.hideOfflineView() }
+        reachability.whenUnreachable = { _ in self.showOfflineView() }
+        
         view.backgroundColor = UIColor.ojo_defaultVCBackground
         
+        view.addSubview(offlineView) // FIRST ALWAYS
+
         view.addSubview(bar)
 
         views = stations.map() { s in
@@ -64,13 +78,34 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
                            width: parent.width,
                            height: 44)
         
-        let viewH = (parent.height - offsetFromBottom - bar.frame.maxY) / CGFloat(views.count)
+        let stationViewHeight = (parent.height - offsetFromBottom - bar.frame.maxY) / CGFloat(views.count)
 
         for (i, v) in views.enumerated() {
             v.frame = CGRect(x: 0,
-                             y: offsetFromTop + bar.frame.height + CGFloat(i * Int(viewH)), // cast to Int to make sure i == 0 is handled correctly
+                             y: offsetFromTop + bar.frame.height + CGFloat(i * Int(stationViewHeight)), // cast to Int to make sure i == 0 is handled correctly
                              width: parent.width,
-                             height: viewH)
+                             height: stationViewHeight)
         }
+        
+        offlineView.frame = CGRect(x: 0,
+                                   y: bar.frame.maxY,
+                                   width: parent.width,
+                                   height: parent.height)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if reachability.currentReachabilityStatus == .notReachable {
+            showOfflineView()
+        } else {
+            hideOfflineView()
+        }
+    }
+
+    private func showOfflineView() {
+        view.bringSubview(toFront: offlineView)
+    }
+    
+    private func hideOfflineView() {
+        view.sendSubview(toBack: offlineView)
     }
 }

@@ -49,6 +49,8 @@
 		6BF622181E1195FF00A207AC /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItems.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */; };
+		6BF6E0BD1E1DAEFA00D22B73 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */; };
+		6BF6E0C11E1DEEF200D22B73 /* OfflineOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6E0C01E1DEEF200D22B73 /* OfflineOverlayView.swift */; };
 		707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707374C31E11DA950013EDDF /* AppDelegate.swift */; };
 		707374C61E11DB6E0013EDDF /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707374C51E11DB6E0013EDDF /* Stations.swift */; };
 		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
@@ -130,6 +132,8 @@
 		6BF622171E1195FF00A207AC /* NewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverEventsViewController.swift; sourceTree = "<group>"; };
+		6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = SOURCE_ROOT; };
+		6BF6E0C01E1DEEF200D22B73 /* OfflineOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineOverlayView.swift; sourceTree = "<group>"; };
 		707374C31E11DA950013EDDF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		707374C51E11DB6E0013EDDF /* Stations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
@@ -166,6 +170,7 @@
 				6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */,
 				6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */,
 				FA689DD244AAE9F5421F1A74 /* Pods_ojo.framework in Frameworks */,
+				6BF6E0BD1E1DAEFA00D22B73 /* Reachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +267,7 @@
 		6BA6B3511E15E1DF0033130E /* Stations */ = {
 			isa = PBXGroup;
 			children = (
+				6BF6E0C01E1DEEF200D22B73 /* OfflineOverlayView.swift */,
 				70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */,
 				707374C51E11DB6E0013EDDF /* Stations.swift */,
 				6B801E2E1E1A2A49002C96F7 /* StationView.swift */,
@@ -322,8 +328,8 @@
 				6B801E301E1AE470002C96F7 /* PlaybackDelegate.swift */,
 				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
 				6B801E321E1AE47B002C96F7 /* PlaybackState.swift */,
-				6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */,
 				6B494EC01E1765F300A7E7F3 /* RemoteControlDelegate.swift */,
+				6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */,
 			);
 			name = Streaming;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */,
 				6BBD1A701E1C229E00A74B6E /* Mixpanel.framework */,
 				6B801E401E1B74B0002C96F7 /* PromiseKit.framework */,
+				6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */,
 				6BCD64D61E172F65002CA55E /* Runes.framework */,
 				6B801E361E1B1457002C96F7 /* SwiftHEXColors.framework */,
 				6B2791C11E1CA6ED00054A57 /* SwiftyJSON.framework */,
@@ -595,6 +602,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 			);
 			outputPaths = (
 			);
@@ -708,6 +716,7 @@
 				707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */,
 				6B801E391E1B156E002C96F7 /* UIImage+Color.swift in Sources */,
 				6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */,
+				6BF6E0C11E1DEEF200D22B73 /* OfflineOverlayView.swift in Sources */,
 				6BCD64D31E1720A5002CA55E /* NowPlayingInfoService.swift in Sources */,
 				6B173E381E14D42F00F937BA /* StationsViewControllerFactory.swift in Sources */,
 				70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */,
