@@ -337,8 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				6BBD1A721E1C231800A74B6E /* Analytics.swift */,
-				6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */,
 				6BF0E6651E1ED3E500B1258C /* AnalyticsType.swift */,
+				6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
