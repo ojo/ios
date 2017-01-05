@@ -14,3 +14,6 @@ bundler:
 clean:
 	rm -rf Carthage
 	rm -rf Pods
+
+beta:
+	bundle exec fastlane ios beta
