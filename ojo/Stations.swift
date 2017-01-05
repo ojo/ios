@@ -41,4 +41,18 @@ struct Station {
     func isEqual(to station: Station) -> Bool {
         return tag == station.tag
     }
+    
+    func info() -> NowPlayingInfo {
+        return NowPlayingInfo(title: title,
+                              artist: "OJO",
+                              album: "",
+                              stationTag: tag,
+                              mediaType: "Song",
+                              startedAt: nil,
+                              lengthInSecs: nil,
+                              artwork: NowPlayingInfo.Artwork(dominantColor: nil,
+                                                              url100: nil,
+                                                              url500: nil)
+        )
+    }
 }

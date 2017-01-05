@@ -33,7 +33,9 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     private(set) var nowPlayingInfo: NowPlayingInfo? = nil {
         didSet {
             guard let s = station else { return }
-            delegates.forEach { $0.incoming(info: nowPlayingInfo, forStation: s) }
+            delegates.forEach {
+                $0.incoming(info: nowPlayingInfo ?? s.info(), forStation: s)
+            }
         }
     }
     
