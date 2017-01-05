@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Mixpanel
 
 // TODO: consider DI
 let INFO_SERVICE = NowPlayingInfoService()
@@ -27,12 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         INFO_SERVICE.configure()
         application.registerForRemoteNotifications()
         
-        /*
-        let mp = Mixpanel.initialize(token: "94b5a087efd368348e9765150a465858")
-        let analytics = Analytics(client: mp)
+        // TODO: Find an analytics service worth its salt.
+        let analytics = Analytics()
         PlaybackTracker.bind(analytics: analytics,
                              playbackManager: PLAYBACK_MANAGER)
-        */
 
         return true
     }

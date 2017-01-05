@@ -7,17 +7,14 @@
 //
 
 import UIKit
-import Mixpanel
 
 final class Analytics {
     
-    private var client: MixpanelInstance
+    typealias Properties = [AnyHashable:Any]
+    
+    private var client: AnalyticsType?
     
     private var currentStation: Station?
-    
-    init(client: MixpanelInstance) {
-        self.client = client
-    }
     
     func trackListeningSessionBegin(station s: Station) {
         currentStation = s
@@ -34,10 +31,10 @@ final class Analytics {
     }
     
     private func time(event: String) {
-        client.time(event: event)
+        client?.time(event: event)
     }
     
     private func track(event: String, properties: Properties = [:]) {
-        client.track(event: event, properties: properties)
+        client?.track(event: event, properties: properties)
     }
 }
