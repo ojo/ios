@@ -102,8 +102,7 @@ extension Miniplayer: PlaybackDelegate {
         }
     }
     
-    func incoming(info: NowPlayingInfo?, forStation station: Station) {
-        guard let info = info else { return }
+    func incoming(info: NowPlayingInfo, forStation station: Station) {
         if info.title == "" {
             // then the server hasn't been fixed yet.
             nowPlaying.popupItem.title = info.artist

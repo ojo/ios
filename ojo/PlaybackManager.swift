@@ -51,7 +51,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                 // TODO perhaps this needs to be moved to the clients where it'll be
                 // their responsibility to get the information they need. this feels
                 // weird to do here.
-                delegates.forEach() { $0.incoming(info: nowPlayingInfo, forStation: s) }
+                delegates.forEach() { $0.incoming(info: nowPlayingInfo ?? s.info(), forStation: s) }
             case .started:
                 delegates.forEach() { $0.didChange(state: .started) }
             case .stopped:

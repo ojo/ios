@@ -113,9 +113,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         playbackToggle.playbackState = state
     }
     
-    func incoming(info: NowPlayingInfo?, forStation station: Station) {
-        guard let info = info else { return } // TODO handle nil case
-        
+    func incoming(info: NowPlayingInfo, forStation station: Station) {
         // BUG: If user taps station and immediately taps the Miniplayer to open
         // this screen, the screen appears without any content. What in the world
         // is happening?

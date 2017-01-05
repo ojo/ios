@@ -26,7 +26,7 @@ final class PlaybackTracker: PlaybackDelegate {
         playbackManager.addDelegate(proxy)
     }
     
-    func incoming(info: NowPlayingInfo?, forStation station: Station) { /* nop */ }
+    func incoming(info: NowPlayingInfo, forStation station: Station) { /* nop */ }
     
     func didChange(state: PlaybackState) {
         switch state {
