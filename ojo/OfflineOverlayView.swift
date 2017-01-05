@@ -13,7 +13,7 @@ class OfflineOverlayView: UIView {
         // intercepts touch events
         let v = UIButton()
         v.backgroundColor = UIColor.white
-        v.alpha = 0.95
+        v.alpha = 0.85
         return v
 
     }()
