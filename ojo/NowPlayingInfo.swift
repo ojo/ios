@@ -17,6 +17,7 @@ struct NowPlayingInfo {
     let artist: String
     let album: String
     let stationTag: String
+    let mediaType: String
     let artwork: Artwork
 
     // decomposed into another struct because of a limitation in the curry lib
@@ -32,13 +33,22 @@ struct NowPlayingInfo {
     }
 }
 
+func either<T: Decodable>(_ j: JSON, _ field: String, _ alt: String) -> Decoded<T> where T == T.DecodedType {
+    return j <| field <|> j <| alt
+}
+
+func eitherO<T: Decodable>(_ j: JSON, _ field: String, _ alt: String) -> Decoded<T?> where T == T.DecodedType {
+    return  j <|? field <|> j <|? alt
+}
+
 extension NowPlayingInfo: Decodable {
     static func decode(_ j: JSON) -> Decoded<NowPlayingInfo> {
         return curry(self.init)
             <^> j <| "title"
             <*> j <| "artist"
             <*> j <| "album"
-            <*> j <| "station-tag"
+            <*> either(j, "station-tag", "station_tag")
+            <*> either(j, "media-type", "media_type")
             <*> NowPlayingInfo.Artwork.decode(j)
     }
 }
@@ -46,9 +56,9 @@ extension NowPlayingInfo: Decodable {
 extension NowPlayingInfo.Artwork: Decodable {
     static func decode(_ j: JSON) -> Decoded<NowPlayingInfo.Artwork> {
         return curry(self.init)
-            <^> j <|? "artwork-dominant-color"
-            <*> j <|? "artwork-url-100"
-            <*> j <|? "artwork-url-500"
+            <^> eitherO(j, "artwork-dominant-color", "artwork_dominant_color")
+            <*> eitherO(j, "artwork-url-100",  "artwork_url_100")
+            <*> eitherO(j, "artwork-url-500", "artwork_url_500")
     }
 }
 
