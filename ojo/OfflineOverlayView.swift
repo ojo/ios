@@ -20,10 +20,10 @@ class OfflineOverlayView: UIView {
     
     let label: UIView = {
         let v = UILabel()
-        v.text = "No Internet Connection"
+        v.text = "You're Offline"
         v.textColor = UIColor.ojo_grey
         v.backgroundColor = UIColor.clear
-        v.font = UIFont(name: DEFAULT_FONT, size: 22)
+        v.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
         v.textAlignment = .center
         return v
     }()
