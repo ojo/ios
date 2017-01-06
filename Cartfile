@@ -3,6 +3,7 @@ github "Alamofire/AlamofireImage" ~> 3.2
 github "LeoNatan/LNPopupController" "dede96cd0475a5681953cac369ed56d6c836529a"
 github "SwiftyJSON/SwiftyJSON"
 github "ashleymills/Reachability.swift" ~> 3.0
+github "btc/mixpanel-swift" "v1.1.1"
 github "cbpowell/MarqueeLabel" ~> 3.0
 github "mxcl/PromiseKit"
 github "thii/SwiftHEXColors"
