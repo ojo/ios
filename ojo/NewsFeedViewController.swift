@@ -6,27 +6,54 @@
 //  Copyright © 2016 TTRN. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import HidingNavigationBar
 
-class NewsFeedViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // TODO(btc): extract custom button
-        let radio = UIImage(named: "radio")!
-        let button: UIButton = UIButton(type: .custom)
-        button.bounds = CGRect(x: 0, y: 0, width: radio.size.width, height: radio.size.height)
-        button.setImage(radio, for: .normal)
-        button.addTarget(self, action: #selector(radioButtonPressed), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
-        
-        self.view.backgroundColor = UIColor.ojo_defaultVCBackground
+class NewsFeedViewController: UICollectionViewController {
+    
+    let REUSE_IDENT = "NewsFeedCollectionViewCell"
+    
+    var hidingNavBarManager: HidingNavigationBarManager?
+    
+    let newsItems = NEWS_ITEMS
+    
+    init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
-    @objc private func radioButtonPressed() {
-        let vc = StationsViewController(withStations: STATIONS, rect: view.bounds) // FIXME(btc): view.frame?
-        self.navigationController?.pushViewController(vc, animated: true)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        self.view.backgroundColor = UIColor.ojo_grey
+        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
+        
+        if let v = collectionView {
+            hidingNavBarManager = HidingNavigationBarManager(viewController: self,
+                                                             scrollView: v)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        hidingNavBarManager?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hidingNavBarManager?.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hidingNavBarManager?.viewWillDisappear(animated)
+    }
+    
+    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
+        return true
+    }
 }

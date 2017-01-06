@@ -36,6 +36,9 @@ final class PlaybackTracker: PlaybackDelegate {
         case .started:
             if let station = playbackManager.station,
                 lastPlaybackState != .started {
+                
+                // FIXME: if we go from started to buffering to started, the listening
+                // session gets reset.
                 analytics.trackListeningSessionBegin(station: station)
             }
         case .stopped:

@@ -28,12 +28,12 @@ class UITabBarRootViewController: UITabBarController {
     
     func hookUpTheDifferentSectionsOfTheApp() {
         let radioVC = StationsViewControllerFactory.make(withStations: STATIONS,
-                                                         bounds: view.frame)
+                                                         bounds: view.frame) // FIXME: bounds or frame?
         let radioImage = UIImage(named: "radio")
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
                                           image: radioImage,
                                           selectedImage: radioImage)
-        let newsVC = NewsFeedViewController()
+        let newsVC = NewsNavigationController(rootViewController: NewsFeedViewController())
         let newsImage = UIImage(named: "news")
         newsVC.tabBarItem = UITabBarItem(title: "News",
                                           image: newsImage,

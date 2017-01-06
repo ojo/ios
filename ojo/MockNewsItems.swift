@@ -8,7 +8,7 @@
 
 import Foundation
 
-let NewsItems: [NewsItem] = [
+let NEWS_ITEMS: [NewsItem] = [
     NewsItem(
         id: 849,
         category: "News",

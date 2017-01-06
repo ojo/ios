@@ -15,7 +15,7 @@ let DEFAULT_PLACEHOLDER_TEXT = "REPLACE ME"
 let DEFAULT_FONT = "HelveticaNeue"
 let DEFAULT_FONT_BOLD = "HelveticaNeue-Bold"
 
-let RELEASE_PHASE: UInt = 1
+let RELEASE_PHASE: UInt = 2
 
 extension UIColor {
     
