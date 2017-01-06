@@ -106,6 +106,11 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     }
     
     private func hideOfflineView() {
-        view.sendSubview(toBack: offlineView)
+        let fade = { self.offlineView.alpha = 0 }
+        let send = { (_: Bool) -> Void in
+            self.view.sendSubview(toBack: self.offlineView)
+            self.offlineView.alpha = 1
+        }
+        UIView.animate(withDuration: 1, animations: fade, completion: send)
     }
 }
