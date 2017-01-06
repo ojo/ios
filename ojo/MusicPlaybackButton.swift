@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// TODO rename PlaybackToggleButton
 class MusicPlaybackButton : UIButton {
     
     static public let playImage: UIImage = UIImage(named: "play")!
@@ -18,16 +19,14 @@ class MusicPlaybackButton : UIButton {
         didSet {
             switch playbackState {
             case .buffering:
-                imageView?.isHidden = true
-                spinner.startAnimating()
                 bringSubview(toFront: spinner)
+                setImage(nil, for: .normal)
+                spinner.startAnimating()
             case .stopped:
                 spinner.stopAnimating()
-                imageView?.isHidden = false
                 setImage(MusicPlaybackButton.playImage, for: .normal)
             case .started:
                 spinner.stopAnimating()
-                imageView?.isHidden = false
                 setImage(MusicPlaybackButton.pauseImage, for: .normal)
 
             }
@@ -58,6 +57,9 @@ class MusicPlaybackButton : UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        spinner.center = center
+        
+        let scX = bounds.width / 2
+        let scY = bounds.height / 2
+        spinner.center = CGPoint(x: scX, y: scY)
     }
 }
