@@ -12,6 +12,8 @@
 		6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E351E14D40200F937BA /* Stations3ViewController.swift */; };
 		6B173E381E14D42F00F937BA /* StationsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */; };
 		6B2791C21E1CA6ED00054A57 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2791C11E1CA6ED00054A57 /* SwiftyJSON.framework */; };
+		6B2DA50C1E202429007DB67E /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2DA50B1E202429007DB67E /* Mixpanel.framework */; };
+		6B2DA50E1E202469007DB67E /* MixpanelAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DA50D1E202469007DB67E /* MixpanelAnalytics.swift */; };
 		6B494EBF1E175E6700A7E7F3 /* RemoteControlResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */; };
 		6B494EC11E1765F300A7E7F3 /* RemoteControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EC01E1765F300A7E7F3 /* RemoteControlDelegate.swift */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
@@ -94,6 +96,8 @@
 		6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewControllerFactory.swift; sourceTree = "<group>"; };
 		6B2791C01E1C718B00054A57 /* ojo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ojo.entitlements; sourceTree = "<group>"; };
 		6B2791C11E1CA6ED00054A57 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
+		6B2DA50B1E202429007DB67E /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = SOURCE_ROOT; };
+		6B2DA50D1E202469007DB67E /* MixpanelAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelAnalytics.swift; sourceTree = "<group>"; };
 		6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlResponder.swift; sourceTree = "<group>"; };
 		6B494EC01E1765F300A7E7F3 /* RemoteControlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlDelegate.swift; sourceTree = "<group>"; };
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +173,7 @@
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
 				6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */,
 				6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */,
+				6B2DA50C1E202429007DB67E /* Mixpanel.framework in Frameworks */,
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
 				6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */,
 				6B801E411E1B74B0002C96F7 /* PromiseKit.framework in Frameworks */,
@@ -347,6 +352,7 @@
 			children = (
 				6BBD1A721E1C231800A74B6E /* Analytics.swift */,
 				6BF0E6651E1ED3E500B1258C /* AnalyticsType.swift */,
+				6B2DA50D1E202469007DB67E /* MixpanelAnalytics.swift */,
 				6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */,
 			);
 			name = Analytics;
@@ -362,6 +368,7 @@
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
 				6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */,
+				6B2DA50B1E202429007DB67E /* Mixpanel.framework */,
 				6B801E401E1B74B0002C96F7 /* PromiseKit.framework */,
 				6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */,
 				6BCD64D61E172F65002CA55E /* Runes.framework */,
@@ -610,6 +617,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
 			);
 			outputPaths = (
 			);
@@ -744,6 +752,7 @@
 				6B801E331E1AE47B002C96F7 /* PlaybackState.swift in Sources */,
 				6BE8907C1E1A14A6000BB347 /* UITabBarRootViewController.swift in Sources */,
 				6B801E2F1E1A2A49002C96F7 /* StationView.swift in Sources */,
+				6B2DA50E1E202469007DB67E /* MixpanelAnalytics.swift in Sources */,
 				6BB8C2451E18620300F4AEE2 /* Future.swift in Sources */,
 				6B801E311E1AE470002C96F7 /* PlaybackDelegate.swift in Sources */,
 				6B801E451E1B7A16002C96F7 /* Promise+UIImage.swift in Sources */,

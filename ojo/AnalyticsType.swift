@@ -7,6 +7,6 @@
 //
 
 protocol AnalyticsType {
-    func track(event: String, properties: [AnyHashable:Any])
+    func track(event: String?, properties: [String:AnyObject]?)
     func time(event: String)
 }

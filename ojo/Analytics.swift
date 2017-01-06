@@ -10,11 +10,15 @@ import UIKit
 
 final class Analytics {
     
-    typealias Properties = [AnyHashable:Any]
+    typealias Properties = [String:AnyObject]
     
     private var client: AnalyticsType?
     
     private var currentStation: Station?
+    
+    init(client: AnalyticsType) {
+        self.client = client
+    }
     
     func trackListeningSessionBegin(station s: Station) {
         currentStation = s
@@ -23,7 +27,7 @@ final class Analytics {
     
     func trackListeningSessionEnd() {
         if let s = currentStation {
-            let p = ["Station": s.tag]
+            let p: Properties = ["Station": s.tag as AnyObject]
             track(event: "Listening Session", properties: p)
             currentStation = nil
         }

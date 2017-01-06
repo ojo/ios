@@ -6,6 +6,7 @@
 //  Copyright © 2016 TTRN. All rights reserved.
 //
 
+import Mixpanel
 import UIKit
 
 // TODO: consider DI
@@ -26,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         INFO_SERVICE.configure()
         application.registerForRemoteNotifications()
         
-        // TODO: Find an analytics service worth its salt.
-        let analytics = Analytics()
+        let mixpanel = Mixpanel.initialize(token: "94b5a087efd368348e9765150a465858")
+        let analytics = Analytics(client: mixpanel)
         PlaybackTracker.bind(analytics: analytics,
                              playbackManager: PLAYBACK_MANAGER)
 
