@@ -11,8 +11,6 @@ import HidingNavigationBar
 
 class NewsFeedViewController: UICollectionViewController {
     
-    let REUSE_IDENT = "NewsFeedCollectionViewCell"
-    
     var hidingNavBarManager: HidingNavigationBarManager?
     
     let newsItems = NEWS_ITEMS
@@ -31,9 +29,13 @@ class NewsFeedViewController: UICollectionViewController {
         self.view.backgroundColor = UIColor.ojo_grey_59
         navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
         
+        collectionView?.register(NewsFeedCollectionViewCell.self,
+                                 forCellWithReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT)
+        
         if let v = collectionView {
             hidingNavBarManager = HidingNavigationBarManager(viewController: self,
                                                              scrollView: v)
+            v.backgroundColor = UIColor.white
         }
     }
     
@@ -55,5 +57,29 @@ class NewsFeedViewController: UICollectionViewController {
     func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
         hidingNavBarManager?.shouldScrollToTop()
         return true
+    }
+}
+
+extension NewsFeedViewController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        return NEWS_ITEMS.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT,
+            for: indexPath)
+
+        if let c = cell as? NewsFeedCollectionViewCell {
+            c.item = NEWS_ITEMS[indexPath.row]
+            return c
+        }
+        return cell // TODO when does this happen?
     }
 }

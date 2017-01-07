@@ -10,6 +10,11 @@ import Argo
 import Curry
 import Runes
 
+// FIXME: I suppose it's safe to assume the JSON item will always have a photo.
+// If it doesn't, parsing will fail and we'll just ignore it. This is better for
+// the UI. If there isn't a photo, there isn't even a dominant color! That's just
+// shitty to look at.
+
 struct NewsItem {
     let id: Int
     let category: String

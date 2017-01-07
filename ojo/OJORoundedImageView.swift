@@ -16,7 +16,7 @@ class OJORoundedImageView: UIImageView {
     }
     
     func setup() {
-        layer.cornerRadius = 6
+        layer.cornerRadius = DEFAULT_CORNER_RADIUS
         clipsToBounds = true
         layer.borderColor = UIColor(red:0.59, green:0.59, blue:0.59, alpha:1.0).cgColor
         layer.borderWidth = 1

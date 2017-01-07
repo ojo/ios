@@ -70,7 +70,7 @@ class StationsCollectionViewController : UICollectionViewController {
 
 
 // MARK: - UICollectionViewDataSource
-extension StationsViewController {
+extension StationsCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -84,7 +84,6 @@ extension StationsViewController {
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
         
-        // FIXME(btc): Is it a bug to hardcode the Type here when the cell's class could
         if let radioCell = cell as? RadioStationCollectionViewCell {
             radioCell.station = stations[indexPath.row]
             return radioCell

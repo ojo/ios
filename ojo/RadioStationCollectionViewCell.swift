@@ -18,7 +18,7 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
 
     var thumbnail: UIImageView = {
         let result = UIImageView()
-        result.layer.cornerRadius = 6
+        result.layer.cornerRadius = DEFAULT_CORNER_RADIUS
         result.clipsToBounds = true
         result.layer.borderColor = UIColor(red:0.59, green:0.59, blue:0.59, alpha:1.0).cgColor
         result.layer.borderWidth = 1
