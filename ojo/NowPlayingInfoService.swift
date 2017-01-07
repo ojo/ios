@@ -52,7 +52,7 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         FIRApp.configure()
 
         // 2. For iOS 10 data message (sent via FCM)
-        FIRMessaging.messaging().remoteMessageDelegate = INFO_SERVICE
+        FIRMessaging.messaging().remoteMessageDelegate = self
 
         // Add observer for InstanceID token refresh callback.
         NotificationCenter.default.addObserver(self,
