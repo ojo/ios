@@ -62,7 +62,7 @@
 		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
 		70D9CE1B1E11D011002D41B8 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */; };
 		70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */; };
-		70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */; };
+		70F3DAEA1E11E72A00B03D12 /* StationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* StationsCollectionViewController.swift */; };
 		70F3DB0F1E11E90A00B03D12 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */; };
 		70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */; };
 		70F3DB181E11F98D00B03D12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB171E11F98D00B03D12 /* Utils.swift */; };
@@ -151,7 +151,7 @@
 		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
 		70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlaybackButton.swift; sourceTree = "<group>"; };
-		70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsNViewController.swift; sourceTree = "<group>"; };
+		70F3DAE91E11E72A00B03D12 /* StationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsCollectionViewController.swift; sourceTree = "<group>"; };
 		70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewCell.swift; sourceTree = "<group>"; };
 		70F3DB171E11F98D00B03D12 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 				70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */,
 				707374C51E11DB6E0013EDDF /* Stations.swift */,
 				6B801E2E1E1A2A49002C96F7 /* StationView.swift */,
-				70F3DAE91E11E72A00B03D12 /* StationsNViewController.swift */,
+				70F3DAE91E11E72A00B03D12 /* StationsCollectionViewController.swift */,
 				6B173E351E14D40200F937BA /* Stations3ViewController.swift */,
 				6B173E371E14D42F00F937BA /* StationsViewControllerFactory.swift */,
 			);
@@ -749,7 +749,7 @@
 				6B173E361E14D40200F937BA /* Stations3ViewController.swift in Sources */,
 				707374C61E11DB6E0013EDDF /* Stations.swift in Sources */,
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
-				70F3DAEA1E11E72A00B03D12 /* StationsNViewController.swift in Sources */,
+				70F3DAEA1E11E72A00B03D12 /* StationsCollectionViewController.swift in Sources */,
 				6BBD1A731E1C231800A74B6E /* Analytics.swift in Sources */,
 				6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */,
 				6B801E331E1AE47B002C96F7 /* PlaybackState.swift in Sources */,

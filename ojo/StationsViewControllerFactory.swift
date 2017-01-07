@@ -17,6 +17,6 @@ class StationsViewControllerFactory {
         if stations.count == 3 {
             return Stations3ViewController(stations: stations)
         }
-        return StationsViewController(withStations: stations, rect: bounds)
+        return StationsCollectionViewController(withStations: stations, rect: bounds)
     }
 }

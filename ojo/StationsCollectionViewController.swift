@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import HidingNavigationBar
 
-class StationsViewController : UICollectionViewController {
+class StationsCollectionViewController : UICollectionViewController {
     
     let REUSE_IDENTIFIER = "RadioStationCollectionViewCell"
     
