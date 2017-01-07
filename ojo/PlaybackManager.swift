@@ -29,6 +29,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
 
     private let remoteControlResponder = RemoteControlResponder()
     
+    private var interruptionHandler: PlaybackInterruptionHandler?
+    
     // |nowPlayingInfo| is nil if station is nil
     private(set) var nowPlayingInfo: NowPlayingInfo? = nil {
         didSet {
@@ -126,11 +128,8 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         
         remoteControlResponder.add(delegate: self)
         
-        NotificationCenter.default
-            .addObserver(self,
-                         selector: #selector(self.handleInterruption),
-                         name: .AVAudioSessionInterruption,
-                         object: nil)
+        interruptionHandler = PlaybackInterruptionHandler(self)
+
         player.addObserver(self,
                            forKeyPath: "status",
                            options: .new,
@@ -207,20 +206,6 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             }
         }.catch { _ in
             print("tried to listen for expiry on a value that doesn't expire")
-        }
-    }
-    
-    @objc private func handleInterruption(n: NSNotification) {
-        guard n.name == .AVAudioSessionInterruption else { return }
-        guard let y = n.userInfo?[AVAudioSessionInterruptionTypeKey]
-            as? NSNumber else { return }
-
-        let began = NSNumber(value: AVAudioSessionInterruptionType.began.rawValue)
-        let ended = NSNumber(value: AVAudioSessionInterruptionType.ended.rawValue)
-        if y.isEqual(to: began) {
-            stop()
-        } else if y.isEqual(to: ended) {
-            play()
         }
     }
     
