@@ -39,7 +39,6 @@
 		6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */; };
 		6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3591E16227E0033130E /* Miniplayer.swift */; };
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
-		6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35D1E17174D0033130E /* UIColor+hex.swift */; };
 		6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */; };
 		6BBD1A731E1C231800A74B6E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A721E1C231800A74B6E /* Analytics.swift */; };
 		6BBD1A761E1C234400A74B6E /* PlaybackTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */; };
@@ -130,7 +129,6 @@
 		6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OJORoundedImageView.swift; sourceTree = "<group>"; };
 		6BA6B3591E16227E0033130E /* Miniplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miniplayer.swift; sourceTree = "<group>"; };
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
-		6BA6B35D1E17174D0033130E /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = SOURCE_ROOT; };
 		6BBD1A721E1C231800A74B6E /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackTracker.swift; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 				6BF0E6691E1ED66B00B1258C /* ArgoFunctions.swift */,
 				6BA47E2E1E12EDFD002CF09A /* DefaultTopItemLabel.swift */,
 				6B35646F1E215279009A5559 /* HidingNavBarCollectionViewController.swift */,
-				6BA6B35D1E17174D0033130E /* UIColor+hex.swift */,
 				6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */,
 				6B801E381E1B156E002C96F7 /* UIImage+Color.swift */,
 				6B801E441E1B7A16002C96F7 /* Promise+UIImage.swift */,
@@ -770,7 +767,6 @@
 				6B801E451E1B7A16002C96F7 /* Promise+UIImage.swift in Sources */,
 				6BA6B3541E15E2370033130E /* OJORoundedImageView.swift in Sources */,
 				6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */,
-				6BA6B35E1E17174D0033130E /* UIColor+hex.swift in Sources */,
 				70F3DB0F1E11E90A00B03D12 /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
