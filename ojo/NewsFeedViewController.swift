@@ -7,16 +7,15 @@
 //
 
 import UIKit
-import HidingNavigationBar
 
-class NewsFeedViewController: UICollectionViewController {
-    
-    var hidingNavBarManager: HidingNavigationBarManager?
-    
+class NewsFeedViewController: HidingNavBarCollectionViewController {
+
     let newsItems = NEWS_ITEMS
     
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    init(frame: CGRect) {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: frame.width, height: frame.width)
+        super.init(collectionViewLayout: layout)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,30 +32,8 @@ class NewsFeedViewController: UICollectionViewController {
                                  forCellWithReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT)
         
         if let v = collectionView {
-            hidingNavBarManager = HidingNavigationBarManager(viewController: self,
-                                                             scrollView: v)
             v.backgroundColor = UIColor.white
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        hidingNavBarManager?.viewDidLayoutSubviews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        hidingNavBarManager?.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hidingNavBarManager?.viewWillDisappear(animated)
-    }
-    
-    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
-        hidingNavBarManager?.shouldScrollToTop()
-        return true
     }
 }
 
