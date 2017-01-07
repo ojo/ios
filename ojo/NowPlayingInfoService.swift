@@ -87,9 +87,9 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
 
         FIRMessaging.messaging().connect { (error) in
             if error != nil {
-                print("Unable to connect with FCM. \(error)")
+                print("Unable to connect to FCM. \(error)")
             } else {
-                print("Connected to FCM.")
+                print("Connected to FCM.") // TODO proper logging
             }
         }
     }
@@ -103,7 +103,7 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         guard let data = str.data(using: .utf8) else { return }
         guard let json = try? JSONSerialization.jsonObject(with: data) else { return }
         let decoded: Decoded<NowPlayingInfo> = JSON(json) <| "attributes"
-        guard let info = decoded.value else { return }
+        guard let info = decoded.value else { return } // TODO: log the error
         guard let cb = callbacks[info.stationTag] else { return }
         cb(info)
     }
