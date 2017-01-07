@@ -26,7 +26,13 @@ extension UIColor {
             return UIColor.white
         }
     }
-    static var ojo_grey: UIColor {
+    
+    static var ojo_grey_84: UIColor {
+        get {
+            return UIColor(red:0.52, green:0.52, blue:0.52, alpha:1.0) // #848484
+        }
+    }
+    static var ojo_grey_59: UIColor {
         get {
             return UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // #595959
         }

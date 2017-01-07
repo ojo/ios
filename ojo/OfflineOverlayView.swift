@@ -21,7 +21,7 @@ class OfflineOverlayView: UIView {
     let label: UIView = {
         let v = UILabel()
         v.text = "You're Offline"
-        v.textColor = UIColor.ojo_grey
+        v.textColor = UIColor.ojo_grey_59
         v.backgroundColor = UIColor.clear
         v.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
         v.textAlignment = .center

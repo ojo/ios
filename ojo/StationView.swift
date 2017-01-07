@@ -26,7 +26,7 @@ class StationView: UIView {
     private let imageMask: UIView = {
         let v = OJORoundedImageView()
         v.alpha = 0.5
-        v.backgroundColor = UIColor.ojo_grey
+        v.backgroundColor = UIColor.ojo_grey_59
         return v
     }()
     
@@ -34,7 +34,7 @@ class StationView: UIView {
         let result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 18)
-        result.textColor = UIColor.ojo_grey
+        result.textColor = UIColor.ojo_grey_59
         return result
     }()
     

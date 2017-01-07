@@ -28,7 +28,7 @@ class NewsFeedViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        self.view.backgroundColor = UIColor.ojo_grey
+        self.view.backgroundColor = UIColor.ojo_grey_59
         navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
         
         if let v = collectionView {

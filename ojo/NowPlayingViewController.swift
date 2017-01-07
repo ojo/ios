@@ -24,7 +24,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         result.trailingBuffer = 50
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 22)
-        result.textColor = UIColor.ojo_grey
+        result.textColor = UIColor.ojo_grey_59
         result.textAlignment = NSTextAlignment.center
         return result
     }()
@@ -34,7 +34,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
         result.trailingBuffer = 50
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT, size: 22)
-        result.textColor = UIColor.ojo_grey
+        result.textColor = UIColor.ojo_grey_59
         result.textAlignment = NSTextAlignment.center
         return result
     }()
