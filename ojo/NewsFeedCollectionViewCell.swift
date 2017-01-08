@@ -31,6 +31,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
     
     private let image: UIImageView = {
         let v = UIImageView()
+        v.clipsToBounds = true
         v.contentMode = .scaleAspectFill
         v.layer.cornerRadius = DEFAULT_CORNER_RADIUS
         return v
