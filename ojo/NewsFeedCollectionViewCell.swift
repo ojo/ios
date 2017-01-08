@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHEXColors
 
 class NewsFeedCollectionViewCell: UICollectionViewCell {
     static let REUSE_IDENT = "NewsFeedCollectionViewCell"
@@ -16,7 +17,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
             guard let item = item else { return }
             
             let s = CGSize(width: 1, height: 1)
-            if let c = UIColor.from(hexString: item.photo.dominantColor) {
+            if let c = UIColor(hexString: item.photo.dominantColor) {
                 image.image = UIImage.from(color: c, withSize: s)
             }
             _ = fetchImage(item.photo.URL).then { image -> Void in
