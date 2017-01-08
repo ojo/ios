@@ -19,7 +19,7 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
     // maps from station.tag to callback function
     private var callbacks: [String:Callback] = [String:Callback]()
 
-    private let API_URL = "https://api.ojo.world/api/v0/stations/now-playing"
+    private let API_URL = API_HOST + "/api/v0/stations/now-playing"
 
     func request(infoFor station: Station,
                  callback: @escaping Callback) {
