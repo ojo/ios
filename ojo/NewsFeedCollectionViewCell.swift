@@ -12,6 +12,7 @@ import SwiftHEXColors
 class NewsFeedCollectionViewCell: UICollectionViewCell {
     static let REUSE_IDENT = "NewsFeedCollectionViewCell"
     
+    // TODO add class function to determine height for cell based on content and frame
     var item: NewsItem? = nil {
         didSet {
             guard let item = item else { return }
