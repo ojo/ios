@@ -43,6 +43,8 @@ class MusicPlaybackButton : UIButton {
         super.init(frame: frame)
         
         imageView?.contentMode = .scaleAspectFit
+        
+        // it's unclear to me why this is required to make the damn thing work.
         sizeToFit()
         
         spinner.startAnimating()
@@ -56,7 +58,6 @@ class MusicPlaybackButton : UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         
         let scX = bounds.width / 2
         let scY = bounds.height / 2
