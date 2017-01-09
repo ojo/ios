@@ -11,27 +11,27 @@ import MediaPlayer
 
 class RemoteControlResponder: UIResponder {
     
-    private var delegates = [RemoteControlDelegate]()
+    private var observers = [RemoteControlObserver]()
     
     override init() {
         super.init()
         
         let cc = MPRemoteCommandCenter.shared()
-        cc.playCommand.addTarget() { _ in
-            self.delegates.forEach() { $0.received(eventType: .remoteControlPlay) }
+        cc.playCommand.addTarget { _ in
+            self.observers.forEach { $0.received(eventType: .remoteControlPlay) }
             return .success
         }
-        cc.pauseCommand.addTarget() { _ in
-            self.delegates.forEach() { $0.received(eventType: .remoteControlPause) }
+        cc.pauseCommand.addTarget { _ in
+            self.observers.forEach { $0.received(eventType: .remoteControlPause) }
             return .success
         }
     }
 
-    public func add(delegate: RemoteControlDelegate) {
-        delegates.append(delegate)
+    public func add(delegate: RemoteControlObserver) {
+        observers.append(delegate)
     }
     
-    public func remove(delegate: RemoteControlDelegate) {
-        delegates = delegates.filter() { $0 !== delegate }
+    public func remove(delegate: RemoteControlObserver) {
+        observers = observers.filter() { $0 !== delegate }
     }
 }

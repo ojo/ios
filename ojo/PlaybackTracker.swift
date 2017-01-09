@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PlaybackTracker: PlaybackDelegate {
+final class PlaybackTracker: PlaybackObserver {
     
     private let analytics: Analytics
     private let playbackManager: PlaybackManager
@@ -23,7 +23,7 @@ final class PlaybackTracker: PlaybackDelegate {
     static func bind(analytics: Analytics, playbackManager: PlaybackManager) {
         let proxy = PlaybackTracker(analytics: analytics,
                                     playbackManager: playbackManager)
-        playbackManager.addDelegate(proxy)
+        playbackManager.addObserver(proxy)
     }
     
     func incoming(info: NowPlayingInfo, forStation station: Station) { /* nop */ }

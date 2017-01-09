@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol RemoteControlDelegate: class {
+protocol RemoteControlObserver: class {
     func received(eventType: UIEventSubtype)
 }

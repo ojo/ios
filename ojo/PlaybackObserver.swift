@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PlaybackDelegate {
+protocol PlaybackObserver {
     func didChange(state: PlaybackState)
     func incoming(info: NowPlayingInfo, forStation station: Station)
 }

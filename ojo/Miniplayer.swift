@@ -36,7 +36,7 @@ class Miniplayer {
         self.barPresenter = barPresenter
         self.playbackManager = playbackManager
         self.nowPlaying = NowPlayingViewController(playbackManager: playbackManager)
-        self.playbackManager.addDelegate(self)
+        self.playbackManager.addObserver(self)
         
         self.barPresenter?.popupBar.marqueeScrollEnabled = true
         
@@ -81,7 +81,7 @@ class Miniplayer {
     }
 }
 
-extension Miniplayer: PlaybackDelegate {
+extension Miniplayer: PlaybackObserver {
     
     func didChange(state: PlaybackState) {
         playbackToggle.playbackState = state
@@ -91,13 +91,17 @@ extension Miniplayer: PlaybackDelegate {
             case .notReachable:
                 hideMiniplayer()
             default:
+                // because either music is about to play or has temporarily stalled
                 showMiniplayer()
             }
         case .started:
             showMiniplayer()
         case .stopped:
             if net.currentReachabilityStatus == .notReachable {
-               hideMiniplayer()
+                // When music has stopped and the user is offline, the miniplayer
+                // becomes a false affordance.
+                // https://en.wikipedia.org/wiki/Affordance#False_affordances
+                hideMiniplayer()
             }
         }
     }

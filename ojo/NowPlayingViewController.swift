@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import MarqueeLabel
 
-class NowPlayingViewController : UIViewController, PlaybackDelegate {
+class NowPlayingViewController : UIViewController {
     
     var imageView: UIImageView = {
         var result = OJORoundedImageView()
@@ -49,7 +49,7 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
     init(playbackManager: PlaybackManager) {
         self.playbackManager = playbackManager
         super.init(nibName: nil, bundle: nil)
-        playbackManager.addDelegate(self)
+        playbackManager.addObserver(self)
         
         playbackToggle.addTarget(self,
                                  action: #selector(playButtonPressed),
@@ -109,6 +109,20 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
                                       height: toggleWH)
     }
     
+    func playButtonPressed(_ e: UIEvent) {
+        switch playbackToggle.playbackState {
+        case .buffering:
+            break
+        case .started:
+            playbackManager?.stop()
+        case .stopped:
+            playbackManager?.play()
+        }
+    }
+}
+
+extension NowPlayingViewController: PlaybackObserver {
+    
     func didChange(state: PlaybackState) {
         playbackToggle.playbackState = state
     }
@@ -132,17 +146,6 @@ class NowPlayingViewController : UIViewController, PlaybackDelegate {
             imageView.af_setImage(withURL: url, placeholderImage: placeholder)
         } else {
             imageView.image = playbackManager?.station?.image
-        }
-    }
-    
-    func playButtonPressed(_ e: UIEvent) {
-        switch playbackToggle.playbackState {
-        case .buffering:
-            break
-        case .started:
-            playbackManager?.stop()
-        case .stopped:
-            playbackManager?.play()
         }
     }
 }

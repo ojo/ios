@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 // NB(btc): not thread-safe.
-class PlaybackManager : NSObject, RemoteControlDelegate {
+class PlaybackManager : NSObject {
     
     // NB(btc): svarlasses NSObject in order to perform KVO on player
     
@@ -23,7 +23,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
   
     private let player = AVPlayer()
     
-    private var delegates = [PlaybackDelegate]()
+    private var observers = [PlaybackObserver]()
     
     private var infoService = NowPlayingInfoService()
 
@@ -35,7 +35,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
     private(set) var nowPlayingInfo: NowPlayingInfo? = nil {
         didSet {
             guard let s = station else { return }
-            delegates.forEach {
+            observers.forEach {
                 $0.incoming(info: nowPlayingInfo ?? s.info(), forStation: s)
             }
         }
@@ -45,7 +45,7 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
         didSet {
             switch state {
             case .buffering:
-                delegates.forEach() { $0.didChange(state: .buffering) }
+                observers.forEach() { $0.didChange(state: .buffering) }
                 guard let s = station else {
                     print("station should not be nil in buffering state")
                     return
@@ -53,11 +53,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                 // TODO perhaps this needs to be moved to the clients where it'll be
                 // their responsibility to get the information they need. this feels
                 // weird to do here.
-                delegates.forEach() { $0.incoming(info: nowPlayingInfo ?? s.info(), forStation: s) }
+                observers.forEach() { $0.incoming(info: nowPlayingInfo ?? s.info(), forStation: s) }
             case .started:
-                delegates.forEach() { $0.didChange(state: .started) }
+                observers.forEach() { $0.didChange(state: .started) }
             case .stopped:
-                delegates.forEach() { $0.didChange(state: .stopped) }
+                observers.forEach() { $0.didChange(state: .stopped) }
             }
         }
     }
@@ -139,11 +139,11 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
                            options: .new,
                            context: nil)
         
-        delegates.append(InfoCenterDelegate())
+        observers.append(InfoCenterNotifier())
     }
     
-    func addDelegate(_ d: PlaybackDelegate) {
-        delegates.append(d)
+    func addObserver(_ d: PlaybackObserver) {
+        observers.append(d)
     }
     
     func play() {
@@ -218,7 +218,9 @@ class PlaybackManager : NSObject, RemoteControlDelegate {
             print(error.localizedDescription)
         }
     }
-    
+}
+
+extension PlaybackManager: RemoteControlObserver {
     func received(eventType: UIEventSubtype) {
         switch eventType {
         case .remoteControlPlay:

@@ -8,7 +8,7 @@
 
 import MediaPlayer
 
-class InfoCenterDelegate: PlaybackDelegate {
+class InfoCenterNotifier: PlaybackObserver {
     
     func incoming(info: NowPlayingInfo, forStation station: Station) {
         var image: UIImage = station.image // default
