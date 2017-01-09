@@ -59,8 +59,19 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         return v
     }()
     
+    override var isHighlighted: Bool {
+        didSet {
+            highlighter?.isHighlighted(isHighlighted)
+        }
+    }
+    
+    private var highlighter: Highlighter?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        highlighter = Highlighter(self)
+
         contentView.addSubview(image)
         contentView.addSubview(title)
         contentView.addSubview(category)
@@ -93,5 +104,27 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    class Highlighter {
+        weak var source: NewsFeedCollectionViewCell?
+        
+        init(_ cell: NewsFeedCollectionViewCell) {
+            source = cell
+            
+            // TODO get the unhighlighted state from source at runtime
+        }
+        
+        func isHighlighted(_ isHighlighted: Bool) {
+            if (isHighlighted) {
+                source?.image.tintColor = UIColor.ojo_grey_59
+                source?.title.textColor = UIColor.ojo_grey_59
+            } else {
+                // TODO for each element, reset to the saved state
+                source?.image.tintColor = UIColor.clear
+                source?.title.textColor = UIColor.black
+            }
+        }
     }
 }
