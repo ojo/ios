@@ -28,7 +28,7 @@ class Miniplayer {
         return result
     }()
     
-    fileprivate let reach = Reachability()!
+    fileprivate let net = Reachability()!
 
     init(_ barPresenter: UIViewController,
          playbackManager: PlaybackManager) {
@@ -46,8 +46,8 @@ class Miniplayer {
         let buttonItem = UIBarButtonItem(customView: playbackToggle)
         self.nowPlaying.popupItem.rightBarButtonItems = [buttonItem]
         
-        try? reach.startNotifier()
-        reach.whenUnreachable = { _ in
+        try? net.startNotifier()
+        net.whenUnreachable = { _ in
             if playbackManager.state != .started {
                 self.hideMiniplayer()
             }
@@ -55,7 +55,7 @@ class Miniplayer {
     }
     
     func showMiniplayer() {
-        guard reach.currentReachabilityStatus != .notReachable else { return }
+        guard net.currentReachabilityStatus != .notReachable else { return }
         if let state = barPresenter?.popupPresentationState, state == .hidden {
             barPresenter?.presentPopupBar(withContentViewController: nowPlaying,
                                           animated: true,
@@ -87,7 +87,7 @@ extension Miniplayer: PlaybackDelegate {
         playbackToggle.playbackState = state
         switch state {
         case .buffering:
-            switch reach.currentReachabilityStatus {
+            switch net.currentReachabilityStatus {
             case .notReachable:
                 hideMiniplayer()
             default:
@@ -96,7 +96,7 @@ extension Miniplayer: PlaybackDelegate {
         case .started:
             showMiniplayer()
         case .stopped:
-            if reach.currentReachabilityStatus == .notReachable {
+            if net.currentReachabilityStatus == .notReachable {
                hideMiniplayer()
             }
         }
