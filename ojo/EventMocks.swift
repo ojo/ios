@@ -20,6 +20,7 @@ let MOCK_EVENTS = [
     Event(id: 1,
                name: "Machel Monday",
                host: "Machel Montano",
+               isFeatured: true,
                description: "", 
                category: "music",
                location: machelMondayLocation,

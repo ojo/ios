@@ -12,6 +12,7 @@ struct Event {
     let id: Int
     let name: String
     let host: String
+    let isFeatured: Bool
     
     let description: String?
     let category: String?
