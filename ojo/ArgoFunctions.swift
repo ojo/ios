@@ -20,3 +20,7 @@ func eitherO<T: Decodable>(_ j: JSON, _ field: String, _ alt: String) -> Decoded
 func get<T: Decodable>(_ j: JSON, _ field: String) -> Decoded<T> where T == T.DecodedType {
     return  j <| field
 }
+
+func toInt(_ text: String) -> Decoded<Int> {
+    return .fromOptional(Int(text))
+}

@@ -8,9 +8,12 @@
 
 import UIKit
 import SwiftHEXColors
+import PromiseKit
 
 class NewsFeedCollectionViewCell: UICollectionViewCell {
     static let REUSE_IDENT = "NewsFeedCollectionViewCell"
+    
+    private var futureImage: Promise<UIImage>?
     
     // TODO add class function to determine height for cell based on content and frame
     var item: NewsItem? = nil {
@@ -20,12 +23,16 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
             if let c = UIColor(hexString: item.photo.dominantColor) {
                 image.image = UIImage.from(color: c)
             }
+            
+            let url: String = item.photo.URL
             _ = fetchImage(item.photo.URL).then { image -> Void in
+                guard let currentURL = self.item?.photo.URL, url == currentURL else { return }
                 self.image.image = image
             }
             
             title.text = item.title
             category.text = item.category
+            timestamp.text = "1 hour ago"
         }
     }
     
@@ -97,10 +104,19 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         title.frame = CGRect(x: DEFAULT_MARGIN_PX,
                              y: category.frame.maxY + 2 * DEFAULT_MARGIN_PX,
                              width: fullWidth,
-                             height: 200)
+                             height: 25)
         title.sizeToFit()
     }
     
+    override func prepareForReuse() {
+        let colorImageSize = CGSize(width: 1, height: 1)
+        image.image = UIImage.from(color: UIColor.ojo_grey_59,
+                                   withSize: colorImageSize)
+        category.text = nil
+        title.text = nil
+        timestamp.text = nil
+        
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

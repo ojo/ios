@@ -40,9 +40,10 @@ extension NewsItem: Decodable {
             let msg = "Failed to extract attributes from JSON"
             return Decoded<NewsItem>.customError(msg)
         }
+        let id = j <| "id" >>- toInt
         let ni = curry(self.init)
         return ni
-            <^> j <| "id"
+            <^> id
             <*> a <| "category"
             <*> a <| "title"
             <*> a <| "body"
