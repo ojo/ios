@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" "4.2.0"
+github "emaloney/CleanroomLogger" "5.0.0"
 github "thoughtbot/Curry" "v3.0.0"
 github "tristanhimmelman/HidingNavigationBar" "1.0.0"
 github "LeoNatan/LNPopupController" "dede96cd0475a5681953cac369ed56d6c836529a"

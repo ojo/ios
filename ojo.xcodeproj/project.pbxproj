@@ -41,6 +41,7 @@
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
 		6BA8F4F31E249A6D00993A09 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8F4F21E249A6D00993A09 /* Event.swift */; };
 		6BA8F4F51E249F2900993A09 /* EventMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8F4F41E249F2900993A09 /* EventMocks.swift */; };
+		6BA8F4F71E24CC2900993A09 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA8F4F61E24CC2900993A09 /* CleanroomLogger.framework */; };
 		6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */; };
 		6BBD1A731E1C231800A74B6E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A721E1C231800A74B6E /* Analytics.swift */; };
 		6BBD1A761E1C234400A74B6E /* PlaybackTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */; };
@@ -133,6 +134,7 @@
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		6BA8F4F21E249A6D00993A09 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6BA8F4F41E249F2900993A09 /* EventMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMocks.swift; sourceTree = "<group>"; };
+		6BA8F4F61E24CC2900993A09 /* CleanroomLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomLogger.framework; path = Carthage/Build/iOS/CleanroomLogger.framework; sourceTree = SOURCE_ROOT; };
 		6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = SOURCE_ROOT; };
 		6BBD1A721E1C231800A74B6E /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackTracker.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				6B801E411E1B74B0002C96F7 /* PromiseKit.framework in Frameworks */,
 				6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */,
 				6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */,
+				6BA8F4F71E24CC2900993A09 /* CleanroomLogger.framework in Frameworks */,
 				FA689DD244AAE9F5421F1A74 /* Pods_ojo.framework in Frameworks */,
 				6BF6E0BD1E1DAEFA00D22B73 /* Reachability.framework in Frameworks */,
 			);
@@ -376,6 +379,7 @@
 				6BCD64D01E171E5E002CA55E /* Alamofire.framework */,
 				6B801E3E1E1B6E7B002C96F7 /* AlamofireImage.framework */,
 				6BCD64D41E172D57002CA55E /* Argo.framework */,
+				6BA8F4F61E24CC2900993A09 /* CleanroomLogger.framework */,
 				6BCD64D81E172F86002CA55E /* Curry.framework */,
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
@@ -630,6 +634,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
 			);
 			outputPaths = (
 			);
