@@ -55,7 +55,6 @@ class StationView: UIView {
         let gr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         gr.cancelsTouchesInView = false // allows us to tint the views in response to touch
         addGestureRecognizer(gr)
-        isUserInteractionEnabled = true
         
         addSubview(image)
         addSubview(text)
