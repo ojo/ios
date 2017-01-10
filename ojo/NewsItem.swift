@@ -35,15 +35,20 @@ struct NewsItem {
 
 extension NewsItem: Decodable {
     static func decode(_ j: JSON) -> Decoded<NewsItem> {
+        let attributes: Decoded<JSON> = j <| "attributes"
+        guard let a = attributes.value else {
+            let msg = "Failed to extract attributes from JSON"
+            return Decoded<NewsItem>.customError(msg)
+        }
         let ni = curry(self.init)
         return ni
             <^> j <| "id"
-            <*> j <| "category"
-            <*> j <| "title"
-            <*> j <| "body"
-            <*> j <|? "subtitle"
-            <*> j <|? "straphead"
-            <*> NewsItem.Photo.decode(j)
+            <*> a <| "category"
+            <*> a <| "title"
+            <*> a <| "body"
+            <*> a <|? "subtitle"
+            <*> a <|? "straphead"
+            <*> NewsItem.Photo.decode(a)
     }
 }
 
