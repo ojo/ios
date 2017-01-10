@@ -17,9 +17,8 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let item = item else { return }
             
-            let s = CGSize(width: 1, height: 1)
             if let c = UIColor(hexString: item.photo.dominantColor) {
-                image.image = UIImage.from(color: c, withSize: s)
+                image.image = UIImage.from(color: c)
             }
             _ = fetchImage(item.photo.URL).then { image -> Void in
                 self.image.image = image
@@ -107,7 +106,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
     }
     
     
-    class Highlighter {
+    private class Highlighter {
         weak var source: NewsFeedCollectionViewCell?
         
         init(_ cell: NewsFeedCollectionViewCell) {

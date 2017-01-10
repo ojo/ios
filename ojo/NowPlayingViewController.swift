@@ -137,8 +137,7 @@ extension NowPlayingViewController: PlaybackObserver {
         artistView.text = p.subtitle
         
         if info.artwork.isPresent(), let c = info.artwork.dominantUIColor() {
-            let s = imageView.frame.size
-            let placeholder = UIImage.from(color: c, withSize: s)
+            let placeholder = UIImage.from(color: c)
             guard let str = info.artwork.url500, let url = URL(string: str) else {
                 imageView.image = playbackManager?.station?.image
                 return

@@ -19,7 +19,7 @@ class InfoCenterNotifier: PlaybackObserver {
             
             // potentially replace image with a colored image
             let size = CGSize(width: 1, height: 1)
-            if let colorImage = UIImage.from(color: c, withSize: size) {
+            if let colorImage = UIImage.from(color: c) {
                 image = colorImage
             }
             

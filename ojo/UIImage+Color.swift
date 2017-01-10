@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIImage {
-    static func from(color: UIColor, withSize size: CGSize) -> UIImage? {
+    static func from(color: UIColor) -> UIImage? {
+        let size = CGSize(width: 1, height: 1)
         UIGraphicsBeginImageContext(size)
         defer { UIGraphicsEndImageContext() }
         guard let ctx = UIGraphicsGetCurrentContext() else { return nil }

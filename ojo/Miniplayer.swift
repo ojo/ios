@@ -114,8 +114,7 @@ extension Miniplayer: PlaybackObserver {
             let color = info.artwork.dominantUIColor(),
             let url = info.artwork.url100 {
             
-            let size = CGSize(width: 100, height: 100) // an educated guess.
-            let colorImage = UIImage.from(color: color, withSize: size)
+            let colorImage = UIImage.from(color: color)
             nowPlaying.popupItem.image = colorImage
             
             fetchImage(url).then { image in
