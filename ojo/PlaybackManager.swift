@@ -205,8 +205,7 @@ class PlaybackManager : NSObject {
                 self.nowPlayingInfo = nil
             }
         }.catch { _ in
-            // TODO: replace this with an actual logger
-            print("tried to listen for expiry on a value that doesn't expire")
+            Log.warning?.message("tried to listen for expiry on an NPInfo that doesn't expire")
         }
     }
     

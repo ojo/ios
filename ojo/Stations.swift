@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-// TODO(btc): Add named image assets
-
 let STATIONS: [Station] = [
     Station(
         title: "STAR",

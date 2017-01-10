@@ -30,7 +30,7 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
         let result = UILabel()
         result.text = DEFAULT_PLACEHOLDER_TEXT
         result.font = UIFont(name: DEFAULT_FONT_BOLD, size: 18)
-        result.textColor = UIColor(red:0.35, green:0.35, blue:0.35, alpha:1.0) // 595959 TODO extract when you recognize name
+        result.textColor = UIColor.ojo_grey_59
         return result
     }()
     
@@ -49,9 +49,6 @@ class RadioStationCollectionViewCell : UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        // TODO(btc): layout views
-        // TODO(btc): station name goes in horizontal center 
-        
         let imageWidthHeight = RadioStationCollectionViewCell.cellHeight(givenBounds: frame)
         thumbnail.frame = CGRect(x: DEFAULT_MARGIN_PX,
                                  y: DEFAULT_MARGIN_PX,

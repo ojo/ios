@@ -71,8 +71,6 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
     }
 
     func applicationWillTerminate() {
-        // TODO: reconsider whether we should disconnect when we get backgrounded
-        // we still want to update art as long as we're playing
         FIRMessaging.messaging().disconnect()
     }
 
@@ -87,24 +85,38 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
 
         FIRMessaging.messaging().connect { (error) in
             if error != nil {
-                print("Unable to connect to FCM. \(error)")
+                Log.error?.message("Unable to connect to Firebase Cloud Messaging: \(error)")
             } else {
-                print("Connected to FCM.") // TODO proper logging
+                Log.info?.message("Connected to Firebase Cloud Messaging")
             }
         }
     }
 
 
     // iOS <= 9 data messages
-    // TODO
     func didReceiveRemoteNotification(userInfo: [AnyHashable : Any]) {
-        guard let value: Any = userInfo["data"] else { return }
-        guard let str = value as? String else { return }
-        guard let data = str.data(using: .utf8) else { return }
-        guard let json = try? JSONSerialization.jsonObject(with: data) else { return }
+        guard let value: Any = userInfo["data"] else {
+            Log.error?.message("NPInfo object is missing 'data' key")
+            return
+        }
+        guard let str = value as? String else {
+            Log.error?.message("Value for 'data' in NPInfo object is not a string")
+            return
+        }
+        guard let data = str.data(using: .utf8),
+            let json = try? JSONSerialization.jsonObject(with: data) else {
+            Log.error?.message("Failed to decode JSON object from NPInfo string")
+            return
+        }
         let decoded: Decoded<NowPlayingInfo> = JSON(json) <| "attributes"
-        guard let info = decoded.value else { return } // TODO: log the error
-        guard let cb = callbacks[info.stationTag] else { return }
+        guard let info = decoded.value else {
+            Log.error?.message(decoded.error.debugDescription)
+            return
+        }
+        guard let cb = callbacks[info.stationTag] else {
+            Log.error?.message("No NPInfo callback registered for station tag: '\(info.stationTag)'")
+            return
+        }
         cb(info)
     }
 
@@ -119,8 +131,7 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         if let info = decoded.value {
             return info
         }
-        // TODO(btc): debug print only (get a real logger!)
-        print(decoded.error.debugDescription)
+        Log.error?.message(decoded.error.debugDescription)
         return nil
     }
 }
