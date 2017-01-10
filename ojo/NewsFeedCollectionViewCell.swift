@@ -109,9 +109,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        let colorImageSize = CGSize(width: 1, height: 1)
-        image.image = UIImage.from(color: UIColor.ojo_grey_59,
-                                   withSize: colorImageSize)
+        image.image = UIImage.from(color: UIColor.ojo_grey_59)
         category.text = nil
         title.text = nil
         timestamp.text = nil
