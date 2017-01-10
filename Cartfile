@@ -1,13 +1,13 @@
 github "Alamofire/Alamofire" ~> 4.0
 github "Alamofire/AlamofireImage" ~> 3.2
 github "LeoNatan/LNPopupController" "dede96cd0475a5681953cac369ed56d6c836529a"
-github "SwiftyJSON/SwiftyJSON"
+github "SwiftyJSON/SwiftyJSON" ~> 3.1
 github "ashleymills/Reachability.swift" ~> 3.0
 github "btc/mixpanel-swift" "v1.1.1"
 github "cbpowell/MarqueeLabel" ~> 3.0
 github "emaloney/CleanroomLogger" ~> 5.0.0
-github "mxcl/PromiseKit"
-github "thii/SwiftHEXColors"
-github "thoughtbot/Argo"
-github "thoughtbot/Curry"
+github "mxcl/PromiseKit" ~> 4.1
+github "thii/SwiftHEXColors" ~> 1.1
+github "thoughtbot/Argo" "v4.1.1"
+github "thoughtbot/Curry" "v3.0.0"
 github "tristanhimmelman/HidingNavigationBar" ~> 1.0
