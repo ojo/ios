@@ -66,7 +66,7 @@
 		707374C61E11DB6E0013EDDF /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707374C51E11DB6E0013EDDF /* Stations.swift */; };
 		70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9CE131E11B207002D41B8 /* LNPopupController.framework */; };
 		70D9CE1B1E11D011002D41B8 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */; };
-		70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */; };
+		70D9CE1F1E11D22E002D41B8 /* PlaybackToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9CE1E1E11D22E002D41B8 /* PlaybackToggleButton.swift */; };
 		70F3DAEA1E11E72A00B03D12 /* StationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DAE91E11E72A00B03D12 /* StationsCollectionViewController.swift */; };
 		70F3DB0F1E11E90A00B03D12 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */; };
 		70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */; };
@@ -160,7 +160,7 @@
 		707374C51E11DB6E0013EDDF /* Stations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
 		70D9CE131E11B207002D41B8 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = SOURCE_ROOT; };
 		70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
-		70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlaybackButton.swift; sourceTree = "<group>"; };
+		70D9CE1E1E11D22E002D41B8 /* PlaybackToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackToggleButton.swift; sourceTree = "<group>"; };
 		70F3DAE91E11E72A00B03D12 /* StationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsCollectionViewController.swift; sourceTree = "<group>"; };
 		70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		70F3DB121E11F3C800B03D12 /* RadioStationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -319,8 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				6BA6B3591E16227E0033130E /* Miniplayer.swift */,
-				70D9CE1E1E11D22E002D41B8 /* MusicPlaybackButton.swift */,
 				70D9CE1A1E11D011002D41B8 /* NowPlayingViewController.swift */,
+				70D9CE1E1E11D22E002D41B8 /* PlaybackToggleButton.swift */,
 				6BF0E66D1E1EEDF100B1258C /* TwoLinePresenter.swift */,
 			);
 			name = "Miniplayer and Now Playing";
@@ -742,7 +742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */,
+				70D9CE1F1E11D22E002D41B8 /* PlaybackToggleButton.swift in Sources */,
 				6BF0E6681E1ED5F500B1258C /* NewsItem.swift in Sources */,
 				6BF622181E1195FF00A207AC /* NewsItemMocks.swift in Sources */,
 				6B801E3D1E1B6343002C96F7 /* InfoCenterNotifier.swift in Sources */,

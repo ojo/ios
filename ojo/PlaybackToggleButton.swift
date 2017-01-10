@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-// TODO rename PlaybackToggleButton
-class MusicPlaybackButton : UIButton {
+class PlaybackToggleButton : UIButton {
     
     static public let playImage: UIImage = UIImage(named: "play")!
     static public let pauseImage: UIImage = UIImage(named: "pause")!
@@ -24,10 +23,10 @@ class MusicPlaybackButton : UIButton {
                 spinner.startAnimating()
             case .stopped:
                 spinner.stopAnimating()
-                setImage(MusicPlaybackButton.playImage, for: .normal)
+                setImage(PlaybackToggleButton.playImage, for: .normal)
             case .started:
                 spinner.stopAnimating()
-                setImage(MusicPlaybackButton.pauseImage, for: .normal)
+                setImage(PlaybackToggleButton.pauseImage, for: .normal)
 
             }
         }

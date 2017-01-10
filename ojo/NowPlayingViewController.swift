@@ -39,8 +39,8 @@ class NowPlayingViewController : UIViewController {
         return result
     }()
 
-    let playbackToggle: MusicPlaybackButton = {
-        let result = MusicPlaybackButton()
+    let playbackToggle: PlaybackToggleButton = {
+        let result = PlaybackToggleButton()
         return result
     }()
     

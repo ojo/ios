@@ -23,8 +23,8 @@ class Miniplayer {
     
     fileprivate var nowPlaying: NowPlayingViewController
     
-    fileprivate var playbackToggle: MusicPlaybackButton = {
-        let result = MusicPlaybackButton()
+    fileprivate var playbackToggle: PlaybackToggleButton = {
+        let result = PlaybackToggleButton()
         return result
     }()
     
