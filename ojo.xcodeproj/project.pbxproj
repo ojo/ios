@@ -243,7 +243,6 @@
 		6B7113011E105AD400C3F33C /* ojo */ = {
 			isa = PBXGroup;
 			children = (
-				6B2791C01E1C718B00054A57 /* ojo.entitlements */,
 				704C94A31E11AC6F00A7D2BF /* Frameworks */,
 				6BA6B3521E15E2070033130E /* Library */,
 				6BA6B3501E15E1D80033130E /* Features */,
@@ -254,6 +253,7 @@
 				6B7113091E105AD400C3F33C /* Assets.xcassets */,
 				6B71130E1E105AD400C3F33C /* Info.plist */,
 				6B8ED9621E1B8A5500C49C45 /* GoogleService-Info.plist */,
+				6B2791C01E1C718B00054A57 /* ojo.entitlements */,
 			);
 			path = ojo;
 			sourceTree = "<group>";
