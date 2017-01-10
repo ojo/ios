@@ -10,23 +10,25 @@ import MediaPlayer
 
 class InfoCenterNotifier: PlaybackObserver {
     
+    var current: NowPlayingInfo?
+    
     func incoming(info: NowPlayingInfo, forStation station: Station) {
+        current = info
         var image: UIImage = station.image // default
         
         if info.artwork.isPresent(),
             let c = info.artwork.dominantUIColor(),
-            let url = info.artwork.url500 {
+            let url = info.artwork.url500,
+            let colorImage = UIImage.from(color: c) {
             
-            // potentially replace image with a colored image
-            let size = CGSize(width: 1, height: 1)
-            if let colorImage = UIImage.from(color: c) {
-                image = colorImage
-            }
+            image = colorImage
             
             // then fetch the real image from the network
-            fetchImage(url).then { fetched in
+            fetchImage(url).then { fetched -> Void in
+                guard let c = self.current, info == c else { return }
                 self.updateInfoCenter(withInfo: info, andImage: fetched)
             }.catch { err in // fallback
+                guard let c = self.current, info == c else { return }
                 self.updateInfoCenter(withInfo: info, andImage: station.image)
             }
         }
