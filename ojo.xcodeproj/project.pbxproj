@@ -40,6 +40,7 @@
 		6BA6B35A1E16227E0033130E /* Miniplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B3591E16227E0033130E /* Miniplayer.swift */; };
 		6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */; };
 		6BA8F4F31E249A6D00993A09 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8F4F21E249A6D00993A09 /* Event.swift */; };
+		6BA8F4F51E249F2900993A09 /* EventMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8F4F41E249F2900993A09 /* EventMocks.swift */; };
 		6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */; };
 		6BBD1A731E1C231800A74B6E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A721E1C231800A74B6E /* Analytics.swift */; };
 		6BBD1A761E1C234400A74B6E /* PlaybackTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */; };
@@ -54,7 +55,7 @@
 		6BF0E66A1E1ED66B00B1258C /* ArgoFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E6691E1ED66B00B1258C /* ArgoFunctions.swift */; };
 		6BF0E66C1E1EDB0400B1258C /* NewsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E66B1E1EDB0400B1258C /* NewsNavigationController.swift */; };
 		6BF0E66E1E1EEDF100B1258C /* TwoLinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E66D1E1EEDF100B1258C /* TwoLinePresenter.swift */; };
-		6BF622181E1195FF00A207AC /* MockNewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* MockNewsItems.swift */; };
+		6BF622181E1195FF00A207AC /* NewsItemMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622171E1195FF00A207AC /* NewsItemMocks.swift */; };
 		6BF6221A1E11AFDE00A207AC /* PlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF622191E11AFDE00A207AC /* PlaybackManager.swift */; };
 		6BF6221E1E11E8BF00A207AC /* DiscoverEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */; };
 		6BF6E0BD1E1DAEFA00D22B73 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */; };
@@ -131,6 +132,7 @@
 		6BA6B3591E16227E0033130E /* Miniplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miniplayer.swift; sourceTree = "<group>"; };
 		6BA6B35B1E1626CE0033130E /* NowPlayingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		6BA8F4F21E249A6D00993A09 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		6BA8F4F41E249F2900993A09 /* EventMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMocks.swift; sourceTree = "<group>"; };
 		6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = SOURCE_ROOT; };
 		6BBD1A721E1C231800A74B6E /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackTracker.swift; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 		6BF0E6691E1ED66B00B1258C /* ArgoFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoFunctions.swift; sourceTree = "<group>"; };
 		6BF0E66B1E1EDB0400B1258C /* NewsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsNavigationController.swift; sourceTree = "<group>"; };
 		6BF0E66D1E1EEDF100B1258C /* TwoLinePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoLinePresenter.swift; sourceTree = "<group>"; };
-		6BF622171E1195FF00A207AC /* MockNewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNewsItems.swift; sourceTree = "<group>"; };
+		6BF622171E1195FF00A207AC /* NewsItemMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemMocks.swift; sourceTree = "<group>"; };
 		6BF622191E11AFDE00A207AC /* PlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackManager.swift; sourceTree = "<group>"; };
 		6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverEventsViewController.swift; sourceTree = "<group>"; };
 		6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = SOURCE_ROOT; };
@@ -321,10 +323,10 @@
 		6BA6B3561E15E6700033130E /* News Feed */ = {
 			isa = PBXGroup;
 			children = (
-				6BF622171E1195FF00A207AC /* MockNewsItems.swift */,
 				70F3DB0E1E11E90A00B03D12 /* NewsFeedViewController.swift */,
 				6B380D241E206F510073D156 /* NewsFeedCollectionViewCell.swift */,
 				6BF0E6671E1ED5F500B1258C /* NewsItem.swift */,
+				6BF622171E1195FF00A207AC /* NewsItemMocks.swift */,
 				70F3DB191E11FFAE00B03D12 /* NewsItemViewController.swift */,
 				6BF0E66B1E1EDB0400B1258C /* NewsNavigationController.swift */,
 			);
@@ -336,6 +338,7 @@
 			children = (
 				6BF6221D1E11E8BF00A207AC /* DiscoverEventsViewController.swift */,
 				6BA8F4F21E249A6D00993A09 /* Event.swift */,
+				6BA8F4F41E249F2900993A09 /* EventMocks.swift */,
 			);
 			name = "Discover Events";
 			sourceTree = "<group>";
@@ -733,7 +736,7 @@
 			files = (
 				70D9CE1F1E11D22E002D41B8 /* MusicPlaybackButton.swift in Sources */,
 				6BF0E6681E1ED5F500B1258C /* NewsItem.swift in Sources */,
-				6BF622181E1195FF00A207AC /* MockNewsItems.swift in Sources */,
+				6BF622181E1195FF00A207AC /* NewsItemMocks.swift in Sources */,
 				6B801E3D1E1B6343002C96F7 /* InfoCenterNotifier.swift in Sources */,
 				6BF0E66E1E1EEDF100B1258C /* TwoLinePresenter.swift in Sources */,
 				6BBD1A761E1C234400A74B6E /* PlaybackTracker.swift in Sources */,
@@ -757,6 +760,7 @@
 				6B3564701E215279009A5559 /* HidingNavBarCollectionViewController.swift in Sources */,
 				707374C61E11DB6E0013EDDF /* Stations.swift in Sources */,
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
+				6BA8F4F51E249F2900993A09 /* EventMocks.swift in Sources */,
 				70F3DAEA1E11E72A00B03D12 /* StationsCollectionViewController.swift in Sources */,
 				6BBD1A731E1C231800A74B6E /* Analytics.swift in Sources */,
 				6BA6B35C1E1626CE0033130E /* NowPlayingInfo.swift in Sources */,

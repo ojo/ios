@@ -21,15 +21,15 @@ struct Event {
     let photoDominantColor: String
     
     struct Location {
-        let name: String
+        let name: String?
         
-        let street: String
-        let city: String
-        let state: String
-        let zip: String
-        let country: String
+        let street: String?
+        let city: String?
+        let state: String?
+        let zip: String?
+        let country: String?
         
-        let latitude: Float
-        let longitude: Float
+        let latitude: Float?
+        let longitude: Float?
     }
 }
