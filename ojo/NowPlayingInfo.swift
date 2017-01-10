@@ -99,7 +99,7 @@ extension NowPlayingInfo: Decodable {
             <^> j <| "title"
             <*> j <| "artist"
             <*> j <| "album"
-            <*> either(j, "station-tag", "station_tag")
+            <*> either(j, "station-tag", "station_tag") // TODO save compute by not doing this. it's always going to be dasherized
             <*> either(j, "media-type", "media_type")
             <*> eitherO(j, "started-at", "started_at")
             <*> eitherO(j, "length-in-secs", "length_in_secs")

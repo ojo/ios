@@ -10,7 +10,7 @@ import UIKit
 
 class NewsFeedViewController: HidingNavBarCollectionViewController {
 
-    let newsItems = NEWS_ITEMS
+    let service = NewsItemService()
     
     init(frame: CGRect) {
         let layout = UICollectionViewFlowLayout()
@@ -24,6 +24,8 @@ class NewsFeedViewController: HidingNavBarCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        service.subscribe(self)
        
         self.view.backgroundColor = UIColor.ojo_grey_59
         navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
@@ -32,8 +34,11 @@ class NewsFeedViewController: HidingNavBarCollectionViewController {
                                  forCellWithReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT)
         
         if let v = collectionView {
-            v.backgroundColor = UIColor.white
+            v.backgroundColor = UIColor.ojo_defaultVCBackground
+            v.delaysContentTouches = false
         }
+        
+        service.want(itemsBefore: nil)
     }
 }
 
@@ -44,7 +49,7 @@ extension NewsFeedViewController {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        return NEWS_ITEMS.count
+        return service.count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
@@ -54,9 +59,33 @@ extension NewsFeedViewController {
             for: indexPath)
 
         if let c = cell as? NewsFeedCollectionViewCell {
-            c.item = NEWS_ITEMS[indexPath.row]
+            c.item = service.item(at: indexPath.row)
             return c
         }
         return cell // TODO when does this happen?
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isHighlighted = true
+    
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isHighlighted = false
+    }
+}
+
+extension NewsFeedViewController: UICollectionViewDelegateFlowLayout {
+/* TODO   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return TODO
+    }
+ */
+}
+
+extension NewsFeedViewController: NewsItemServiceDelegate {
+    func serviceRefreshed() {
+        collectionView?.reloadData()
     }
 }
