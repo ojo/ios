@@ -19,7 +19,6 @@
 		6B3564741E2176F1009A5559 /* PlaybackInterruptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3564731E2176F1009A5559 /* PlaybackInterruptionHandler.swift */; };
 		6B380D251E206F510073D156 /* NewsFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B380D241E206F510073D156 /* NewsFeedCollectionViewCell.swift */; };
 		6B494EBF1E175E6700A7E7F3 /* RemoteControlResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */; };
-		6B494EC11E1765F300A7E7F3 /* RemoteControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B494EC01E1765F300A7E7F3 /* RemoteControlObserver.swift */; };
 		6B71130A1E105AD400C3F33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7113091E105AD400C3F33C /* Assets.xcassets */; };
 		6B7113181E105AD400C3F33C /* ojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113171E105AD400C3F33C /* ojoTests.swift */; };
 		6B7113231E105AD400C3F33C /* ojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7113221E105AD400C3F33C /* ojoUITests.swift */; };
@@ -110,7 +109,6 @@
 		6B3564731E2176F1009A5559 /* PlaybackInterruptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackInterruptionHandler.swift; sourceTree = "<group>"; };
 		6B380D241E206F510073D156 /* NewsFeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlResponder.swift; sourceTree = "<group>"; };
-		6B494EC01E1765F300A7E7F3 /* RemoteControlObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlObserver.swift; sourceTree = "<group>"; };
 		6B7112FF1E105AD400C3F33C /* ojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7113091E105AD400C3F33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B71130E1E105AD400C3F33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -362,7 +360,6 @@
 				6BF622191E11AFDE00A207AC /* PlaybackManager.swift */,
 				6B801E301E1AE470002C96F7 /* PlaybackObserver.swift */,
 				6B801E321E1AE47B002C96F7 /* PlaybackState.swift */,
-				6B494EC01E1765F300A7E7F3 /* RemoteControlObserver.swift */,
 				6B494EBE1E175E6700A7E7F3 /* RemoteControlResponder.swift */,
 			);
 			name = Streaming;
@@ -753,7 +750,6 @@
 				6BBD1A761E1C234400A74B6E /* PlaybackTracker.swift in Sources */,
 				6BF0E6661E1ED3E500B1258C /* AnalyticsType.swift in Sources */,
 				6BF0E66A1E1ED66B00B1258C /* ArgoFunctions.swift in Sources */,
-				6B494EC11E1765F300A7E7F3 /* RemoteControlObserver.swift in Sources */,
 				6BA47E2F1E12EDFD002CF09A /* DefaultTopItemLabel.swift in Sources */,
 				707374C41E11DA950013EDDF /* AppDelegate.swift in Sources */,
 				6B801E391E1B156E002C96F7 /* UIImage+Color.swift in Sources */,
