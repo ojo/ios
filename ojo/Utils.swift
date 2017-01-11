@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+#if DEBUG
+let DEBUG = true
+#else
+let DEBUG = false
+#endif
+
 let API_HOST = "https://api.ojo.world"
 
 let ESTIMATED_STREAM_LATENCY_IN_SECS = 23
