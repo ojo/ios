@@ -12,12 +12,17 @@ import UIKit
 class NewsItemViewController : UIViewController {
     var newsItem: NewsItem?
     
-    init(newsItem: NewsItem) {
+    init(_ newsItem: NewsItem) {
         self.newsItem = newsItem
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.ojo_defaultVCBackground
     }
 }

@@ -65,15 +65,28 @@ extension NewsFeedViewController {
         return cell // TODO when does this happen?
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.isHighlighted = true
     
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.isHighlighted = false
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didSelectItemAt indexPath: IndexPath) {
+        guard let item = service.item(at: indexPath.row) else {
+            let msg = "User selected item at index \(indexPath), but it wasn't available in News Service"
+            Log.error?.message(msg)
+            return
+        }
+        let vc = NewsItemViewController(item)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
