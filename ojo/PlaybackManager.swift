@@ -27,7 +27,7 @@ class PlaybackManager : NSObject {
     
     private var infoService = NowPlayingInfoService()
 
-    private let remoteControlResponder = RemoteControlResponder()
+    private var remoteControlResponder: RemoteControlResponder?
     
     private var interruptionHandler: PlaybackInterruptionHandler?
     
@@ -126,7 +126,7 @@ class PlaybackManager : NSObject {
         // doesn't work otherwise.
         UIApplication.shared.beginReceivingRemoteControlEvents()
         
-        remoteControlResponder.add(delegate: self)
+        remoteControlResponder = RemoteControlResponder(self)
         
         interruptionHandler = PlaybackInterruptionHandler(self)
 
@@ -215,19 +215,6 @@ class PlaybackManager : NSObject {
             try AVAudioSession.sharedInstance().setActive(true)
         } catch let error as NSError {
             print(error.localizedDescription)
-        }
-    }
-}
-
-extension PlaybackManager: RemoteControlObserver {
-    func received(eventType: UIEventSubtype) {
-        switch eventType {
-        case .remoteControlPlay:
-            play()
-        case .remoteControlPause:
-            stop()
-        default: break
-            // TODO(btc): handle next, prev
         }
     }
 }
