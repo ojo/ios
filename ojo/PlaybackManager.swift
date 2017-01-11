@@ -58,6 +58,8 @@ class PlaybackManager : NSObject {
                 observers.forEach() { $0.didChange(state: .started) }
             case .stopped:
                 observers.forEach() { $0.didChange(state: .stopped) }
+                
+                // When we stop, reset to default artwork and unsubscribe from Info service
             }
         }
     }
