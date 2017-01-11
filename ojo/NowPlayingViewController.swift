@@ -81,7 +81,7 @@ class NowPlayingViewController : UIViewController {
     
     override func viewDidLayoutSubviews() {
         let width = self.view.bounds.width
-        let paddingX: CGFloat = 6
+        let paddingX: CGFloat = DEFAULT_MARGIN_PX
         let albumArtPaddingY: CGFloat = 66
         let widthHeight = width - 2 * paddingX
         imageView.frame = CGRect(x: paddingX,
