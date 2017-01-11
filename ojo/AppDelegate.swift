@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let analytics = Analytics(client: mixpanel)
         PlaybackTracker.bind(analytics: analytics,
                              playbackManager: PLAYBACK_MANAGER)
-
+        Log.info?.message("Application did finish launching")
         return true
     }
     
