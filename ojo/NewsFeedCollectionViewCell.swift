@@ -15,6 +15,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
     
     private var futureImage: Promise<UIImage>?
     
+    
     // TODO add class function to determine height for cell based on content and frame
     var item: NewsItem? = nil {
         didSet {
@@ -32,15 +33,13 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
             
             title.text = item.title
             category.text = item.category
-            timestamp.text = "1 hour ago"
+            timestamp.text = "1 hour ago" // TODO use a library for this
         }
     }
     
     private let image: UIImageView = {
-        let v = UIImageView()
-        v.clipsToBounds = true
+        let v = OJORoundedImageView()
         v.contentMode = .scaleAspectFill
-        v.layer.cornerRadius = DEFAULT_CORNER_RADIUS
         return v
     }()
     
@@ -48,6 +47,8 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         let v = UILabel()
         v.font = UIFont(name: DEFAULT_FONT_BOLD, size: 26)
         v.textColor = UIColor.black
+        v.highlightedTextColor = UIColor.ojo_red
+        v.numberOfLines = 3
         return v
     }()
     
@@ -67,45 +68,49 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
     
     override var isHighlighted: Bool {
         didSet {
-            highlighter?.isHighlighted(isHighlighted)
+            title.isHighlighted = isHighlighted
+            image.isHighlighted = isHighlighted
         }
     }
-    
-    private var highlighter: Highlighter?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        highlighter = Highlighter(self)
-
         contentView.addSubview(image)
         contentView.addSubview(title)
         contentView.addSubview(category)
         contentView.addSubview(timestamp)
+        
+        title.backgroundColor = UIColor.purple
+        category.backgroundColor = UIColor.green
+        timestamp.backgroundColor = UIColor.orange
     }
     
     override func layoutSubviews() {
-        let fullWidth = frame.width - 2 * DEFAULT_MARGIN_PX
+        super.layoutSubviews()
+        let fullWidth = bounds.width - 2 * DEFAULT_MARGIN_PX
         image.frame = CGRect(x: DEFAULT_MARGIN_PX,
                              y: DEFAULT_MARGIN_PX,
                              width: fullWidth,
                              height: fullWidth/THE_GOLDEN_RATIO)
-        let underImage = image.frame.maxY + 2 * DEFAULT_MARGIN_PX
+        let underImage = image.bounds.maxY + 2 * DEFAULT_MARGIN_PX
+        
+        let cs = category.computedSize(width: fullWidth)
         category.frame = CGRect(x: DEFAULT_MARGIN_PX,
                                 y: underImage,
-                                width: fullWidth,
-                                height: 25)
-        category.sizeToFit()
-        timestamp.frame = CGRect(x: category.frame.maxX + 2 * DEFAULT_MARGIN_PX,
+                                width: cs.width,
+                                height: cs.height)
+
+        let tss = timestamp.computedSize(width: fullWidth)
+        timestamp.frame = CGRect(x: category.bounds.maxX + 2 * DEFAULT_MARGIN_PX,
                                  y: underImage,
-                                 width: 100,
-                                 height: 25)
-        timestamp.sizeToFit()
+                                 width: tss.width,
+                                 height: tss.height)
+        
         title.frame = CGRect(x: DEFAULT_MARGIN_PX,
                              y: category.frame.maxY + 2 * DEFAULT_MARGIN_PX,
-                             width: fullWidth,
-                             height: 25)
-        title.sizeToFit()
+                             width: title.computedSize(width: fullWidth).width,
+                             height: title.computedSize(width: fullWidth).height)
     }
     
     override func prepareForReuse() {
@@ -115,29 +120,15 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         timestamp.text = nil
         
     }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    private class Highlighter {
-        weak var source: NewsFeedCollectionViewCell?
-        
-        init(_ cell: NewsFeedCollectionViewCell) {
-            source = cell
-            
-            // TODO get the unhighlighted state from source at runtime
-        }
-        
-        func isHighlighted(_ isHighlighted: Bool) {
-            if (isHighlighted) {
-                source?.image.tintColor = UIColor.ojo_grey_59
-                source?.title.textColor = UIColor.ojo_grey_59
-            } else {
-                // TODO for each element, reset to the saved state
-                source?.image.tintColor = UIColor.clear
-                source?.title.textColor = UIColor.black
-            }
-        }
+}
+
+extension UILabel {
+    func computedSize(width: CGFloat) -> CGSize {
+        let s = CGSize(width: width, height: .greatestFiniteMagnitude)
+        return sizeThatFits(s)
     }
 }
