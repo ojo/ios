@@ -57,7 +57,6 @@ extension NewsFeedViewController {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT,
             for: indexPath)
-
         if let c = cell as? NewsFeedCollectionViewCell {
             c.item = service.item(at: indexPath.row)
             return c
