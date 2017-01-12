@@ -125,9 +125,10 @@ class NewsItemViewController : UIViewController {
                                  width: fullWidth,
                                  height: 100) // TODO FIXME
         
-        
-        // a reputation system.
-        
-        
+        body.frame = CGRect(x: DEFAULT_MARGIN_PX,
+                            y: titleView.frame.maxY + DEFAULT_MARGIN_PX,
+                            width: fullWidth,
+                            height: body.sizeThatFits(CGSize(width: fullWidth,
+                                                             height: .greatestFiniteMagnitude)).height)
     }
 }
