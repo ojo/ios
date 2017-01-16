@@ -25,7 +25,7 @@ let DEFAULT_FONT_BOLD = "HelveticaNeue-Bold"
 let DEFAULT_CORNER_RADIUS: CGFloat = 6
 let THE_GOLDEN_RATIO: CGFloat = 1.61803398875
 
-let RELEASE_PHASE: UInt = 2
+let RELEASE_PHASE: UInt = 3
 
 extension UIColor {
     

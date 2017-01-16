@@ -39,9 +39,22 @@ class UITabBarRootViewController: UITabBarController {
                                           image: newsImage,
                                           selectedImage: newsImage)
         newsVC.tabBarItem.badgeValue = "4"
-        let eventsVC = DiscoverEventsViewController()
+        
+        let pageController: EventsViewController = EventsViewController.init(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.horizontal, options: nil)
+        
+        let navigationController: RKSwipeBetweenViewControllers = RKSwipeBetweenViewControllers.init(rootViewController: pageController)
+        let upcomingEventsVC: UpcomingEventsViewController = UpcomingEventsViewController()
+        let allEventsVC: AllEventsViewController = AllEventsViewController()
+        let featuredEventsVC: FeaturedViewController = FeaturedViewController()
+        
+//        upcomingEventsVC.view.backgroundColor = UIColor.red
+//        allEventsVC.view.backgroundColor = UIColor.green
+//        featuredEventsVC.view.backgroundColor = UIColor.orange
+
+        navigationController.viewControllerArray = [upcomingEventsVC,allEventsVC,featuredEventsVC]
+
         let eventsImage = UIImage(named: "events")
-        eventsVC.tabBarItem = UITabBarItem(title: "Discover Events",
+        navigationController.tabBarItem = UITabBarItem(title: "Events",
                                          image: eventsImage,
                                          selectedImage: eventsImage)
         switch RELEASE_PHASE {
@@ -50,7 +63,7 @@ class UITabBarRootViewController: UITabBarController {
         case 2:
             viewControllers = [newsVC, radioVC]
         case 3:
-            viewControllers = [newsVC, radioVC, eventsVC]
+            viewControllers = [newsVC, radioVC, navigationController]
         default:
             viewControllers = [radioVC]
         }
