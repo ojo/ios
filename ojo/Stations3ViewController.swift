@@ -49,12 +49,18 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         try? reachability.startNotifier()
-        reachability.whenReachable = { _ in self.hideOfflineView() }
-        reachability.whenUnreachable = { _ in self.showOfflineView() }
+        reachability.whenReachable = { _ in
+            DispatchQueue.main.async {
+                self.hideOfflineView()
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            DispatchQueue.main.async {
+                self.showOfflineView()
+            }
+        }
         
         view.backgroundColor = UIColor.ojo_defaultVCBackground
-        
-        view.addSubview(offlineView) // FIRST ALWAYS
 
         view.addSubview(bar)
 
@@ -65,6 +71,8 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
         for v in views {
             view.addSubview(v)
         }
+
+        view.addSubview(offlineView) // LAST ALWAYS
     }
 
     override func viewDidLayoutSubviews() {
@@ -102,15 +110,15 @@ class Stations3ViewController: UIViewController, StationViewDelegate {
     }
 
     private func showOfflineView() {
-        view.bringSubview(toFront: offlineView)
+        offlineView.isHidden = false
     }
     
     private func hideOfflineView() {
-        let fade = { self.offlineView.alpha = 0 }
-        let send = { (_: Bool) -> Void in
-            self.view.sendSubview(toBack: self.offlineView)
-            self.offlineView.alpha = 1
+        let fade: () -> Void = { [weak self] in self?.offlineView.alpha = 0 }
+        let hide: (Bool) -> Void = { [weak self] _ in
+            self?.offlineView.isHidden = true
+            self?.offlineView.alpha = 1
         }
-        UIView.animate(withDuration: 1, animations: fade, completion: send)
+        UIView.animate(withDuration: 1, animations: fade, completion: hide)
     }
 }

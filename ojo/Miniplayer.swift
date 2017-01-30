@@ -48,8 +48,10 @@ class Miniplayer {
         
         try? net.startNotifier()
         net.whenUnreachable = { _ in
-            if playbackManager.state != .started {
-                self.hideMiniplayer()
+            DispatchQueue.main.async {
+                if playbackManager.state != .started {
+                    self.hideMiniplayer()
+                }
             }
         }
     }
