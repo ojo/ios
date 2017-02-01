@@ -28,7 +28,7 @@ class UITabBarRootViewController: UITabBarController {
     
     func hookUpTheDifferentSectionsOfTheApp() {
         let radioVC = StationsViewControllerFactory.make(withStations: STATIONS,
-                                                         bounds: view.frame) // FIXME: bounds or frame?
+                                                         bounds: view.bounds) // FIXME: bounds or frame?
         let radioImage = UIImage(named: "radio")
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
                                           image: radioImage,
