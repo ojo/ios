@@ -35,7 +35,7 @@ class NewsItemService {
 
     init() {}
 
-    func item(at index: Int) -> NewsItem? {
+    func item(at index: Int) -> NewsItem {
         return items[index]
     }
 

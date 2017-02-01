@@ -12,7 +12,13 @@ import PromiseKit
 
 class NewsFeedCollectionViewCell: UICollectionViewCell {
     static let REUSE_IDENT = "NewsFeedCollectionViewCell"
-    
+
+    static func sizeFor(newsItem: NewsItem, givenWidth w: CGFloat) -> CGSize {
+        let h = w
+        // TODO
+        return CGSize(width: w, height: h)
+    }
+
     private var futureImage: Promise<UIImage>?
     
     
@@ -48,7 +54,6 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         v.font = UIFont(name: DEFAULT_FONT_BOLD, size: 26)
         v.textColor = UIColor.black
         v.highlightedTextColor = UIColor.ojo_red
-        v.numberOfLines = 3
         return v
     }()
     

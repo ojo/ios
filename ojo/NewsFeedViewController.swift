@@ -12,9 +12,8 @@ class NewsFeedViewController: HidingNavBarCollectionViewController {
 
     let service = NewsItemService()
     
-    init(frame: CGRect) {
+    init() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: frame.width, height: frame.width)
         super.init(collectionViewLayout: layout)
     }
     
@@ -79,21 +78,21 @@ extension NewsFeedViewController {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
-        guard let item = service.item(at: indexPath.row) else {
-            let msg = "User selected item at index \(indexPath), but it wasn't available in News Service"
-            Log.error?.message(msg)
-            return
-        }
+        let item = service.item(at: indexPath.row)
+
         let vc = NewsItemViewController(item)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension NewsFeedViewController: UICollectionViewDelegateFlowLayout {
-/* TODO   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return TODO
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let i = indexPath.row
+        return NewsFeedCollectionViewCell.sizeFor(newsItem: service.item(at: i),
+                                                  givenWidth: view.bounds.width)
     }
- */
 }
 
 extension NewsFeedViewController: NewsItemServiceDelegate {

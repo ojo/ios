@@ -33,7 +33,7 @@ class UITabBarRootViewController: UITabBarController {
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
                                           image: radioImage,
                                           selectedImage: radioImage)
-        let newsVC = NewsNavigationController(rootViewController: NewsFeedViewController(frame: view.frame))
+        let newsVC = NewsNavigationController(rootViewController: NewsFeedViewController())
         let newsImage = UIImage(named: "news")
         newsVC.tabBarItem = UITabBarItem(title: "News",
                                           image: newsImage,
