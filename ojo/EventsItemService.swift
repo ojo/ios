@@ -40,16 +40,25 @@ class EventsItemService {
         return items[index]
     }
     
-    // makes news items available locally
-    func want(itemsBefore item: EventItem?) {
-        foo()
+    // makes events items available locally
+    func want(itemsBefore item: EventItem?, type: EventsType) {
+        foo(type: type)
     }
     
     func subscribe(_ d: EventsItemServiceDelegate) {
         delegates.append(d)
     }
     
-    private func foo() {
+    private func foo(type: EventsType) {
+        if type == EventsType.EVENT_TYPE_UPCOMING {
+            //url shold be upcomming or change params
+        }else if type == EventsType.EVENT_TYPE_ALL {
+            //url shold be upcomming or change params
+        }else if type == EventsType.EVENT_TYPE_FEATURED {
+            //url shold be upcomming or change params
+        }else{
+            
+        }
         Alamofire.request(API_URL).responseJSON { response in
             if let json: Any = response.result.value {
                 if let items = self.parse(array: json) {

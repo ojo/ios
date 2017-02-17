@@ -6,17 +6,28 @@
 //  Copyright © 2017 TTRN. All rights reserved.
 //
 
+
+
+enum EventsType {
+    case EVENT_TYPE_UPCOMING
+    case EVENT_TYPE_ALL
+    case EVENT_TYPE_FEATURED
+    case EVENT_TYPE_DEFAULT
+}
+
 import UIKit
 
 
-class EventsViewController: HidingNavBarCollectionViewController {
+class EventsViewController: UICollectionViewController {
     
-        let serviceEvent = EventsItemService()
-        
-        init(frame: CGRect) {
+    let serviceEvent = EventsItemService()
+    var eventType = EventsType.EVENT_TYPE_DEFAULT;
+    
+    init(frame: CGRect, type: EventsType) {
             let layout = UICollectionViewFlowLayout()
             layout.itemSize = CGSize(width: frame.width, height: frame.width)
             super.init(collectionViewLayout: layout)
+            eventType = type;
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -25,21 +36,20 @@ class EventsViewController: HidingNavBarCollectionViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            
             serviceEvent.subscribe(self)
             
             self.view.backgroundColor = UIColor.ojo_grey_59
-            navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
+//            navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
             
-            collectionView?.register(NewsFeedCollectionViewCell.self,
-                                     forCellWithReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT)
+            collectionView?.register(EventsViewCollectionViewCell.self,
+                                     forCellWithReuseIdentifier: EventsViewCollectionViewCell.REUSE_IDENT)
             
             if let v = collectionView {
                 v.backgroundColor = UIColor.ojo_defaultVCBackground
                 v.delaysContentTouches = false
             }
             
-            serviceEvent.want(itemsBefore: nil)
+            serviceEvent.want(itemsBefore: nil, type: self.eventType)
         }
     }
     
@@ -80,17 +90,17 @@ class EventsViewController: HidingNavBarCollectionViewController {
         
         override func collectionView(_ collectionView: UICollectionView,
                                      didSelectItemAt indexPath: IndexPath) {
-            guard let item = serviceEvent.item(at: indexPath.row) else {
-                let msg = "User selected item at index \(indexPath), but it wasn't available in News Service"
-                Log.error?.message(msg)
+//            guard let item = serviceEvent.item(at: indexPath.row) else {
+//                let msg = "User selected item at index \(indexPath), but it wasn't available in News Service"
+//                Log.error?.message(msg)
                 return
-            }
+//            }
 //            let vc = EventsViewController(item)
 //            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    extension NewsFeedViewController: UICollectionViewDelegateFlowLayout {
+    extension EventsViewController: UICollectionViewDelegateFlowLayout {
         /* TODO   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          return TODO
          }
