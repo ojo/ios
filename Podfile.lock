@@ -23,10 +23,12 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - Protobuf (3.2.0)
+  - TRMosaicLayout (1.0.0)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
+  - TRMosaicLayout
 
 SPEC CHECKSUMS:
   Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
@@ -36,7 +38,8 @@ SPEC CHECKSUMS:
   FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
+  TRMosaicLayout: 1875505c48dd2877afd69a8bea7b4c1c63afa5b5
 
-PODFILE CHECKSUM: a77863dc2da3950c46f5a0c5595599b04e11059c
+PODFILE CHECKSUM: adf45c341b1b2fa1233c1eaa21892df7c778923e
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

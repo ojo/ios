@@ -33,22 +33,30 @@ class UITabBarRootViewController: UITabBarController {
         radioVC.tabBarItem = UITabBarItem(title: "Radio",
                                           image: radioImage,
                                           selectedImage: radioImage)
+
         let newsVC = NewsNavigationController(rootViewController: NewsFeedViewController())
         let newsImage = UIImage(named: "news")
         newsVC.tabBarItem = UITabBarItem(title: "News",
-                                          image: newsImage,
-                                          selectedImage: newsImage)
+                                         image: newsImage,
+                                         selectedImage: newsImage)
         newsVC.tabBarItem.badgeValue = "4"
+
         let eventsVC = DiscoverEventsViewController()
         let eventsImage = UIImage(named: "events")
         eventsVC.tabBarItem = UITabBarItem(title: "Discover Events",
-                                         image: eventsImage,
-                                         selectedImage: eventsImage)
+                                           image: eventsImage,
+                                           selectedImage: eventsImage)
+
+        let nowVC = NowNavigationController(rootViewController: NowCollectionViewController())
+        let nowImage = UIImage(named: "news")
+        nowVC.tabBarItem = UITabBarItem(title: "Now",
+                                        image: nowImage,
+                                        selectedImage: nowImage)
         switch RELEASE_PHASE {
         case 1:
             viewControllers = [radioVC]
         case 2:
-            viewControllers = [newsVC, radioVC]
+            viewControllers = [nowVC, radioVC]
         case 3:
             viewControllers = [newsVC, radioVC, eventsVC]
         default:

@@ -40,7 +40,7 @@ class NewsItemService {
     }
 
     // makes news items available locally
-    func want(itemsBefore item: NewsItem?) {
+    func loadItems(before item: NewsItem? = nil) {
         foo()
     }
 

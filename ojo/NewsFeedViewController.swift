@@ -37,7 +37,7 @@ class NewsFeedViewController: HidingNavBarCollectionViewController {
             v.delaysContentTouches = false
         }
         
-        service.want(itemsBefore: nil)
+        service.loadItems()
     }
 }
 

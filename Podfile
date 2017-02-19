@@ -7,6 +7,7 @@ target 'ojo' do
   # Pods for ojo
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'TRMosaicLayout'
 
   target 'ojoTests' do
     inherit! :search_paths
