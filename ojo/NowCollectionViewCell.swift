@@ -19,6 +19,12 @@ class NowCollectionViewCell: UICollectionViewCell {
             }
             backgroundColor = UIColor(hexString: data.photo.dominantColor)
             title.text = data.title
+
+            let urlAtTimeOfRequest: String = data.photo.URL
+            _ = UIImage.promise(url: data.photo.URL).then { image -> Void in
+                guard let currentURL = self.data?.photo.URL, urlAtTimeOfRequest == currentURL else { return }
+                self.image.image = image
+            }
         }
     }
 
@@ -34,6 +40,7 @@ class NowCollectionViewCell: UICollectionViewCell {
     let image: UIImageView = {
         let v = UIImageView()
         v.contentMode = .scaleAspectFill
+        v.clipsToBounds = true
         return v
     }()
 
