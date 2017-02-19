@@ -51,6 +51,7 @@
 		6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D41E172D57002CA55E /* Argo.framework */; };
 		6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D61E172F65002CA55E /* Runes.framework */; };
 		6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D81E172F86002CA55E /* Curry.framework */; };
+		6BD8E0141E59A57F00A8091E /* RandomColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E0131E59A57F00A8091E /* RandomColor.framework */; };
 		6BE8907C1E1A14A6000BB347 /* UITabBarRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */; };
 		6BF0E6661E1ED3E500B1258C /* AnalyticsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E6651E1ED3E500B1258C /* AnalyticsType.swift */; };
 		6BF0E6681E1ED5F500B1258C /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E6671E1ED5F500B1258C /* NewsItem.swift */; };
@@ -145,6 +146,7 @@
 		6BCD64D41E172D57002CA55E /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D61E172F65002CA55E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D81E172F86002CA55E /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = SOURCE_ROOT; };
+		6BD8E0131E59A57F00A8091E /* RandomColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RandomColor.framework; path = Carthage/Build/iOS/RandomColor.framework; sourceTree = SOURCE_ROOT; };
 		6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarRootViewController.swift; sourceTree = "<group>"; };
 		6BF0E6651E1ED3E500B1258C /* AnalyticsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsType.swift; sourceTree = "<group>"; };
 		6BF0E6671E1ED5F500B1258C /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B2791C21E1CA6ED00054A57 /* SwiftyJSON.framework in Frameworks */,
+				6BD8E0141E59A57F00A8091E /* RandomColor.framework in Frameworks */,
 				6B801E3F1E1B6E7B002C96F7 /* AlamofireImage.framework in Frameworks */,
 				6B801E371E1B1457002C96F7 /* SwiftHEXColors.framework in Frameworks */,
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
@@ -389,6 +392,7 @@
 				6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */,
 				6B2DA50B1E202429007DB67E /* Mixpanel.framework */,
 				6B801E401E1B74B0002C96F7 /* PromiseKit.framework */,
+				6BD8E0131E59A57F00A8091E /* RandomColor.framework */,
 				6BF6E0BC1E1DAEFA00D22B73 /* Reachability.framework */,
 				6BCD64D61E172F65002CA55E /* Runes.framework */,
 				6B801E361E1B1457002C96F7 /* SwiftHEXColors.framework */,
@@ -638,6 +642,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RandomColor.framework",
 			);
 			outputPaths = (
 			);

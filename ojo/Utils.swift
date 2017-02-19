@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RandomColor
 
 #if DEBUG
 let DEBUG = true
@@ -28,7 +29,11 @@ let THE_GOLDEN_RATIO: CGFloat = 1.61803398875
 let RELEASE_PHASE: UInt = 2
 
 extension UIColor {
-    
+
+    static var random: UIColor {
+        return randomColor()
+    }
+
     // you can use http://uicolor.xyz/#/hex-to-ui to convert hex to UIColor!
     
     static var ojo_defaultVCBackground: UIColor {
