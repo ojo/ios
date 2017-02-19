@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 class NewsItemViewController : UIViewController {
     var newsItem: NewsItem?
@@ -55,10 +56,10 @@ class NewsItemViewController : UIViewController {
         return v
     }()
     
-    private let body: UILabel = {
-        let v = UILabel()
-        v.font = UIFont(name: DEFAULT_FONT, size: 14)
-        v.textColor = UIColor.ojo_grey_84
+    private let body: WKWebView = {
+        let v = WKWebView()
+        //        v.font = UIFont(name: DEFAULT_FONT, size: 14)
+        // v.textColor = UIColor.ojo_grey_84
         return v
     }()
     
@@ -72,9 +73,8 @@ class NewsItemViewController : UIViewController {
         guard let newsItem = newsItem else { return }
         category.text = newsItem.category
         titleView.text = newsItem.title
-        body.text = newsItem.body
+        body.loadHTMLString(newsItem.body, baseURL: nil)
         straphead.text = newsItem.straphead
-        
         
         if let c = UIColor(hexString: newsItem.photo.dominantColor),
             let ci = UIImage.from(color: c),
@@ -101,7 +101,7 @@ class NewsItemViewController : UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        container.frame = view.frame
+        container.frame = view.bounds
         
         let fullWidth = view.frame.width - 2 * DEFAULT_MARGIN_PX
         
@@ -128,7 +128,8 @@ class NewsItemViewController : UIViewController {
         body.frame = CGRect(x: DEFAULT_MARGIN_PX,
                             y: titleView.frame.maxY + DEFAULT_MARGIN_PX,
                             width: fullWidth,
-                            height: body.sizeThatFits(CGSize(width: fullWidth,
-                                                             height: .greatestFiniteMagnitude)).height)
+                            height: 100)
+
+        container.contentSize = CGSize(width: view.bounds.width, height: body.frame.maxY)
     }
 }
