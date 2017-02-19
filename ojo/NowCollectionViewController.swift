@@ -34,12 +34,17 @@ class NowCollectionViewController: UICollectionViewController {
         if let v = collectionView {
             v.backgroundColor = UIColor.ojo_defaultVCBackground
             v.delaysContentTouches = true // explicitly. for now.
+            if #available(iOS 10.0, *) {
+                v.prefetchDataSource = self
+            }
         }
 
         service.loadItems() // eager load some initial entries
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let c = collectionView.dequeueReusableCell(withReuseIdentifier: NowCollectionViewCell.reuseID, for: indexPath)
         if let cc = c as? NowCollectionViewCell {
             cc.data = service.item(at: indexPath.item)
@@ -54,11 +59,21 @@ extension NowCollectionViewController { // UICollectionViewDelegate
         return 1
     }
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
         return service.count
     }
 }
 
+extension NowCollectionViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        // TODO
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        // TODO
+    }
+}
 
 extension NowCollectionViewController: NewsItemServiceDelegate {
     func serviceRefreshed() {
@@ -71,11 +86,14 @@ extension NowCollectionViewController: TRMosaicLayoutDelegate {
         return 150
     }
 
-    func collectionView(_ collectionView: UICollectionView, mosaicCellSizeTypeAtIndexPath indexPath: IndexPath) -> TRMosaicCellType {
+    func collectionView(_ collectionView: UICollectionView,
+                        mosaicCellSizeTypeAtIndexPath indexPath: IndexPath) -> TRMosaicCellType {
         return indexPath.item % 3 == 0 ? .big : .small
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: TRMosaicLayout, insetAtSection: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: TRMosaicLayout,
+                        insetAtSection: Int) -> UIEdgeInsets {
         return .zero
     }
 }

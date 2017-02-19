@@ -41,14 +41,14 @@ class NewsItemService {
 
     // makes news items available locally
     func loadItems(before item: NewsItem? = nil) {
-        foo()
+        fetch()
     }
 
     func subscribe(_ d: NewsItemServiceDelegate) {
         delegates.append(d)
     }
 
-    private func foo() {
+    private func fetch() {
         Alamofire.request(API_URL).responseJSON { response in
             if let json: Any = response.result.value {
                 if let items = self.parse(array: json) {

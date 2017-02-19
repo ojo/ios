@@ -18,9 +18,6 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         // TODO
         return CGSize(width: w, height: h)
     }
-
-    private var futureImage: Promise<UIImage>?
-    
     
     // TODO add class function to determine height for cell based on content and frame
     var item: NewsItem? = nil {

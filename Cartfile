@@ -7,8 +7,8 @@ github "btc/mixpanel-swift" "v1.1.1"
 github "cbpowell/MarqueeLabel" ~> 3.0
 github "emaloney/CleanroomLogger" ~> 5.0.0
 github "mxcl/PromiseKit" ~> 4.1
+github "onevcat/RandomColorSwift"
 github "thii/SwiftHEXColors" ~> 1.1
 github "thoughtbot/Argo" "v4.1.1"
 github "thoughtbot/Curry" "v3.0.0"
 github "tristanhimmelman/HidingNavigationBar" ~> 1.0
-github "onevcat/RandomColorSwift"

@@ -18,14 +18,50 @@ class NowCollectionViewCell: UICollectionViewCell {
                 return
             }
             backgroundColor = UIColor(hexString: data.photo.dominantColor)
+            title.text = data.title
         }
     }
 
+    let title: UILabel = {
+        let v = UILabel()
+        v.textColor = .ojo_defaultVCBackground
+        v.font = UIFont.defaultFont(ofSize: 16)
+        v.lineBreakMode = .byWordWrapping
+        v.numberOfLines = 0
+        return v
+    }()
+
+    let image: UIImageView = {
+        let v = UIImageView()
+        v.contentMode = .scaleAspectFill
+        return v
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        for v: UIView in [image, title] { // order matters
+            addSubview(v)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        image.frame = bounds
+
+        let titleMargin: CGFloat = 5
+        let titleSize = title.sizeThatFits(bounds.insetBy(dx: titleMargin, dy: titleMargin).size)
+        let titleOrigin = CGPoint(x: titleMargin,
+                                  y: bounds.height - titleSize.height - titleMargin)
+        title.frame = CGRect(origin: titleOrigin,
+                             size: titleSize)
+    }
+
+    override func prepareForReuse() {
+        image.image = nil
+        title.text = ""
     }
 }
