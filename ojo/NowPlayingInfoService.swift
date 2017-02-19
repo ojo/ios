@@ -40,8 +40,12 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
     }
 
     func unsubscribe(from station: Station) {
-        FIRMessaging.messaging().unsubscribe(fromTopic: "/topics/now-playing-\(station.tag)")
-        callbacks[station.tag] = nil
+        unsubscribe(tag: station.tag)
+    }
+
+    func unsubscribe(tag: String) {
+        FIRMessaging.messaging().unsubscribe(fromTopic: "/topics/now-playing-\(tag)")
+        callbacks[tag] = nil
     }
 
     func configure() {
@@ -115,6 +119,7 @@ class NowPlayingInfoService: NSObject, FIRMessagingDelegate {
         }
         guard let cb = callbacks[info.stationTag] else {
             Log.error?.message("No NPInfo callback registered for station tag: '\(info.stationTag)'")
+            unsubscribe(tag: info.stationTag)
             return
         }
         cb(info)
