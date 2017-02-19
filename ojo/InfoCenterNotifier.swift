@@ -24,7 +24,7 @@ class InfoCenterNotifier: PlaybackObserver {
             image = colorImage
             
             // then fetch the real image from the network
-            fetchImage(url).then { fetched -> Void in
+            UIImage.promise(url: url).then { fetched -> Void in
                 guard let c = self.current, info == c else { return }
                 self.updateInfoCenter(withInfo: info, andImage: fetched)
             }.catch { err in // fallback

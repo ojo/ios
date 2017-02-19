@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftHEXColors
-import PromiseKit
 
 class NewsFeedCollectionViewCell: UICollectionViewCell {
     static let REUSE_IDENT = "NewsFeedCollectionViewCell"
@@ -29,7 +28,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
             }
             
             let url: String = item.photo.URL
-            _ = fetchImage(item.photo.URL).then { image -> Void in
+            _ = UIImage.promise(url: item.photo.URL).then { image -> Void in
                 guard let currentURL = self.item?.photo.URL, url == currentURL else { return }
                 self.image.image = image
             }

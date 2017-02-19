@@ -119,7 +119,7 @@ extension Miniplayer: PlaybackObserver {
             let colorImage = UIImage.from(color: color)
             nowPlaying.popupItem.image = colorImage
             
-            fetchImage(url).then { image in
+            UIImage.promise(url: url).then { image in
                 self.nowPlaying.popupItem.image = image
                 }.catch { _ in
                     self.nowPlaying.popupItem.image = station.image
