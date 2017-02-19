@@ -28,6 +28,16 @@ let THE_GOLDEN_RATIO: CGFloat = 1.61803398875
 
 let RELEASE_PHASE: UInt = 2
 
+extension UIFont {
+    static func defaultFont(ofSize s: CGFloat) -> UIFont {
+        return UIFont(name: DEFAULT_FONT, size: s)!
+    }
+
+    static func defaultBoldFont(ofSize s: CGFloat) -> UIFont {
+        return UIFont(name: DEFAULT_FONT_BOLD, size: s)!
+    }
+}
+
 extension UIColor {
 
     static var random: UIColor {
