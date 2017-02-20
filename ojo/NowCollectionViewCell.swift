@@ -31,7 +31,7 @@ class NowCollectionViewCell: UICollectionViewCell {
     let title: UILabel = {
         let v = UILabel()
         v.textColor = .ojo_defaultVCBackground
-        v.font = UIFont.defaultFont(ofSize: 16)
+        v.font = UIFont.defaultBoldFont(ofSize: 16)
         v.lineBreakMode = .byWordWrapping
         v.numberOfLines = 0
         return v
