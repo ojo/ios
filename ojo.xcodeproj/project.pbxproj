@@ -55,6 +55,11 @@
 		6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D61E172F65002CA55E /* Runes.framework */; };
 		6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCD64D81E172F86002CA55E /* Curry.framework */; };
 		6BD8E0141E59A57F00A8091E /* RandomColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E0131E59A57F00A8091E /* RandomColor.framework */; };
+		6BD8E0191E5A6EDE00A8091E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E0181E5A6EDE00A8091E /* Bolts.framework */; };
+		6BD8E01B1E5A6EE600A8091E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E01A1E5A6EE600A8091E /* FBSDKCoreKit.framework */; };
+		6BD8E01D1E5A6EEF00A8091E /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E01C1E5A6EEF00A8091E /* FacebookCore.framework */; };
+		6BD8E01F1E5A6F5E00A8091E /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E01E1E5A6F5E00A8091E /* FacebookShare.framework */; };
+		6BD8E0211E5A6FB000A8091E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD8E0201E5A6FB000A8091E /* FBSDKShareKit.framework */; };
 		6BE8907C1E1A14A6000BB347 /* UITabBarRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */; };
 		6BF0E6661E1ED3E500B1258C /* AnalyticsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E6651E1ED3E500B1258C /* AnalyticsType.swift */; };
 		6BF0E6681E1ED5F500B1258C /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF0E6671E1ED5F500B1258C /* NewsItem.swift */; };
@@ -153,6 +158,11 @@
 		6BCD64D61E172F65002CA55E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = SOURCE_ROOT; };
 		6BCD64D81E172F86002CA55E /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = SOURCE_ROOT; };
 		6BD8E0131E59A57F00A8091E /* RandomColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RandomColor.framework; path = Carthage/Build/iOS/RandomColor.framework; sourceTree = SOURCE_ROOT; };
+		6BD8E0181E5A6EDE00A8091E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = SOURCE_ROOT; };
+		6BD8E01A1E5A6EE600A8091E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = SOURCE_ROOT; };
+		6BD8E01C1E5A6EEF00A8091E /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = SOURCE_ROOT; };
+		6BD8E01E1E5A6F5E00A8091E /* FacebookShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookShare.framework; path = Carthage/Build/iOS/FacebookShare.framework; sourceTree = SOURCE_ROOT; };
+		6BD8E0201E5A6FB000A8091E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Carthage/Build/iOS/FBSDKShareKit.framework; sourceTree = SOURCE_ROOT; };
 		6BE8907B1E1A14A6000BB347 /* UITabBarRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarRootViewController.swift; sourceTree = "<group>"; };
 		6BF0E6651E1ED3E500B1258C /* AnalyticsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsType.swift; sourceTree = "<group>"; };
 		6BF0E6671E1ED5F500B1258C /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
@@ -190,16 +200,21 @@
 				6B2791C21E1CA6ED00054A57 /* SwiftyJSON.framework in Frameworks */,
 				6BD8E0141E59A57F00A8091E /* RandomColor.framework in Frameworks */,
 				6B801E3F1E1B6E7B002C96F7 /* AlamofireImage.framework in Frameworks */,
+				6BD8E01D1E5A6EEF00A8091E /* FacebookCore.framework in Frameworks */,
 				6B801E371E1B1457002C96F7 /* SwiftHEXColors.framework in Frameworks */,
 				70D9CE141E11B207002D41B8 /* LNPopupController.framework in Frameworks */,
 				6BCD64D11E171E5E002CA55E /* Alamofire.framework in Frameworks */,
 				6BCD64D91E172F86002CA55E /* Curry.framework in Frameworks */,
+				6BD8E01F1E5A6F5E00A8091E /* FacebookShare.framework in Frameworks */,
+				6BD8E01B1E5A6EE600A8091E /* FBSDKCoreKit.framework in Frameworks */,
 				6B2DA50C1E202429007DB67E /* Mixpanel.framework in Frameworks */,
 				70F3DB1C1E12034000B03D12 /* HidingNavigationBar.framework in Frameworks */,
 				6BCD64D71E172F65002CA55E /* Runes.framework in Frameworks */,
 				6B801E411E1B74B0002C96F7 /* PromiseKit.framework in Frameworks */,
 				6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */,
+				6BD8E0191E5A6EDE00A8091E /* Bolts.framework in Frameworks */,
 				6BCD64D51E172D57002CA55E /* Argo.framework in Frameworks */,
+				6BD8E0211E5A6FB000A8091E /* FBSDKShareKit.framework in Frameworks */,
 				6BA8F4F71E24CC2900993A09 /* CleanroomLogger.framework in Frameworks */,
 				FA689DD244AAE9F5421F1A74 /* Pods_ojo.framework in Frameworks */,
 				6BF6E0BD1E1DAEFA00D22B73 /* Reachability.framework in Frameworks */,
@@ -396,6 +411,18 @@
 			name = Analytics;
 			sourceTree = "<group>";
 		};
+		6BD8E0171E5A6A4100A8091E /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				6BD8E0181E5A6EDE00A8091E /* Bolts.framework */,
+				6BD8E01C1E5A6EEF00A8091E /* FacebookCore.framework */,
+				6BD8E01E1E5A6F5E00A8091E /* FacebookShare.framework */,
+				6BD8E01A1E5A6EE600A8091E /* FBSDKCoreKit.framework */,
+				6BD8E0201E5A6FB000A8091E /* FBSDKShareKit.framework */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
 		704C94A31E11AC6F00A7D2BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +431,7 @@
 				6BCD64D41E172D57002CA55E /* Argo.framework */,
 				6BA8F4F61E24CC2900993A09 /* CleanroomLogger.framework */,
 				6BCD64D81E172F86002CA55E /* Curry.framework */,
+				6BD8E0171E5A6A4100A8091E /* Facebook */,
 				70F3DB1B1E12034000B03D12 /* HidingNavigationBar.framework */,
 				70D9CE131E11B207002D41B8 /* LNPopupController.framework */,
 				6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */,
@@ -660,6 +688,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RandomColor.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookShare.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKShareKit.framework",
 			);
 			outputPaths = (
 			);
