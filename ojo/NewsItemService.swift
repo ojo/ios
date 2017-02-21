@@ -61,14 +61,14 @@ class NewsItemService {
     private func parse(array data: Any) -> [NewsItem]? {
         let decodedArray: Decoded<[JSON]> = JSON(data) <|| "data"
         guard let array = decodedArray.value else {
-            print(decodedArray.error.debugDescription)
+            Log.error?.message(decodedArray.error.debugDescription)
             return nil
         }
         let decodedItems: [Decoded<NewsItem>] = array.map { NewsItem.decode($0) }
         var items = [NewsItem]()
         for decoded in decodedItems {
             guard let item = decoded.value else {
-                print(decoded.error.debugDescription)
+                Log.error?.message(decoded.error.debugDescription)
                 continue
             }
             items.append(item)
