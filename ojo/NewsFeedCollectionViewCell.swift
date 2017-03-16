@@ -107,7 +107,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
                                  height: tss.height)
         
         title.frame = CGRect(x: DEFAULT_MARGIN_PX,
-                             y: category.frame.maxY + 2 * DEFAULT_MARGIN_PX,
+                             y: category.frame.maxY + DEFAULT_MARGIN_PX,
                              width: title.computedSize(width: fullWidth).width,
                              height: title.computedSize(width: fullWidth).height)
     }
