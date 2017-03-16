@@ -8,6 +8,7 @@
 
 import TRMosaicLayout
 import UIKit
+import FacebookShare
 
 class NowCollectionViewController: UICollectionViewController {
 
@@ -63,6 +64,17 @@ extension NowCollectionViewController { // UICollectionViewDelegate
                                  numberOfItemsInSection section: Int) -> Int {
         return service.count
     }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let content = service.item(at: indexPath.item).facebookLinkShareContent else { return }
+        let dialog = ShareDialog(content: content)
+        dialog.mode = .native
+        dialog.failsOnInvalidData = true
+        dialog.completion = { result in
+            Log.info?.trace()
+        }
+        try? dialog.show()
+    }
 }
 
 extension NowCollectionViewController: UICollectionViewDataSourcePrefetching {
@@ -83,7 +95,7 @@ extension NowCollectionViewController: NewsItemServiceDelegate {
 
 extension NowCollectionViewController: TRMosaicLayoutDelegate {
     func heightForSmallMosaicCell() -> CGFloat {
-        return 150
+        return 200
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -95,5 +107,13 @@ extension NowCollectionViewController: TRMosaicLayoutDelegate {
                         layout collectionViewLayout: TRMosaicLayout,
                         insetAtSection: Int) -> UIEdgeInsets {
         return .zero
+    }
+}
+
+extension NewsItem {
+    var facebookLinkShareContent: LinkShareContent? {
+        guard let imageURL = URL(string: photo.URL) else { return nil }
+        let url = imageURL
+        return LinkShareContent(url: url, title: title, imageURL: imageURL)
     }
 }
