@@ -56,7 +56,7 @@ class UITabBarRootViewController: UITabBarController {
         case 1:
             viewControllers = [radioVC]
         case 2:
-            viewControllers = [nowVC, radioVC]
+            viewControllers = [newsVC, radioVC]
         case 3:
             viewControllers = [newsVC, radioVC, eventsVC]
         default:

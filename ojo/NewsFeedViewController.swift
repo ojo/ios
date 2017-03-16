@@ -27,7 +27,7 @@ class NewsFeedViewController: HidingNavBarCollectionViewController {
         service.subscribe(self)
        
         self.view.backgroundColor = UIColor.ojo_grey_59
-        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO")
+        navigationController?.navigationBar.topItem?.titleView = DefaultTopItemLabel("OJO News")
         
         collectionView?.register(NewsFeedCollectionViewCell.self,
                                  forCellWithReuseIdentifier: NewsFeedCollectionViewCell.REUSE_IDENT)

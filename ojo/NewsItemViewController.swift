@@ -39,6 +39,8 @@ class NewsItemViewController : UIViewController {
         let v = UILabel()
         v.font = UIFont(name: DEFAULT_FONT_BOLD, size: 26)
         v.textColor = UIColor.black
+        v.lineBreakMode = .byWordWrapping
+        v.numberOfLines = 4
         return v
     }()
     
@@ -56,10 +58,12 @@ class NewsItemViewController : UIViewController {
         return v
     }()
     
-    private let body: WKWebView = {
-        let v = WKWebView()
-        //        v.font = UIFont(name: DEFAULT_FONT, size: 14)
-        // v.textColor = UIColor.ojo_grey_84
+    private let body: UITextView = {
+        let v = UITextView()
+        v.font = UIFont(name: DEFAULT_FONT, size: 14)
+        v.isEditable = false
+        v.isSelectable = false
+        v.bounces = false
         return v
     }()
     
@@ -73,7 +77,15 @@ class NewsItemViewController : UIViewController {
         guard let newsItem = newsItem else { return }
         category.text = newsItem.category
         titleView.text = newsItem.title
-        body.loadHTMLString(newsItem.body, baseURL: nil)
+
+        let pStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        pStyle.lineHeightMultiple = 24
+        pStyle.maximumLineHeight = 24
+        pStyle.minimumLineHeight = 24
+        pStyle.paragraphSpacing = 10
+        let attributes = [ NSFontAttributeName : UIFont(name: DEFAULT_FONT, size: 14), NSParagraphStyleAttributeName : pStyle ]
+        body.attributedText = NSAttributedString(string: newsItem.body, attributes: attributes)
+
         straphead.text = newsItem.straphead
         
         if let c = UIColor(hexString: newsItem.photo.dominantColor),
@@ -105,31 +117,26 @@ class NewsItemViewController : UIViewController {
         
         let fullWidth = view.frame.width - 2 * DEFAULT_MARGIN_PX
         
-        straphead.frame = CGRect(x: DEFAULT_MARGIN_PX,
-                                 y: topLayoutGuide.length + DEFAULT_MARGIN_PX,
-                                 width: fullWidth,
-                                 height: 40) // TODO FIXME
-        
         image.frame = CGRect(x: DEFAULT_MARGIN_PX,
-                             y: straphead.frame.maxY + DEFAULT_MARGIN_PX,
+                             y: DEFAULT_MARGIN_PX,
                              width: fullWidth,
                              height: fullWidth/THE_GOLDEN_RATIO)
         
         category.frame = CGRect(x: DEFAULT_MARGIN_PX,
                                 y: image.frame.maxY + DEFAULT_MARGIN_PX,
                                 width: fullWidth,
-                                height: 40) // FIXME TODO
-        
+                                height: category.computedSize(width: fullWidth).height)
+
         titleView.frame = CGRect(x: DEFAULT_MARGIN_PX,
                                  y: category.frame.maxY,
                                  width: fullWidth,
-                                 height: 100) // TODO FIXME
-        
+                                 height: titleView.computedSize(width: fullWidth).height)
+
         body.frame = CGRect(x: DEFAULT_MARGIN_PX,
                             y: titleView.frame.maxY + DEFAULT_MARGIN_PX,
                             width: fullWidth,
-                            height: 100)
+                            height: body.computedSize(width: fullWidth).height)
 
-        container.contentSize = CGSize(width: view.bounds.width, height: body.frame.maxY)
+        container.contentSize = CGSize(width: view.bounds.width, height: body.frame.maxY + bottomLayoutGuide.length)
     }
 }

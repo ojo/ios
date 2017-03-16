@@ -46,6 +46,7 @@
 		6BA8F4F51E249F2900993A09 /* EventMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8F4F41E249F2900993A09 /* EventMocks.swift */; };
 		6BA8F4F71E24CC2900993A09 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA8F4F61E24CC2900993A09 /* CleanroomLogger.framework */; };
 		6BA8F4F91E25A0AE00993A09 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8F4F81E25A0AE00993A09 /* Logger.swift */; };
+		6BB30FCA1E7B23E5003FA83C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB30FC91E7B23E5003FA83C /* UIView.swift */; };
 		6BBD1A6F1E1C1F0C00A74B6E /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */; };
 		6BBD1A731E1C231800A74B6E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A721E1C231800A74B6E /* Analytics.swift */; };
 		6BBD1A761E1C234400A74B6E /* PlaybackTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */; };
@@ -149,6 +150,7 @@
 		6BA8F4F41E249F2900993A09 /* EventMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMocks.swift; sourceTree = "<group>"; };
 		6BA8F4F61E24CC2900993A09 /* CleanroomLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomLogger.framework; path = Carthage/Build/iOS/CleanroomLogger.framework; sourceTree = SOURCE_ROOT; };
 		6BA8F4F81E25A0AE00993A09 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6BB30FC91E7B23E5003FA83C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6BBD1A6E1E1C1F0C00A74B6E /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = SOURCE_ROOT; };
 		6BBD1A721E1C231800A74B6E /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		6BBD1A751E1C234400A74B6E /* PlaybackTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackTracker.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				6BA6B3531E15E2370033130E /* OJORoundedImageView.swift */,
 				6B801E381E1B156E002C96F7 /* UIImage+Color.swift */,
 				6B801E441E1B7A16002C96F7 /* UIImage+Promise.swift */,
+				6BB30FC91E7B23E5003FA83C /* UIView.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				6B3564701E215279009A5559 /* HidingNavBarCollectionViewController.swift in Sources */,
 				707374C61E11DB6E0013EDDF /* Stations.swift in Sources */,
 				70F3DB131E11F3C800B03D12 /* RadioStationCollectionViewCell.swift in Sources */,
+				6BB30FCA1E7B23E5003FA83C /* UIView.swift in Sources */,
 				6BA8F4F51E249F2900993A09 /* EventMocks.swift in Sources */,
 				6B6E0BAE1E59946800C91FC3 /* NowNavigationController.swift in Sources */,
 				70F3DAEA1E11E72A00B03D12 /* StationsCollectionViewController.swift in Sources */,

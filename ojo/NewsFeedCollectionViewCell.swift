@@ -36,6 +36,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
             title.text = item.title
             category.text = item.category
             timestamp.text = "1 hour ago" // TODO use a library for this
+            setNeedsLayout()
         }
     }
     
@@ -50,6 +51,7 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         v.font = UIFont(name: DEFAULT_FONT_BOLD, size: 26)
         v.textColor = UIColor.black
         v.highlightedTextColor = UIColor.ojo_red
+        v.numberOfLines = 10
         return v
     }()
     
@@ -81,10 +83,6 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(title)
         contentView.addSubview(category)
         contentView.addSubview(timestamp)
-        
-        title.backgroundColor = UIColor.purple
-        category.backgroundColor = UIColor.green
-        timestamp.backgroundColor = UIColor.orange
     }
     
     override func layoutSubviews() {
@@ -124,12 +122,5 @@ class NewsFeedCollectionViewCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension UILabel {
-    func computedSize(width: CGFloat) -> CGSize {
-        let s = CGSize(width: width, height: .greatestFiniteMagnitude)
-        return sizeThatFits(s)
     }
 }
